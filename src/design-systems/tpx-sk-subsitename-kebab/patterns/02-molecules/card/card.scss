@@ -1,0 +1,48 @@
+.m-card {
+  &__image {
+    img {
+      @apply w-full h-full object-cover object-top;
+    }
+  }
+
+  &__content {
+    @apply bg-white/40 ;
+  }
+
+  &__headline {
+    word-break: break-word;
+  }
+
+  h3 {
+    a {
+      @apply not-italic;
+    }
+  }
+
+  &--hover {
+    @apply hover:cursor-pointer;
+
+    &:hover {
+      .m-card__content {
+        @apply bg-white;
+      }
+    }
+    &:active {
+      @apply outline-dashed;
+      outline-color: theme('colors.secondary.600');
+    }
+  }
+
+  &--focused {
+    @apply outline-dashed;
+    outline-color: theme('colors.secondary.600');
+
+    a:focus {
+      @apply outline-none;
+    }
+
+    .m-card__content {
+      @apply bg-white;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+svg_icon:
+  use: "@atoms/svg-icon/svg-icon.twig"
+  label: Svg Icon
+  description: Flexible SVG icon component.
+  settings:
+    color:
+      label: Color
+      type: textfield
+      preview: text-current
+    size:
+      preview: w-4
+      label: Size
+      type: select
+      options:
+        w-4: Small
+        w-8: Medium
+        w-12: Large
+    icon:
+      type: token
+      label: Icon
+      preview: search
+    stroke_inherits_color:
+      type: boolean
+      label: Stroke inherits text color
+      description: Adds the `stroke-current` tailwindcss class to inherit the text colour from the parent element or the text colour class set on the `color` setting of this component.
+      default_value: false

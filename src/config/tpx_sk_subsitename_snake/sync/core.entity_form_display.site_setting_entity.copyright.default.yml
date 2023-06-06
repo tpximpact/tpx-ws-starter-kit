@@ -1,0 +1,54 @@
+uuid: 3a61fbf6-75a6-4cc3-a15e-53ecc52dc41c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.copyright.field_copyright_message
+    - site_settings.site_setting_entity_type.copyright
+id: site_setting_entity.copyright.default
+targetEntityType: site_setting_entity
+bundle: copyright
+mode: default
+content:
+  field_copyright_message:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  fieldset:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

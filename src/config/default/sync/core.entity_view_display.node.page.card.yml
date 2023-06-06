@@ -1,0 +1,64 @@
+uuid: dd60fc9e-ef76-4978-950c-f335557879da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.page.field_body
+    - field.field.node.page.field_hero
+    - field.field.node.page.field_listing_date
+    - field.field.node.page.field_listing_image
+    - field.field.node.page.field_meta_description
+    - field.field.node.page.field_meta_title
+    - field.field.node.page.field_metatag
+    - node.type.page
+  module:
+    - datetime
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.card
+targetEntityType: node
+bundle: page
+mode: card
+content:
+  field_listing_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: card_date
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_listing_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: listing
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_meta_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_advanced_header_type: true
+  field_body: true
+  field_call_to_action_banner: true
+  field_header_image: true
+  field_hero: true
+  field_image_background_colour: true
+  field_meta_title: true
+  field_metatag: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

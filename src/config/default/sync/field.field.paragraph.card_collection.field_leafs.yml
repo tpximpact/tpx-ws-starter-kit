@@ -1,0 +1,23 @@
+uuid: 8a1d01e1-3c63-4a46-adf4-6bd683855f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leafs
+    - paragraphs.paragraphs_type.card_collection
+id: paragraph.card_collection.field_leafs
+field_name: field_leafs
+entity_type: paragraph
+bundle: card_collection
+label: Leafs
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

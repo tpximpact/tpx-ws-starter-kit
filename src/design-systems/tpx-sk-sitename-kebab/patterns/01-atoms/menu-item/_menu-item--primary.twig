@@ -1,0 +1,51 @@
+{% import '@molecules/menu/_menu-macros.twig' as menus %}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set link_tag_name = link_tag_name|default('span') %}
+{% set link_attributes = link_attributes|default(create_attribute()) %}
+{% set hasSubMenu = below is not empty ? true : false %}
+
+{# Classes #}
+{% set classes = [
+  'a-menu-item',
+  'a-menu-item--primary',
+  'group',
+  hasSubMenu ? 'a-menu-item--has-subnav',
+] | join(' ') | trim %}
+
+{% set link_classes = [
+  'a-menu-item__link',
+  'a-menu-item__link--primary',
+  in_active_trail ? 'a-menu-item__link--active',
+] | join(' ') | trim %}
+
+{% if hasSubMenu %}
+  {% set link_attributes = link_attributes
+    .setAttribute(':class', "subMenuIsOpen && 'a-menu-item__link--active'")
+  %}
+{% endif %}
+
+{# Attributes #}
+{% if url is not empty %}
+  {% set link_tag_name = 'a' %}
+  {% set link_attributes = link_attributes.setAttribute('href', url|render).setAttribute('title', title).setAttribute('target', url.getOption('attributes').target) %}
+{% endif %}
+
+{# Template #}
+{% set link %}
+  <{{ link_tag_name }}{{ link_attributes.addClass(link_classes) }} x-bind="bindMenuItemPrimaryLink" x-ref="link">
+    <span class="a-menu-item__label">
+      {{ title }}
+    </span>
+  </{{ link_tag_name }}>
+{% endset %}
+
+<li{{ attributes.addClass(classes) }} x-data="menuItem({{ hasSubMenu }})" x-bind="bindMenuItemPrimary">
+  {{ link }}
+
+  {% if hasSubMenu %}
+    {{ menus.create_dropdownIndicator(in_active_trail) }}
+    {{ menus.create_submenu(below, title) }}
+  {% endif %}
+</li>

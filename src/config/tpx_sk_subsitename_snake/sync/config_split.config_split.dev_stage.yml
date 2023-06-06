@@ -1,0 +1,19 @@
+uuid: be17a76d-55c8-4a3f-a1aa-24183ea57f69
+langcode: en
+status: true
+dependencies: {  }
+id: dev_stage
+label: 'Dev and stage'
+description: ''
+weight: 0
+folder: ../src/config/default/sync_devstage
+module:
+  acquia_connector: 0
+  smtp: 0
+  qa_accounts: 0
+theme: {  }
+blacklist:
+  - google_tag.container.dev_and_stage
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

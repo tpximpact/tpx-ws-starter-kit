@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * breadcrumbs
+ *
+ * See breadcrumbs.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set color = color|default('blue') %}
+{% set chevron = pattern('svg_icon', {
+  icon: 'chevron',
+  size: 'w-4 h-4',
+}) %}
+
+{# Classes #}
+{% set classes = [
+  'flex w-full-extended text-white',
+  'a-breadcrumbs',
+  'a-breadcrumbs--' ~ color,
+] | sort | join(' ') | trim %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+{% if crumbs is not empty %}
+  <nav {{ attributes.setAttribute('aria-label', 'Breadcrumb') }}>
+    <div class="container flex items-center w-full">
+      <ol class="a-breadcrumbs__list items-center lg:flex">
+        {% for crumb in crumbs %}
+          {% if crumb.url %}
+            {% if not loop.first and crumb.text != 'home' %}
+              <li class="a-breadcrumbs__list-item lg:flex hidden lg:text-lg">
+                <a href="{{ crumb.url }}" class="py-4 hocus:underline">{{ crumb.text }}</a>
+              </li>
+
+              {% if not loop.last %}
+                <span class="a-breadcrumbs__separator mx-4 hidden lg:flex">
+                  {{ chevron }}
+                </span>
+              {% endif %}
+            {% endif %}
+
+            {% if loop.last %}
+              <a href="{{ crumb.url }}"
+                 class="a-breadcrumbs__previous py-4 inline-flex items-center lg:hidden hocus:underline">
+                <span class="rotate-180">{{ chevron }}</span>
+                <span class="ml-4">{{ 'Back to '|t }}{{ crumb.text }}</span>
+              </a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </nav>
+{% endif %}

@@ -1,0 +1,17 @@
+uuid: 55407616-166d-46aa-938b-ea2c4615155d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_portrait_mobile_x2
+label: 'Hero portrait mobile x2'
+effects:
+  05b7b8d8-2eff-4d1f-bb9c-1fe6e9e20da7:
+    uuid: 05b7b8d8-2eff-4d1f-bb9c-1fe6e9e20da7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 690
+      height: 920
+      crop_type: focal_point

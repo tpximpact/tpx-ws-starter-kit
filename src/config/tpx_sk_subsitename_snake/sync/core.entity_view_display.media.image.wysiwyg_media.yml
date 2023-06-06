@@ -1,0 +1,23 @@
+uuid: 6cc82d44-d893-465a-8048-44b93f119e2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwyg_media
+    - field.field.media.image.field_media_image
+    - media.type.image
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.wysiwyg_media
+targetEntityType: media
+bundle: image
+mode: wysiwyg_media
+content: {  }
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

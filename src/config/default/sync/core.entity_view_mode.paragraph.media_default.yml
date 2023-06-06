@@ -1,0 +1,10 @@
+uuid: f7fdddfd-3e4f-443c-bf0b-2574eccdf15a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.media_default
+label: 'Standard width'
+targetEntityType: paragraph
+cache: true

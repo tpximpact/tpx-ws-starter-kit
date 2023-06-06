@@ -1,0 +1,22 @@
+uuid: d1b1a53a-1ca1-4c04-a6fc-bacfb5aff284
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: tpx_sk_sitename_snake_content
+theme: tpx_sk_sitename_snake
+region: main
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

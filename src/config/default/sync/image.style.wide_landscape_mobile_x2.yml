@@ -1,0 +1,17 @@
+uuid: b31df28c-6763-4303-a130-7f17c09d61c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_landscape_mobile_x2
+label: 'Wide landscape mobile x2'
+effects:
+  7f2ace80-d5df-483c-a518-fb83f8c5968d:
+    uuid: 7f2ace80-d5df-483c-a518-fb83f8c5968d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1120
+      height: 630
+      crop_type: focal_point

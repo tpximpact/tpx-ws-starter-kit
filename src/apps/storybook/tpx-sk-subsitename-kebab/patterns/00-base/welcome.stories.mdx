@@ -1,0 +1,98 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Badge } from '@storybook/components';
+import { storage } from '@wingsuit-designsystem/pattern';
+import LinkTo from '@storybook/addon-links/react';
+import logo from './images/subsite-logo.svg';
+import './images/ws-tokens.svg';
+import './images/ws-atoms.svg';
+import './images/ws-molecules.svg';
+import './images/ws-organisms.svg';
+import './images/ws-templates.svg';
+const tailwindFile = require('../../config/silo/tailwind.json');
+const colors = tailwindFile.tailwind.theme.colors;
+
+
+<Meta title="Welcome"
+  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true }}}}
+/>
+
+<div style={{display: 'flex', justifyContent: 'center', marginBottom: '40px'}}>
+  <div style={{padding: '1em'}}>
+    <img src={logo} style={{margin: 'auto', maxWidth: '300px'}} />
+  </div>
+</div>
+
+
+# Subsite design system
+
+<div style={{paddingTop: '40px'}}>
+
+  ## <img src="images/ws-tokens.svg" style={{width: '20px'}}/> Tokens
+  <Canvas>
+    <LinkTo story="page" kind="Tokens/Colours">
+      <Badge status="neutral">Colours</Badge>
+    </LinkTo>
+    <LinkTo story="page" kind="Tokens/Typography">
+      <Badge status="neutral">Typography</Badge>
+    </LinkTo>
+    <LinkTo story="page" kind="Tokens/Scale">
+      <Badge status="neutral">Scale</Badge>
+    </LinkTo>
+    <LinkTo story="page" kind="Tokens/Icons">
+      <Badge status="neutral">Icons</Badge>
+    </LinkTo>
+  </Canvas>
+
+  ## <img src="images/ws-atoms.svg" style={{width: '20px'}}/> Atoms
+  <Canvas>
+    {
+      storage.loadPatternsByNamespace('Atoms').map((pattern)=>{
+        return (
+          <LinkTo key={pattern.getId()} story={pattern.getDefaultVariant().getLabel()} kind={`${pattern.getNamespace()}-${pattern.getId()}`}>
+            <Badge status="neutral">{pattern.getLabel()}</Badge>
+          </LinkTo>
+        )
+      })
+    }
+  </Canvas>
+
+
+  ## <img src="images/ws-molecules.svg" style={{width: '20px'}}/> Molecules
+  <Canvas>
+    {
+      storage.loadPatternsByNamespace('Molecules').map((pattern)=>{
+        return (
+          <LinkTo key={pattern.getId()} story={pattern.getDefaultVariant().getLabel()} kind={`${pattern.getNamespace()}-${pattern.getId()}`}>
+            <Badge status="neutral">{pattern.getLabel()}</Badge>
+          </LinkTo>
+        )
+      })
+    }
+  </Canvas>
+
+  ## <img src="images/ws-organisms.svg" style={{width: '20px'}}/> Organisms
+  <Canvas>
+    {
+      storage.loadPatternsByNamespace('Organisms').map((pattern)=>{
+        return (
+          <LinkTo key={pattern.getId()} story={pattern.getDefaultVariant().getLabel()} kind={`${pattern.getNamespace()}-${pattern.getId()}`}>
+            <Badge status="neutral">{pattern.getLabel()}</Badge>
+          </LinkTo>
+        )
+      })
+    }
+  </Canvas>
+
+  ## <img src="images/ws-templates.svg" style={{width: '20px'}}/> Templates
+  <Canvas>
+    {
+      storage.loadPatternsByNamespace('Templates').map((pattern)=>{
+        return (
+          <LinkTo key={pattern.getId()} story={pattern.getDefaultVariant().getLabel()} kind={`${pattern.getNamespace()}-${pattern.getId()}`}>
+            <Badge status="neutral">{pattern.getLabel()}</Badge>
+          </LinkTo>
+        )
+      })
+    }
+  </Canvas>
+</div>

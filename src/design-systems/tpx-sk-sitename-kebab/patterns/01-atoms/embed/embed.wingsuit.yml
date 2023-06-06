@@ -1,0 +1,19 @@
+embed:
+  extends:
+    - spacer.settings
+  use: "@atoms/embed/embed.twig"
+  label: Embed
+  description: Simple component to allow embedding third party scripts or widgets
+  fields:
+    embed:
+      type: text
+      label: Script
+      preview: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4uhQFwOqe5Vy84bjOB5Zob?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>'
+  settings:
+    embed_size:
+      type: select
+      label: Embed size
+      options:
+        default: Default
+        small: Small
+      preview: default

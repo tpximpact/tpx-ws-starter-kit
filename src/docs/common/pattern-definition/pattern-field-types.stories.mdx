@@ -1,0 +1,100 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Pattern definition/Field types"
+      parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+          canvas: {hidden: true},
+        },
+      }}
+/>
+
+# **Field types**
+
+## **`object`**
+With field type `object` you can pass any objects to the Twig template. This is useful for the menu, for example. You can edit the JSON string with knobs.
+```yaml
+items:
+  label: Items
+  type: object
+  preview:
+    - title: Datenschutz
+      link: "#"
+      in_active_trail: true
+    - title: Impressum
+      link: "#"
+```
+
+## **`pattern`**
+With field type `pattern` you can render other patterns inside the pattern:
+* `id`: The id of the pattern.
+* `variant`: The variant of the pattern.
+* `fields`: Overwrites field preview values of the pattern.
+* `settings`: Overwrites setting preview values of the pattern.
+```yaml
+fields:
+  image:
+    type: pattern
+    preview:
+      id: image
+      variant: primary
+      settings:
+        style: medium
+      fields:
+        field: value
+```
+
+### **Pattern list**
+The `pattern` field type also works with a list of patterns.<br />
+You can control how Wingsuit will handle the resulting array of objects by changing the `multi_value_type` property:
+```yaml
+fields:
+  images:
+    type: pattern
+    multi_value_type: single_value
+    preview:
+      -
+        id: image
+        variant: primary
+        settings:
+          style: medium
+        fields:
+          field: value
+      -
+        id: image
+        variant: primary
+        settings:
+          style: medium
+        fields:
+          field: value
+```
+
+**Following options are available for the `multi_value_type` property:**
+
+**`single_value`**
+
+All patterns will be rendered into a single value.<br />
+The resulting variable is a render string, not an array. This is useful if you want to add multiple objects into one area.
+```twig
+{{ images }}
+```
+
+**`items`**
+
+Provides a list of patterns.<br />
+The resulting variable is an array you can loop through.
+```twig
+{% for item in images %}
+  {{ item }}
+{% endfor %}
+```
+
+**`field_items`**
+
+Provides a list of objects.<br />
+The rendered pattern is inside the content key. This is useful to emulate multi value field templates in drupal.
+```twig
+{% for item in images %}
+  {{ item.content }}
+{% endfor %}
+```

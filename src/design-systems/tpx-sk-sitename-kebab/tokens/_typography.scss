@@ -1,0 +1,73 @@
+/**
+ * This file is for the site default typography styles.
+ * Do not use this file to adjust WYSIWYG typography styles.
+ */
+
+h1, h2, h3, h4, h5, h6, th {
+  font-family: theme('fontFamily[serif][0]');
+  font-weight: theme('fontWeight.bold');
+}
+
+h1 {
+  font-size: theme('fontSize.5xl');
+
+  @screen lg {
+    font-size: theme('fontSize.7xl');
+  }
+}
+
+h2 {
+  font-size: theme('fontSize.4xl');
+
+  @screen lg {
+    font-size: theme('fontSize.6xl');
+  }
+}
+
+h3 {
+  font-size: theme('fontSize.3xl');
+
+  @screen lg {
+    font-size: theme('fontSize.4xl');
+  }
+}
+
+h4 {
+  font-size: theme('fontSize.xl');
+
+  @screen lg {
+    font-size: theme('fontSize.3xl');
+  }
+}
+
+h5 {
+  font-size: theme('fontSize.lg');
+
+  @screen lg {
+    font-size: theme('fontSize.2xl');
+  }
+}
+
+h6 {
+  font-size: theme('fontSize.base');
+
+  @screen lg {
+    font-size: theme('fontSize.xl');
+  }
+}
+
+th {
+  font-size: theme('fontSize.md');
+
+  @screen lg {
+    font-size: theme('fontSize.2xl');
+  }
+}
+
+.main-content, td {
+  font-size: theme('fontSize.base');
+
+  @screen lg {
+    font-size: theme('fontSize.lg');
+  }
+}

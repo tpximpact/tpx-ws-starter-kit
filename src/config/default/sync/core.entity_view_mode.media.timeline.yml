@@ -1,0 +1,10 @@
+uuid: eda4c8bf-3de6-49a1-af2f-b569a05fa709
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.timeline
+label: Timeline
+targetEntityType: media
+cache: true

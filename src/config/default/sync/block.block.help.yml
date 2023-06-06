@@ -1,0 +1,20 @@
+uuid: 4d052c03-3e5f-4d15-a3c1-b1ea8a8d0bd1
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - tpx_sk_sitename_snake
+id: help
+theme: tpx_sk_sitename
+region: ''
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: visible
+  provider: help
+visibility: {  }

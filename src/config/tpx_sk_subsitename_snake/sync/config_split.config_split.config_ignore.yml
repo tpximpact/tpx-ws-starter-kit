@@ -1,0 +1,16 @@
+uuid: 422cfaeb-56ff-4a29-ab8c-3a22e693f16c
+langcode: en
+status: true
+dependencies: {  }
+id: config_ignore
+label: 'Config ignore'
+description: ''
+weight: -1
+folder: ''
+module: {  }
+theme: {  }
+blacklist:
+  - 'webform.webform.*'
+graylist: {  }
+graylist_dependents: false
+graylist_skip_equal: true

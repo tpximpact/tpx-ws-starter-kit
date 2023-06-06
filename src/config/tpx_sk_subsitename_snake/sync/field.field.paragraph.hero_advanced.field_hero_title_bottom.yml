@@ -1,0 +1,19 @@
+uuid: 1b543f49-8534-40a5-9143-16f2d9c3dc8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_title_bottom
+    - paragraphs.paragraphs_type.hero_advanced
+id: paragraph.hero_advanced.field_hero_title_bottom
+field_name: field_hero_title_bottom
+entity_type: paragraph
+bundle: hero_advanced
+label: 'Hero title bottom'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

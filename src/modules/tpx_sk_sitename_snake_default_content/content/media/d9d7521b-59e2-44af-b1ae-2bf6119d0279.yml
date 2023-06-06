@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: d9d7521b-59e2-44af-b1ae-2bf6119d0279
+  bundle: hero
+  default_langcode: en
+  depends:
+    0e0c3de6-e2e1-400e-9730-744db551ee1b: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: snow-mountain.png
+  created:
+    -
+      value: 1664827239
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 0e0c3de6-e2e1-400e-9730-744db551ee1b
+      alt: 'snow mountain'
+      title: ''
+      width: 1800
+      height: 1013

@@ -1,0 +1,17 @@
+uuid: b408caf5-e56b-4bcd-aab2-79396836872b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: teaser_image_desktop_x2
+label: 'Teaser image desktop x2'
+effects:
+  e28a1ff4-2321-4be0-987d-ab37dcae00b9:
+    uuid: e28a1ff4-2321-4be0-987d-ab37dcae00b9
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 1000
+      crop_type: focal_point

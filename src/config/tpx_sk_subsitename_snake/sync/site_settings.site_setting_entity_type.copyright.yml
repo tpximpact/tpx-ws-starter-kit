@@ -1,0 +1,8 @@
+uuid: 9c290fb6-c244-46ad-bf9c-66cfeacf5545
+langcode: en
+status: true
+dependencies: {  }
+id: copyright
+label: Copyright
+fieldset: Footer
+multiple: false

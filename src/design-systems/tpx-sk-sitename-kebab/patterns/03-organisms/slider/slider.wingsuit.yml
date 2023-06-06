@@ -1,0 +1,252 @@
+slider:
+  use: "@organisms/slider/slider.twig"
+  label: Slider
+  description: |
+    Javascript slider with splide (https://splidejs.com/).
+    Change the slider behavior in slider.behavior.js.
+  variants:
+    content:
+      label: Content
+      fields:
+        items:
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+          - id: slide
+            variant: content
+    gallery:
+      label: Gallery
+    carousel:
+      label: Carousel
+      settings:
+        autoplay: true
+        pagination: true
+  configuration:
+    color:
+      dark-blue: 'bg-blue-400 border-blue-400 text-white'
+      mid-blue: 'bg-blue-300 border-blue-300 text-white'
+      bright-blue: 'bg-blue-200 border-blue-200 text-blue-400'
+      green: 'bg-green-100 border-green-100 text-blue-400'
+    hover:
+      dark-blue: 'hocus:text-blue-400'
+      mid-blue: 'hocus:text-blue-300'
+      bright-blue: 'hocus:text-blue-400'
+      green: 'hocus:text-blue-400'
+  settings:
+    object_fit:
+      type: select
+      label: Image Fit
+      description: Determines how images & videos fill the space of the slide
+      options:
+        contain: Contain
+        cover: Cover
+      default_value: contain
+    color:
+      type: select
+      label: Colour
+      default_value: mid-blue
+      options:
+        dark-blue: Dark blue
+        mid-blue: Mid blue
+        bright-blue: Bright blue
+        green: Green
+    pager_text:
+      type: boolean
+      label: Pager Text
+      description: Display a visual text indicator of the slider progress
+      default_value: false
+    pager_buttons:
+      type: boolean
+      label: Pager Buttons
+      description: Display the previous & next buttons
+      default_value: true
+    autoplay:
+      type: boolean
+      label: Autoplay
+      default_value: false
+    loop:
+      type: boolean
+      label: Loop
+      description: |
+        Seemlessly transition to the first or last slide when moving beyond the first or last slide, rather than disabling the pager buttons.
+        This setting is not compatible with the `rewind` setting. Ensure rewind is disabled for this setting to take effect.
+      default_value: false
+    rewind:
+      type: boolean
+      label: Rewind
+      description: |
+        Repositions the slider to the first or last slide when moving beyond the first or last slide, rather than disabling the pager buttons.
+        This setting overrides the `loop` option.
+      default_value: true
+    pagination:
+      type: boolean
+      label: Pagination
+      default_value: false
+    autoplay_toggle:
+      type: boolean
+      label: Autoplay Toggle
+      description: |
+        Display the play/pause button for the autoplay function.
+        This option does nothing without the `autoplay` option enabled.
+      default_value: true
+    pause_on_input:
+      type: boolean
+      label: Pause on input
+      description: Pauses the autoplay function when the user hovers or focuses
+      default_value: false
+    interval:
+      type: number
+      label: Interval
+      description: The time in milliseconds between slide transitions when the `autoplay` option is enabled.
+      default_value: 5000
+    speed:
+      type: number
+      label: Speed
+      description: The speed of the slide transition animation in milliseconds
+      default_value: 750
+    easing:
+      type: select
+      label: Easing
+      description: The motion of the slide transition animation. Accepts any CSS easing, including `cubic-bezier()`.
+      allow_expose: true
+      options:
+        none: None
+        default: Default
+        linear: Linear
+        ease-in: Ease in
+        ease-out: Ease out
+        ease-in-out: Ease in out
+      default_value: default
+    container:
+      type: boolean
+      label: Container
+      default_value: true
+  fields:
+    anchor:
+      type: text
+      label: Anchor name
+      description: A unique CSS ID for this section of text, for sub navigation
+    heading:
+      type: text
+      label: Heading
+      description: The title of the slider
+      preview: Cards collection heading
+    description:
+      type: text
+      label: Description
+      description: Accompanying text to describe the slider content
+      preview: Optional description for cards collection
+    header:
+      type: pattern
+      label: Section Header
+      description: Optional header
+      preview:
+        id: rich_text
+        variant: default
+        fields:
+          text: '<h2 class="text-center section-header">Headline</h2>'
+    items:
+      type: pattern
+      label: Slider items
+      multi_value_type: items
+      preview:
+        - id: slide
+          variant: video
+          fields:
+            video: 'https://vimeo.com/556856745'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=2'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=3'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=4'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=5'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=6'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=7'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=8'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=9'
+        - id: slide
+          variant: image
+          fields:
+            content:
+              - id: image
+                variant: image
+                settings:
+                  url: 'https://picsum.photos/720/1280?random=10'
+  libraries:
+    - pattern_slider:
+        js:
+          ../behaviors/slider.js: {}
+        css:
+          component:
+            ../slider.css: {}

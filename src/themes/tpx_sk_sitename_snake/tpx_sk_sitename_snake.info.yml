@@ -1,0 +1,31 @@
+name: tpx_sk_sitename
+type: theme
+description: A Theme for UIPatterns and Storybook.
+base theme: stable9
+core_version_requirement: ^8 || ^9 || ^10
+libraries:
+  - tpx_sk_sitename_snake/core
+regions:
+  header: Header
+  top: Top
+  main: Main
+  content: Content
+  sidebar: Sidebar
+  bottom: Bottom
+  footer: Footer
+components:
+  namespaces:
+    macros:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/macros
+    protons:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/00-protons
+    atoms:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/01-atoms
+    molecules:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/02-molecules
+    organisms:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/03-organisms
+    templates:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/04-templates
+    pages:
+      - ../../../docroot/wingsuit/tpx-sk-sitename-kebab/atomic/patterns/05-pages

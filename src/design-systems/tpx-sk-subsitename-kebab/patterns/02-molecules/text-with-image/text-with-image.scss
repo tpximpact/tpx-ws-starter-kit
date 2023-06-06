@@ -1,0 +1,7 @@
+.m-text-with-image {
+  .a-button {
+    &--secondary {
+      @apply bg-white;
+    }
+  }
+}

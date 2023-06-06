@@ -1,0 +1,10 @@
+uuid: 12dcb9f4-7cd6-457e-915a-3988f72d90c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.nested
+label: Nested
+targetEntityType: paragraph
+cache: true

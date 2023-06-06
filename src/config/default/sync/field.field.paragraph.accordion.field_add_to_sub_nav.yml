@@ -1,0 +1,23 @@
+uuid: 683313b6-2d4f-4bcf-bb51-9cbfd9879f53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_add_to_sub_nav
+    - paragraphs.paragraphs_type.accordion
+id: paragraph.accordion.field_add_to_sub_nav
+field_name: field_add_to_sub_nav
+entity_type: paragraph
+bundle: accordion
+label: 'Add to sub-navigation'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

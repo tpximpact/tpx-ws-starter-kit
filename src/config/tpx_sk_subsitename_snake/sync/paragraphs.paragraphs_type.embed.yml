@@ -1,0 +1,17 @@
+uuid: d4aa9ccf-c89f-4cec-a185-dd2190f72c69
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:d7e74a7c-56e7-4213-92cb-c780024a70df'
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: embed
+label: Embed
+icon_uuid: d7e74a7c-56e7-4213-92cb-c780024a70df
+icon_default: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIyMTUuNTggMjAwLjQgMjY4Ljg1NCAxNTkuMjA3IiB3aWR0aD0iMjY4Ljg1NHB4IiBoZWlnaHQ9IjE1OS4yMDdweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNIDMxNi44OCAyNTYuOTA5IEwgMjkzLjc3OSAyODAuMDA1IEwgMzE2Ljg4MiAzMDMuMTA1IEwgMzIyLjg3MyAyOTcuMTE1IEwgMzA1Ljc2MSAyODAuMDA1IEwgMzIyLjg3IDI2Mi44OTYgTCAzMTYuODggMjU2LjkwOSBaIE0gMzgzLjEzMyAyNTYuOTA5IEwgMzc3LjE0MyAyNjIuODk4IEwgMzk0LjI1NCAyODAuMDA1IEwgMzc3LjE0NSAyOTcuMTE4IEwgMzgzLjEzNCAzMDMuMTA4IEwgNDA2LjIzNiAyODAuMDA1IEwgMzgzLjEzMyAyNTYuOTA5IFogTSAzMjcuMzY3IDMwOS4zNDUgTCAzMzQuODU2IDMxMy4zMDEgTCAzNjcuOTY3IDI1MC42NjIgTCAzNjAuNDc4IDI0Ni43MDcgTCAzMjcuMzY3IDMwOS4zNDUgWiIgc3R5bGU9IiIvPgo8L3N2Zz4='
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,28 @@
+diff --git a/docroot/.htaccess b/docroot/.htaccess
+index 4d19147..81f2eab 100644
+--- a/docroot/.htaccess
++++ b/docroot/.htaccess
+@@ -176,6 +176,23 @@ AddEncoding gzip svgz
+       Header append Vary Accept-Encoding
+     </FilesMatch>
+   </IfModule>
++
++  # Exclude Acquia domains.
++  RewriteCond %{HTTP_HOST} !\.acquia-sites\.com [NC]
++
++  # Exclude DDEV domains.
++  RewriteCond %{HTTP_HOST} !\.ddev\.site [NC]
++
++  # Exclude manifesto.sh domains.
++  RewriteCond %{HTTP_HOST} !\.manifesto\.sh [NC]
++
++  # Ensure www.
++  RewriteCond %{HTTP_HOST} !^www\. [NC]
++  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
++
++  # Ensure https.
++  RewriteCond %{HTTP:X-Forwarded-Proto} !https
++  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ </IfModule>
+ 
+ # Various header fixes.

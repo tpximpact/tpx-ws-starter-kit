@@ -1,0 +1,16 @@
+.o-footer {
+  &__actions {
+    nav a {
+      svg {
+        @apply ml-4 duration-200;
+      }
+
+      &:hover,
+      &:focus {
+        svg {
+          @apply translate-x-1;
+        }
+      }
+    }
+  }
+}

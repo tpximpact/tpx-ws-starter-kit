@@ -1,0 +1,17 @@
+uuid: 2ae7ec58-494b-48c9-a984-92ba4acd927c
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_simple
+label: 'Hero simple'
+effects:
+  f20ca484-d4e0-43ea-9450-0552c44d2b77:
+    uuid: f20ca484-d4e0-43ea-9450-0552c44d2b77
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1440
+      height: 483
+      crop_type: focal_point

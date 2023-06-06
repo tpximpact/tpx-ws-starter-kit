@@ -1,0 +1,23 @@
+uuid: 7c2ea252-0797-4d70-9817-ada5536b1db8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_zoom
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_zoom
+field_name: field_zoom
+entity_type: paragraph
+bundle: image
+label: Zoom
+description: 'Enable the Zoomist plugin.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

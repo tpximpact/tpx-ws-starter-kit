@@ -1,0 +1,8 @@
+uuid: 4292e529-2240-43e3-94a2-9959e6f511b7
+langcode: en
+status: true
+dependencies: {  }
+id: footer-4
+label: 'Follow us'
+description: 'Footer social menu'
+locked: false

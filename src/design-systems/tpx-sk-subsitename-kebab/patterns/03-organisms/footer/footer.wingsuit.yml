@@ -1,0 +1,77 @@
+footer:
+  use: "@organisms/footer/footer.twig"
+  label: Footer
+  description: The footer pattern with copyright and menu.
+  fields:
+    menu_1:
+      type: pattern
+      label: Menu
+      preview:
+        id: menu
+        variant: footer
+        fields:
+          menu_name: Who we are
+          items:
+            - title: Our vision
+              url: ''
+            - title: Our impact
+              url: ''
+            - title: Our leadership team
+              url: ''
+            - title: Annual report
+              url: ''
+    menu_2:
+      type: pattern
+      label: Menu
+      preview:
+        id: menu
+        variant: footer
+        fields:
+          menu_name: Get support
+          items:
+            - title: Support
+              url: ''
+            - title: Our helpline
+              url: ''
+            - title: Health advice
+              url: ''
+            - title: Support groups
+              url: ''
+    menu_3:
+      type: pattern
+      label: Menu
+      preview:
+        id: menu
+        variant: footer
+        fields:
+          menu_name: Get involved
+          items:
+            - title: Fundraise
+              url: ''
+            - title: Campaign with us
+              url: ''
+            - title: Join an event
+              url: ''
+            - title: Shop
+              url: ''
+    menu_4:
+      type: pattern
+      label: Menu
+      preview:
+        id: menu
+        variant: footer
+    menu_legal:
+      type: pattern
+      label: Menu
+      preview:
+        id: menu
+        variant: footer-legal
+    copyright:
+      type: text
+      label: Copyright
+      preview: Asthma & Lung UK
+  libraries:
+    - style: # subsite/footer.style
+        css:
+          component:
+            '../footer.css': { }

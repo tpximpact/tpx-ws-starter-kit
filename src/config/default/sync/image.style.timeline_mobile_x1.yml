@@ -1,0 +1,17 @@
+uuid: 4b01322e-f87a-406d-9e00-ff799d28e3f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: timeline_mobile_x1
+label: 'Timeline mobile x1'
+effects:
+  0b2ca07f-33cd-40d3-9be2-b93a373ff8e4:
+    uuid: 0b2ca07f-33cd-40d3-9be2-b93a373ff8e4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 360
+      crop_type: focal_point

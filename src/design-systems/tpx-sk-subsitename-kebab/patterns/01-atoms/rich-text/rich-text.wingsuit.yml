@@ -1,0 +1,72 @@
+rich_text:
+  use: "@atoms/rich-text/rich-text.twig"
+  label: Rich Text
+  description: |
+    Component for displaying rich text, for example from a WYSIWYG editor.
+    Check https://github.com/tailwindlabs/tailwindcss-typography for more informations.
+  extends:
+    - spacer.settings
+  variants:
+    default:
+      label: Default
+    nested:
+      label: Nested
+      description: |
+        Takes the full width of the containing element,
+        so that this pattern can be included as part other components
+  configuration:
+    font_size:
+      small: 'prose-sm'
+      large: 'prose-lg'
+  settings:
+    container:
+      type: boolean
+      label: Container
+      description: Determines whether to wrap the text content with a container element
+      default_value: true
+    width:
+      label: Width
+      type: select
+      default_value: standard-width
+      options:
+        standard-width: Standard width
+        full-width: Full width
+    size:
+      type: select
+      label: Size
+      description: Determines the font size of the text
+      default_value: medium
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+  fields:
+    anchor:
+      type: text
+      label: Anchor name
+      description: A unique CSS ID for this section of text, for sub navigation
+    text:
+      type: text
+      label: Text
+      preview: |
+        <h2>Heading 2 is here and this is how it looks like</h2>
+        <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and <a href="#">typesetting industry</a>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h3>Heading 3 is here and this is how it looks like</h3>
+        <p>Lorem Ipsum is simply dummy text of the <a href="&lt;front&gt;" rel="noopener" target="_blank">printing and typesetting industry</a>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when <a href="&lt;nolink&gt;">an unknown printer</a> took a galley of type and scrambled it to make a type specimen book.</p>
+        <ul>
+        	<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+        	<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+        	<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+        </ul>
+        <ol>
+        	<li>Item of a numbered list</li>
+        	<li>Item of a numbered list</li>
+        	<li>Item of a numbered list</li>
+        </ol>
+        <p><a class="a-button a-button--primary"">Primary button</a></p>
+        <p><a class="a-button a-button--secondary" rel="noopener" target="_blank">Secondary button</a></p>
+  libraries:
+    - style:
+        css:
+          component:
+            '../rich-text.css': {}

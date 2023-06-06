@@ -1,0 +1,17 @@
+uuid: c9b145a2-0098-4c40-8711-f75f5c7be7ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_portrait_desktop_x2
+label: 'Hero portrait desktop x2'
+effects:
+  2d46292d-f23b-4b6e-a7d4-0a3717a1ecd6:
+    uuid: 2d46292d-f23b-4b6e-a7d4-0a3717a1ecd6
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 720
+      height: 960
+      crop_type: focal_point

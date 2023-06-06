@@ -1,0 +1,102 @@
+{% set attributes = attributes|default(create_attribute()) %}
+{% set color = color|default('blue') %}
+{% set bg_color = pattern_configuration('pagination', variant, 'bg_color')[bg_color|default(color)] %}
+{% set text_color = pattern_configuration('pagination', variant, 'text_color')[text_color|default(color)] %}
+{% set hover_color = pattern_configuration('pagination', variant, 'hover_color')[hover_color|default(color)] %}
+{% set border_color = pattern_configuration('pagination', variant, 'border_color')[border_color|default(color)] %}
+{% set icon_size = 'w-2 h-4 lg:w-4 lg:h-8' %}
+{% set prev_link_tag = previous_url ? 'a' : 'span' %}
+{% set next_link_tag = next_url ? 'a' : 'span' %}
+{% set ajax_pager_class = 'js-pager__items' %}
+
+{% set classes = [
+  'm-pagination',
+  'flex', 'flex-col',
+  'bg-white', 'items-center',
+] | join(' ') | trim %}
+
+{% set item_classes = [
+  'm-pagination__item',
+  'flex', 'items-center',
+  'justify-center', 'h-full',
+  'first:rounded-l last:rounded-r',
+  active_link ? border_color,
+] | join(' ') | trim %}
+
+{% set link_classes = [
+  'p-2 px-4 lg:p-4 lg:px-6',
+  'h-full', 'flex items-center',
+  'border border-grey-200 rounded-inherit',
+  'font-normal', 'lg:text-md',
+  'transition-all duration-75 ease-in-out', 'a11y-focus',
+  text_color, hover_color,
+] | join(' ') | trim %}
+
+{% set disabled_classes = [
+  '!text-grey-200', 'pointer-events-none',
+] | join(' ') | trim %}
+
+{% set ellipses_classes = [
+  item_classes,
+  disabled_classes,
+] | join(' ') | trim %}
+
+{% if items %}
+  <nav{{ attributes.addClass(classes).setAttribute('role', 'navigation') }}>
+    <ul class="m-pagination__wrapper flex flex-row w-full justify-between md:justify-start">
+      <li class="flex">
+        <ul class="{{ ajax_pager_class }}">
+          <li class="m-pagination__prev rounded {{ item_classes }}">
+            <{{ prev_link_tag }} class="{{ link_classes }} {{ previous_url is empty ? disabled_classes }}" {{ previous_url ? 'href=' ~ previous_url : 'disabled' }}
+               title="{{ previous_text|t }}">
+              {{ pattern('svg_icon', {icon: 'chevron', size: icon_size ~ ' rotate-180'}) }}
+              <span class="visually-hidden">{{ previous_text|t }}</span>
+            </{{ prev_link_tag }}>
+          </li>
+        </ul>
+      </li>
+
+      <li class="flex">
+        <ul class="m-pagination__items mx-4 flex flex-row {{ ajax_pager_class }}">
+          {% if ellipsis_previous %}
+            <li class="{{ ellipses_classes }}">
+              <span class="{{ link_classes }}">...</span>
+            </li>
+          {% endif %}
+
+          {% for key, item in items %}
+            {% set active_link = current == key %}
+            {% set link_text = active_link ? 'Current page'|t : 'Go to page @key'|t({'@key': key}) %}
+            {% set active_link_classes = [
+              active_link ? 'is-active !text-white',
+              active_link ? bg_color,
+              active_link ? border_color,
+            ] | join(' ') | trim %}
+
+            <li class="{{ item_classes }}">
+              <a class="{{ link_classes }} {{ active_link_classes }}" href="{{ item.href }}">{{ key }}</a>
+            </li>
+          {% endfor %}
+
+          {% if ellipsis_next %}
+            <li class="{{ ellipses_classes }}">
+              <span class="{{ link_classes }}">...</span>
+            </li>
+          {% endif %}
+        </ul>
+      </li>
+
+      <li class="flex">
+        <ul class="{{ ajax_pager_class }}">
+          <li class="m-pagination__next rounded {{ item_classes }}">
+            <{{ next_link_tag }} class="{{ link_classes }} {{ next_url is empty ? disabled_classes }}" {{ next_url ? 'href=' ~ next_url : 'disabled' }}
+               title="{{ next_text|t }}">
+              {{ pattern('svg_icon', {icon: 'chevron', size: icon_size}) }}
+              <span class="visually-hidden">{{ next_text|t }}</span>
+            </{{ next_link_tag }}>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+{% endif %}

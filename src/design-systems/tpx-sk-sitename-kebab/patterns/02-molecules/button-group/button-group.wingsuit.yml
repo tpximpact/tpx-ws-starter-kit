@@ -1,0 +1,159 @@
+button_group:
+  use: "@molecules/button-group/button-group.twig"
+  label: Button Group
+  description: A group of buttons
+  configuration:
+    columns:
+      2: 'sm:grid-cols-2'
+      3: 'sm:grid-cols-3'
+      4: 'sm:grid-cols-4'
+      5: 'sm:grid-cols-5'
+      6: 'sm:grid-cols-6'
+    gap:
+      small: 'gap-2 lg:gap-2.5'
+      medium: 'gap-4 lg:gap-6'
+      large: 'gap-6 lg:gap-8'
+  settings:
+    gap:
+      type: select
+      label: Gap
+      description: The spacing between the buttons
+      default_value: small
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+    align:
+      type: select
+      allow_token: true
+      label: Align
+      required: true
+      default_value: left
+      options:
+        left: Left
+        center: Center
+        right: Right
+    columns:
+      type: select
+      label: Columns
+      description: Enables CSS grid and determines how many columns should appear in the layout
+      default_value: 0
+      options:
+        0: 0
+        1: 1
+        2: 2
+        3: 3
+        4: 4
+        5: 5
+        6: 6
+  fields:
+    heading:
+      type: text
+      label: Heading
+      preview: Browse
+    buttons:
+      type: pattern
+      label: Buttons
+      preview:
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Allergies
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Blood disorders
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Cancer care
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Eyes
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Feet
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Heart
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Kidneys
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Liver
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Lung
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: COVID clinic
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Pain
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Skin
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Sleep
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Veins
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Neurology
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Head and neck
+        - id: button
+          variant: primary
+          settings:
+            color: purple
+          fields:
+            text: Urology

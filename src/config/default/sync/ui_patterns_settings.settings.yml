@@ -1,0 +1,3 @@
+mapping:
+  paragraph--field_padding_top: 'spacer::padding_top'
+  paragraph--field_padding_bottom: 'spacer::padding_bottom'

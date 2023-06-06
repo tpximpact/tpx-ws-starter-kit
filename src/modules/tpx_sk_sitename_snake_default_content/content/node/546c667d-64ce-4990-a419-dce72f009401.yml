@@ -1,0 +1,205 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 546c667d-64ce-4990-a419-dce72f009401
+  bundle: landing_page
+  default_langcode: en
+  depends:
+    a862540c-1241-43b9-871f-ad69805a5d7d: node
+    cf34e7a9-ff29-4a88-b9ae-07342532b3b7: media
+    d9d7521b-59e2-44af-b1ae-2bf6119d0279: media
+    a19966a1-b447-46fb-97bb-fc0d58807ee5: media
+    90e3db2c-ef35-4eb5-9d5f-fc0a544e8e44: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Homepage'
+  created:
+    -
+      value: 1664527052
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /breath-life
+      langcode: en
+      pathauto: 1
+  publish_state:
+    -
+      value: _none
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 21a93402-94ea-4761-8bcb-c46e338eee09
+          bundle: card_collection
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664529084
+          behavior_settings:
+            -
+              value: {  }
+          field_card_items:
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+          field_heading:
+            -
+              value: 'Cart collection heading'
+          field_leafs:
+            -
+              value: true
+          field_padding_bottom:
+            -
+              value: medium
+          field_padding_top:
+            -
+              value: medium
+          field_text:
+            -
+              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 184349f0-62bd-465f-944d-e23bb850d0d2
+          bundle: text_with_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664527296
+          behavior_settings:
+            -
+              value: {  }
+          field_image:
+            -
+              entity: cf34e7a9-ff29-4a88-b9ae-07342532b3b7
+          field_image_alignment:
+            -
+              value: right
+          field_primary_button:
+            -
+              uri: 'internal:/contact'
+              title: 'Contact us'
+              options: {  }
+          field_text:
+            -
+              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum consequat ipsum. Maecenas ut turpis et quam convallis fermentum non sit amet nibh.</p>'
+              format: full_html
+          field_title:
+            -
+              value: 'Contact us'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c5a5ccc6-a568-4b5b-865c-64c7ee3793ed
+          bundle: cta_banner
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664527225
+          behavior_settings:
+            -
+              value: {  }
+          field_cta_primary:
+            -
+              uri: 'internal:/contact-us'
+              title: 'Give us a call'
+              options: {  }
+          field_cta_secondary:
+            -
+              uri: 'internal:/contact-us'
+              title: 'Send us an email'
+              options: {  }
+          field_heading:
+            -
+              value: 'Contact us'
+          field_text:
+            -
+              value: '<p>Speak to someone today, we’re ready for your call. Book an appointment or ask for advice here.</p>'
+              format: full_html
+  field_hero:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b890cfa2-6d5e-44bd-9473-3f83fb9dac73
+          bundle: hero_advanced
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664527057
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_hero_image_desktop:
+            -
+              entity: d9d7521b-59e2-44af-b1ae-2bf6119d0279
+          field_hero_image_mobile:
+            -
+              entity: a19966a1-b447-46fb-97bb-fc0d58807ee5
+          field_text:
+            -
+              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+              format: full_html
+  field_listing_date:
+    -
+      value: '2022-09-30'
+  field_listing_image:
+    -
+      entity: 90e3db2c-ef35-4eb5-9d5f-fc0a544e8e44
+  field_meta_description:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  field_meta_title:
+    -
+      value: Homepage

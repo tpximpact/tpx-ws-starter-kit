@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * site-container
+ *
+ * See site-container.wingsuit.yaml for documentation.
+ */
+#}
+{# Include this template inside the page.html.twig in drupal. #}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set page_color = page_color|default(page_color) %}
+
+{# Classes #}
+{% set classes = [
+  't-site-container',
+  't-site-container--' ~ variant,
+  'flex',
+] %}
+
+{# Template #}
+<div{{ attributes }}>
+  {% if header|render %}
+    {{ header }}
+  {% endif %}
+
+  {% if top|render %}
+    {{ top }}
+  {% endif %}
+
+  {% if sidebar|render %}
+    {{ sidebar }}
+  {% endif %}
+
+  {% if main|render %}
+    <main class="main-content relative flex-1">
+      {{ main }}
+    </main>
+  {% endif %}
+
+  {% if bottom|render %}
+    {{ bottom }}
+  {% endif %}
+
+  {% if footer|render %}
+    {{ footer }}
+  {% endif %}
+</div>

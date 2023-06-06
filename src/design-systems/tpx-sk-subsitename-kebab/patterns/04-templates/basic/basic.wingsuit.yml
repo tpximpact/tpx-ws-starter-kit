@@ -1,0 +1,112 @@
+basic:
+  use: "@templates/basic/basic.twig"
+  label: Basic
+  description: Basic page template
+  fields:
+    bundle:
+      type: text
+      label: Node type
+      preview: Basic
+    pre_headline:
+      type: text
+      label: Pre headline
+      preview: Listing
+    title:
+      type: text
+      label: Headline
+      preview: How we handle your personal data at The London Clinic
+    description:
+      type: text
+      label: Description
+      preview: |
+        As a healthcare provider, we handle a wide range of information about you in order to support you and your
+        needs. On this page you can find information on how we handle your data, why we need it and who we share it with.
+    image_desktop:
+      type: text
+      label: Desktop image
+    image_tablet:
+      type: text
+      label: Tablet image
+    hero_image:
+      type: text
+      label: Advanced hero image
+    anchor_nav:
+      type: pattern
+      label: Anchor nav
+      preview:
+        id: menu
+        variant: subnav
+    content:
+      type: pattern
+      label: Content
+      preview:
+        - id: rich_text
+          variant: default
+          settings:
+            color: blue
+          fields:
+            media: ''
+            caption: ''
+            anchor: key-benefits
+            text: |
+              <h2>Key benefits</h2>
+              <p>
+                Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.
+              </p>
+              <p>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis montes,
+                nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus tellus ac cursus,
+                tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              </p>
+              <p>
+                Curabitur blandit tempus porttitor. Sed posuere consectetur est at lobortis.
+                Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus.
+              </p>
+        - id: rich_text
+          variant: default
+          settings:
+            color: blue
+          fields:
+            media: ''
+            caption: ''
+            anchor: consultants
+            text: |
+              <h2>Top consultants</h2>
+              <p>
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam.
+                Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </p>
+              <p>
+                Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.
+                Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+              </p>
+        - id: rich_text
+          variant: default
+          settings:
+            color: blue
+          fields:
+            media: ''
+            caption: ''
+            anchor: faqs
+            text: |
+              <h2>FAQs</h2>
+              <p>
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam.
+                Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              </p>
+              <p>
+                Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor.
+                Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+              </p>

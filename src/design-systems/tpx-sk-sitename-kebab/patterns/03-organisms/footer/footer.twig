@@ -1,0 +1,22 @@
+<footer class="o-footer text-black dark:bg-primary-900 dark:text-white font-serif">
+  <div class="text-white sm:py-8 py-4 bg-primary-600">
+    <div class="relative container">
+        <div class="list-reset sm:mb-6 mb-2 w-full grid lg:grid-cols-4 sm:grid-cols-2">
+          {{ menu_1 }}
+          {{ menu_2 }}
+          {{ menu_3 }}
+          {{ menu_4 }}
+        </div>
+    </div>
+  </div>
+  <div class="py-4 bg-secondary-600">
+    <div class="container lg:flex">
+      <div class="sm:text-left flex flex-col sm:flex-row">
+        {{ menu_legal }}
+      </div>
+      <p class="text-copyright text-base text-secondary-300 lg:text-lg lg:ml-auto">
+        {{ 'Copyright'|t }} {{ 'now'|date('Y') }} {{ copyright }}
+      </p>
+    </div>
+  </div>
+</footer>

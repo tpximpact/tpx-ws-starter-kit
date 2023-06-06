@@ -1,0 +1,193 @@
+definitions:
+  steps:
+    - step: &code-sniffer
+        name: 'Code Sniffer'
+        image: willhallonline/drupal-phpcs
+        script:
+          - HEADER_ROW=1
+          - CUSTOM_MODULES_PATH="src/modules"
+          - PHPCS_ERROR_COUNT=$(phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --report=csv "$CUSTOM_MODULES_PATH" | wc -l)
+          - PHPCS_ERROR_COUNT=$((${PHPCS_ERROR_COUNT} - ${HEADER_ROW}))
+          - if [ ${PHPCS_ERROR_COUNT} -gt ${PHPCS_ERROR_COUNT_BASELINE} ]; then
+          - mkdir test-reports
+          - phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --report-junit=test-reports/phpcs.xml "$CUSTOM_MODULES_PATH"
+          - else
+          - echo "Skipping phpcs. $PHPCS_ERROR_COUNT errors were found. The configured baseline is currently set at $PHPCS_ERROR_COUNT_BASELINE."
+          - fi
+
+    - step: &build-codebase
+        name: 'Build codebase (without dev packages)'
+        image: composer:2.1.5
+        caches:
+          - composer
+        script:
+          - composer install --ignore-platform-reqs --no-dev --no-progress --no-ansi --no-interaction
+        artifacts:
+          - 'docroot/**'
+          - 'vendor/**'
+
+    - step: &build-frontend
+        name: 'Build frontend'
+        image: node:14.17.5
+        caches:
+          - node
+        artifacts:
+          - 'vendor/**'
+          - 'docroot/**'
+        script:
+          - npm set unsafe-perm true
+          - npm install
+          - npm run build:drupal:tpx-sk-sitename-kebab
+          - npm run build:drupal:tpx-sk-subsitename-kebab
+
+    - step: &build-docs
+        name: 'Build documentation'
+        image: node:14.17.5
+        caches:
+          - node
+        artifacts:
+          - 'vendor/**'
+          - 'docroot/**'
+        condition:
+          changesets:
+            includePaths:
+              - 'bitbucket-pipelines.yml'
+              - 'package.json'
+              - 'package-lock.json'
+              - 'tailwind.config.js'
+              - 'wingsuit.config.js'
+              - 'src/docs/**'
+              - 'src/apps/storybook/**/docs/**'
+              - 'src/design-systems/**/docs/**'
+        script:
+          - npm set unsafe-perm true
+          - npm install
+          - npm run build:docs
+
+    - step: &build-storybook
+        name: 'Build Storybook'
+        image: node:14.17.5
+        caches:
+          - node
+        artifacts:
+          - 'vendor/**'
+          - 'docroot/**'
+        condition:
+          changesets:
+            includePaths:
+              - 'bitbucket-pipelines.yml'
+              - 'package.json'
+              - 'package-lock.json'
+              - 'tailwind.config.js'
+              - 'wingsuit.config.js'
+              - 'postcss.config.js'
+              - 'babel.config.js'
+              - '.browserslistrc'
+              - '.eslint*'
+              - '.stylelint*'
+              - '.prettier*'
+              - 'src/apps/**'
+              - 'src/themes/**'
+              - 'src/design-systems/**'
+              - 'src/docs/**'
+        script:
+          - npm set unsafe-perm true
+          - npm install
+          - npm run build:storybook:tpx-sk-sitename-kebab
+          - npm run build:storybook:tpx-sk-subsitename-kebab
+          - #npm run publish:storybook -- --ci --exit-once-uploaded --project-token="$CHROMATIC_PROJECT_TOKEN"
+
+    - step: &tests
+        name: 'Tests'
+        script:
+          - echo "Tests coming soon"
+
+    - step: &commit
+        name: 'Commit'
+        artifacts:
+          - 'docroot/**'
+          - 'vendor/**'
+        script:
+          - mkdir -p ~/.ssh
+          - (umask  077 ; echo $BBPL_ACQUIA_CI_SSH_KEY | base64 --decode > ~/.ssh/id_rsa)
+          # These are the original steps to check-or-create a branch. The version route below tries to do the same
+          - echo $REMOTE_REPO
+          - echo $BITBUCKET_BRANCH
+          - ls -l ~/.ssh/
+          - if git ls-remote --exit-code --heads $REMOTE_REPO refs/heads/$BITBUCKET_BRANCH; then
+          - echo "Cloning existing branch"
+          - git clone --depth 1 -b $BITBUCKET_BRANCH $REMOTE_REPO acquia;
+          - else
+          - echo "Creating new branch"
+          - git clone --depth 1 -b master $REMOTE_REPO acquia
+          - cd acquia
+          - git checkout -b $BITBUCKET_BRANCH
+          - git push -u origin $BITBUCKET_BRANCH
+          - cd ..;
+          - fi
+
+          - echo 'Copy build changes'
+          - rm -Rf acquia/src
+          - rm -Rf acquia/vendor
+          - rm -Rf acquia/hooks
+          - # Check for Storybook build changes.
+          - "[ ! -d docroot/storybook/tpx-sk-sitename-kebab ] || rm -rf acquia/docroot/storybook/tpx-sk-sitename-kebab"
+          - "[ ! -d docroot/storybook/tpx-sk-subsitename-kebab ] || rm -rf acquia/docroot/storybook/tpx-sk-subsitename-kebab"
+          - "[ ! -d docroot/docs ] || rm -rf acquia/docroot/docs"
+          - cd acquia/docroot
+          - find . -maxdepth 1 -type f|xargs rm -rf # Remove all files from docroot.
+          - find . -maxdepth 1 -type d -not \( -name 'storybook' -or -name 'docs' -or -name '..' -or -name '.' \)|xargs rm -rf # Prevents Storybook & docs being removed when build steps are skipped.
+          - cd ../..
+          - cp composer.* acquia/
+          - cp -n -r src acquia/
+          - cp -n -r vendor acquia/
+          - cp -n -r hooks acquia/
+          - cp -n -r docroot acquia/
+
+          - echo "Last commit message"
+          - git log --oneline -1
+          - git log --oneline -1 > commit-message
+          - cd acquia
+          - find docroot -type d -name .git |xargs rm -rf
+          - find vendor -type d -name .git |xargs rm -rf
+          - find hooks -type f -name "*.sh" |xargs chmod a+x
+          - git config --global user.email "ci@tpximpact.co.uk"
+          - git add --all .
+          - if (git diff --exit-code --quiet && git diff --staged --exit-code --quiet); then
+          - echo "Nothing to commit";
+          - else
+          - git commit -F ../commit-message
+          - git push
+          - fi
+        after-script:
+          - if [ $BITBUCKET_EXIT_CODE -eq 0 ]; then
+          - cd $BITBUCKET_CLONE_DIR
+          - if git describe --tags --exact-match; then
+          - TAG="$(git describe --tags --exact-match)"
+          - echo "Creating TAG:" $TAG
+          - cd acquia
+          - git status
+          - git tag -a ${TAG} -m "Tag ${TAG}"
+          - git push --tags
+          - else
+          - echo "No tags to push"
+          - fi
+          - fi
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *code-sniffer
+  branches:
+    '{master,develop,release/*,project/*,hotfix/*}':
+      - step: *build-codebase
+      - parallel:
+          - step: *build-docs
+          - step: *build-storybook
+          - step: *build-frontend
+      - step: *commit
+  custom:
+    build-docs:
+      - step: *build-docs
+    build-storybook:
+      - step: *build-storybook

@@ -1,0 +1,121 @@
+uuid: 38b03a48-b541-4959-90e0-c4aaebc46790
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero
+    - node.type.page
+    - paragraphs.paragraphs_type.hero_simple
+  module:
+    - entity_reference_revisions
+id: node.page.field_hero
+field_name: field_hero
+entity_type: node
+bundle: page
+label: Hero
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hero_simple: hero_simple
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 29
+        enabled: false
+      accordion_item:
+        weight: 30
+        enabled: false
+      card_collection:
+        weight: 31
+        enabled: false
+      conditions:
+        weight: 32
+        enabled: false
+      cta_banner:
+        weight: 33
+        enabled: false
+      download:
+        weight: 34
+        enabled: false
+      embed:
+        weight: 38
+        enabled: false
+      experts:
+        weight: 35
+        enabled: false
+      from_library:
+        weight: 36
+        enabled: false
+      hero_advanced:
+        weight: 37
+        enabled: false
+      hero_simple:
+        weight: 38
+        enabled: true
+      iframe:
+        weight: 39
+        enabled: false
+      key_info:
+        weight: 44
+        enabled: false
+      key_info_image_item:
+        weight: 41
+        enabled: false
+      key_info_images:
+        weight: 40
+        enabled: false
+      key_info_item:
+        weight: 47
+        enabled: false
+      key_info_statistics:
+        weight: 42
+        enabled: false
+      key_info_stats_item:
+        weight: 43
+        enabled: false
+      media:
+        weight: 44
+        enabled: false
+      package_cost:
+        weight: 45
+        enabled: false
+      partner_logo:
+        weight: 46
+        enabled: false
+      related_content:
+        weight: 47
+        enabled: false
+      step:
+        weight: 48
+        enabled: false
+      teaser:
+        weight: 49
+        enabled: false
+      text:
+        weight: 50
+        enabled: false
+      text_two_columns:
+        weight: 51
+        enabled: false
+      text_with_image:
+        weight: 52
+        enabled: false
+      timeline:
+        weight: 53
+        enabled: false
+      treatment_overview:
+        weight: 55
+        enabled: false
+      treatments:
+        weight: 54
+        enabled: false
+      webform:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,10 @@
+# This empty file is placed here simply to prevent
+# ddev generating and managing the contents of this file.
+
+options:
+  uri: https://tpx-sk-sitename-kebab.ddev.site
+command:
+  site:
+    alias:
+      options:
+        format: list

@@ -1,0 +1,9 @@
+name: tpx_sk_sitename Default Content
+type: module
+description: Generate tpx_sk_sitename default content.
+package: tpx_sk_sitename
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - default_content:default_content
+  - drupal:serialization
+  - drupal:hal

@@ -1,0 +1,22 @@
+uuid: 4e2e25b9-bc12-41ac-829a-ca3827494a70
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: tpx_sk_sitename_snake_messages
+theme: tpx_sk_sitename_snake
+region: top
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

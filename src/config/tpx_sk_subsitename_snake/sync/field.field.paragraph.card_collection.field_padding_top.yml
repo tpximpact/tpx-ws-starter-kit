@@ -1,0 +1,23 @@
+uuid: 97cc11e2-fe20-489a-842e-3f7156b6202b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_top
+    - paragraphs.paragraphs_type.card_collection
+  module:
+    - options
+id: paragraph.card_collection.field_padding_top
+field_name: field_padding_top
+entity_type: paragraph
+bundle: card_collection
+label: 'Padding - Top'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

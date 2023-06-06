@@ -1,0 +1,10 @@
+uuid: 723f5bf6-0cfa-4b25-9b78-59865c871756
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main navigation'
+description: 'tpx_sk_sitename section links'
+locked: true

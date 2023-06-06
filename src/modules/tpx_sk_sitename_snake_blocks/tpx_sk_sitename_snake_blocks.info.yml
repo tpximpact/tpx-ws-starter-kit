@@ -1,0 +1,7 @@
+name: tpx_sk_sitename Blocks
+type: module
+description: Generate tpx_sk_sitename site blocks.
+package: tpx_sk_sitename
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:block

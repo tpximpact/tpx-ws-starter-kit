@@ -1,0 +1,21 @@
+uuid: e4275351-f7ea-449b-9c99-119d65526804
+langcode: en
+status: true
+dependencies: {  }
+id: local_dev
+label: 'Local dev'
+description: ''
+weight: 0
+folder: ../src/config/default/sync_local
+module:
+  dblog: 0
+  devel: 0
+  field_ui: 0
+  stage_file_proxy: 0
+  structure_sync: 0
+  views_ui: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

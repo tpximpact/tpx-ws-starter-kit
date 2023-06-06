@@ -1,0 +1,17 @@
+uuid: ed880659-d2fe-43f0-9ce6-07a6c4f08efb
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: listing_image_mobile_x1
+label: 'Listing image mobile x1'
+effects:
+  91e4954d-71bd-4fc5-9080-5d8a7eb1c0fd:
+    uuid: 91e4954d-71bd-4fc5-9080-5d8a7eb1c0fd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 302
+      height: 171
+      crop_type: focal_point

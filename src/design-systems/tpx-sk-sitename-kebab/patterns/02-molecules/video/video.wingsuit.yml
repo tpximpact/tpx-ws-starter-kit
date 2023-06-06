@@ -1,0 +1,37 @@
+video:
+  use: "@molecules/video/video.twig"
+  label: Video
+  description: Displays a video.
+  extends:
+    - spacer.settings
+  fields:
+    header:
+      type: text
+      label: Header
+      preview: Video heading
+    description:
+      type: text
+      label: Description
+      description: The video description text.
+      preview: Optional description of the video, 160 characters limit
+    iframe:
+      type: text
+      label: Iframe
+      preview: <iframe class="" frameborder="0" allow='autoplay' data-src="https://www.youtube.com/embed/TysVRz0VyyY?autoplay=1"></iframe>
+    media_thumbnail:
+      type: text
+      label: Media
+      preview: '//i.ytimg.com/vi_webp/TysVRz0VyyY/maxresdefault.webp'
+    media_thumbnail_legacy:
+      type: text
+      label: Media
+      preview: '//i.ytimg.com/vi/TysVRz0VyyY/maxresdefault.jpg'
+  libraries:
+    - style:
+        css:
+          component:
+            ../video.css: { }
+    - behavior: # subsite/video.behavior
+        js:
+          ../behaviors/video.js:
+            attributes: { defer: true }

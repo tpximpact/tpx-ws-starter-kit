@@ -1,0 +1,44 @@
+html,
+body {
+  font-size: 16px;
+  height: theme('height.full');
+  font-weight: theme('fontWeight.normal');
+  letter-spacing: 0.00001px; // This prevents characters such as `st` being joined for the bold font-weight.
+}
+
+img {
+  width: theme('width.full');
+}
+
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+a,
+button,
+select {
+  font-weight: theme('fontWeight.medium');
+  font-style: italic;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: theme('outline.DEFAULT[0]');
+    z-index: theme('zIndex[50]');
+  }
+}

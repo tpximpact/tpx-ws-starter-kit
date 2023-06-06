@@ -1,0 +1,28 @@
+uuid: 9e0de2c5-c90e-452d-913a-1506e0fa747f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.nested
+    - field.field.paragraph.text.field_padding_bottom
+    - field.field.paragraph.text.field_padding_top
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+id: paragraph.text.nested
+targetEntityType: paragraph
+bundle: text
+mode: nested
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_padding_bottom: true
+  field_padding_top: true
+  search_api_excerpt: true

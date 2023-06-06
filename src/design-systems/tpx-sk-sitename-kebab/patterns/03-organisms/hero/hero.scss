@@ -1,0 +1,13 @@
+.o-hero {
+  h1 {
+    @apply relative z-0 overflow-hidden;
+  }
+
+  &__image {
+    background-image: var(--bg-image-mobile);
+
+    @screen md {
+      background-image: var(--bg-image);
+    }
+  }
+}

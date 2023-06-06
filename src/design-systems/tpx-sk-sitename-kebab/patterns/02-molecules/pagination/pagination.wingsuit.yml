@@ -1,0 +1,71 @@
+pagination:
+  use: "@molecules/pagination/pagination.twig"
+  label: Pagination
+  description: Simple and functional pagination.
+  configuration:
+    bg_color:
+      blue: 'bg-blue'
+      orange: 'bg-orange'
+      green: 'bg-green'
+      purple: 'bg-purple'
+    border_color:
+      blue: 'border-blue'
+      orange: 'border-orange'
+      green: 'border-green'
+      purple: 'border-purple'
+    text_color:
+      blue: 'text-blue'
+      orange: 'text-orange'
+      green: 'text-green'
+      purple: 'text-purple'
+    hover_color:
+      blue: 'hocus:bg-blue-500 hocus:text-white hocus:border-blue-500'
+      orange: 'hocus:bg-orange-500 hocus:text-white hocus:border-orange-500'
+      green: 'hocus:bg-green-500 hocus:text-white hocus:border-green-500'
+      purple: 'hocus:bg-purple-500 hocus:text-white hocus:border-purple-500'
+  settings:
+    color:
+      type: select
+      label: Color
+      default_value: blue
+      options:
+        blue: Blue
+        orange: Orange
+        green: Green
+        purple: Purple
+    current:
+      type: number
+      label: Current page number
+      preview: 1
+    ellipsis_previous:
+      type: boolean
+      label: Previous ellipsis
+    ellipsis_next:
+      type: boolean
+      label: Next ellipsis
+  fields:
+    previous_url:
+      type: link
+      label: Previous url
+    previous_text:
+      type: text
+      label: Previous text
+      default_value: Go to previous page
+    next_url:
+      type: link
+      label: Next url
+      preview: '#next'
+    next_text:
+      type: text
+      label: Next text
+      default_value: Go to next page
+    items:
+      type: object
+      label: Items
+      preview:
+        1:
+          href: '#1'
+        2:
+          href: '#2'
+        3:
+          href: '#3'

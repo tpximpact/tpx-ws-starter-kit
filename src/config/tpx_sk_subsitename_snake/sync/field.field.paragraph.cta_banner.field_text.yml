@@ -1,0 +1,29 @@
+uuid: f935c43d-7d39-4cfd-b05c-9c9c4590be1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.cta_banner
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    plain_text: '0'
+    iframe_content: '0'
+id: paragraph.cta_banner.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: cta_banner
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

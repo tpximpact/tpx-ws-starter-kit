@@ -1,0 +1,17 @@
+uuid: c0da9726-ca2d-4baa-bcd8-b73f2df26e71
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: timeline_tablet_x1
+label: 'Timeline tablet x1'
+effects:
+  c4136a1b-6f92-467e-859c-1cd915ee4fb4:
+    uuid: c4136a1b-6f92-467e-859c-1cd915ee4fb4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 540
+      crop_type: focal_point

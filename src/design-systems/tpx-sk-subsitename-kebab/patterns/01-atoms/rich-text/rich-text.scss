@@ -1,0 +1,30 @@
+.iframe-embed {
+  .prose iframe {
+    position: relative;
+  }
+}
+
+.a-button {
+  @apply relative flex inline-flex items-center justify-center z-0;
+  @apply py-4 px-6 rounded-2 border-2 overflow-hidden;
+  @apply text-center lg:text-xl text-secondary-600 font-serif font-bold not-italic leading-none;
+  @apply cursor-pointer transition-all duration-100;
+  @apply outline-none active:outline-dashed;
+  @apply before:content before:absolute before:w-full before:h-1/2 before:left-0 before:-bottom-0.5;
+  @apply before:bg-secondary-500 before:translate-y-full before:transition-all before:-z-10 before:pointer-events-none;
+  @apply hocus:before:translate-y-0 hocus:before:active:bg-secondary-500;
+  @apply active:before:translate-y-full;
+
+  &:active {
+    outline-color: theme('colors.secondary.600');
+  }
+
+  &--primary {
+    @apply text-white bg-secondary-600 border-secondary-300;
+  }
+
+  &--secondary {
+    @apply bg-transparent;
+    @apply hocus:before:bg-primary;
+  }
+}

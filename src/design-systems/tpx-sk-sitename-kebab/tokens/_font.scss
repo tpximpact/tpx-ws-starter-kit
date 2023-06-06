@@ -1,0 +1,26 @@
+@mixin font-face($font-name, $file, $family, $weight: normal, $font-style: normal) {
+  $filepath: "fonts/#{$family}/#{$file}";
+
+  @font-face {
+    src: url('#{$filepath}.eot');
+    src: url('#{$filepath}.eot?#iefix') format('embedded-opentype'),
+    url('#{$filepath}.woff2') format('woff2'),
+    url('#{$filepath}.woff') format('woff'),
+    url('#{$filepath}.ttf') format('truetype'),
+    url('#{$filepath}.svg##{$font-name}') format('svg');
+    font: {
+      family: #{$font-name};
+      weight: $weight;
+      style: $font-style;
+      display: swap;
+    }
+  }
+}
+$font-name-serif: theme('fontFamily.serif[0]');
+$font-name-serif-cond: theme('fontFamily.serif-cond[0]');
+
+@include font-face($font-name-serif, 'TTNormsPro-Regular', 'TTNormsPro');
+@include font-face($font-name-serif, 'TTNormsPro-Medium', 'TTNormsPro', 500);
+@include font-face($font-name-serif, 'TTNormsPro-MediumItalic', 'TTNormsPro', 500, italic);
+@include font-face($font-name-serif, 'TTNormsPro-Bold', 'TTNormsPro', 700);
+@include font-face($font-name-serif-cond, 'TTNormsProCond-Bd', 'TTNormsProCond', 700);

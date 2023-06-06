@@ -1,0 +1,32 @@
+.m-menu {
+  &--primary {
+    @apply relative flex;
+  }
+
+  &__mobile-controls {
+    @apply xl:hidden flex items-center;
+  }
+
+  &__menu-toggle {
+    @apply py-2.5 px-3;
+  }
+
+  &__menu-wrapper {
+    @apply absolute top-full flex flex-col mx-auto w-full h-screen bg-secondary-600 overflow-hidden overflow-y-scroll z-20;
+    @apply xl:relative xl:top-0 xl:h-auto xl:bg-inherit xl:p-0 xl:overflow-visible;
+  }
+
+  &__menu {
+    @apply flex flex-col flex-grow xl:flex-row items-center justify-start xl:justify-center py-10 pb-20 xl:py-0 xl:w-auto;
+  }
+
+  &__submenu {
+    @apply absolute left-0 right-0 top-0 h-full z-50;
+    @apply xl:top-full;
+  }
+
+  &__submenu-container {
+    @apply h-full xl:h-auto bg-secondary-600 text-white py-10 pb-0;
+    @apply xl:py-14;
+  }
+}

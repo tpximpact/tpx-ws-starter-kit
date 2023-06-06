@@ -1,0 +1,56 @@
+uuid: 18dd65ac-9543-4856-a8d2-17ca4e346fb1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: prod
+label: Prod
+weight: 0
+tag_container_ids:
+  - GTM-MRQC3B
+advanced_settings:
+  gtm:
+    data_layer: dataLayer
+    include_classes: false
+    allowlist_classes: |-
+      google
+      nonGooglePixels
+      nonGoogleScripts
+      nonGoogleIframes
+    blocklist_classes: |-
+      customScripts
+      customPixels
+    include_environment: true
+    environment_id: env-2
+    environment_token: QRYIk913VEd_Je28uNMdHQ
+dimensions_metrics: {  }
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: |-
+      /admin*
+      /batch*
+      /node/add*
+      /node/*/edit
+      /node/*/delete
+      /user/*/edit*
+      /user/*/cancel*
+  response_code:
+    id: response_code
+    negate: true
+    response_codes: |-
+      403
+      404
+events:
+  sign_up:
+    method: CMS
+  search: {  }
+  generate_lead:
+    value: ''
+    currency: ''
+  webform_purchase: {  }
+  login:
+    method: CMS
+  custom: {  }

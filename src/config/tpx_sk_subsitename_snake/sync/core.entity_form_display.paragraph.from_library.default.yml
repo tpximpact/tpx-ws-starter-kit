@@ -1,0 +1,98 @@
+uuid: 43a6bb3f-3c50-4c34-80f1-6818f5858b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.paragraphs_library_items
+    - field.field.paragraph.from_library.field_padding_bottom
+    - field.field.paragraph.from_library.field_padding_top
+    - field.field.paragraph.from_library.field_reusable_paragraph
+    - paragraphs.paragraphs_type.from_library
+  module:
+    - entity_browser
+    - field_group
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_fields
+        - group_settings
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_settings:
+      children:
+        - field_padding_top
+        - field_padding_bottom
+      label: Settings
+      region: content
+      parent_name: group_content
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_fields:
+      children:
+        - field_reusable_paragraph
+      label: Fields
+      region: content
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: Bea-FFbHlBuiYLW8Et0hLK6VNECewxpIchDbOtC7IDo
+id: paragraph.from_library.default
+targetEntityType: paragraph
+bundle: from_library
+mode: default
+content:
+  field_padding_bottom:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_padding_top:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_reusable_paragraph:
+    type: entity_browser_entity_reference
+    weight: 0
+    region: content
+    settings:
+      entity_browser: paragraphs_library_items
+      field_widget_display: label
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: true
+      open: true
+      field_widget_display_settings: {  }
+      selection_mode: selection_append
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

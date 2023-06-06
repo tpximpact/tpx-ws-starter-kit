@@ -1,0 +1,60 @@
+uuid: 592666b3-6664-4afb-b067-5238ced95f59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_body
+    - field.field.node.page.field_hero
+    - field.field.node.page.field_listing_date
+    - field.field.node.page.field_listing_image
+    - field.field.node.page.field_meta_description
+    - field.field.node.page.field_meta_title
+    - field.field.node.page.field_metatag
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_body:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hero:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_advanced_header_type: true
+  field_call_to_action_banner: true
+  field_header_image: true
+  field_image_background_colour: true
+  field_listing_date: true
+  field_listing_image: true
+  field_meta_description: true
+  field_meta_title: true
+  field_metatag: true
+  field_summary: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

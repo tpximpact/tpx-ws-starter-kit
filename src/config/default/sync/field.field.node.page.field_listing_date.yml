@@ -1,0 +1,24 @@
+uuid: f2f046ef-9424-470d-a868-d1b3d08b9511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_date
+    - node.type.page
+  module:
+    - datetime
+id: node.page.field_listing_date
+field_name: field_listing_date
+entity_type: node
+bundle: page
+label: 'Listing date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

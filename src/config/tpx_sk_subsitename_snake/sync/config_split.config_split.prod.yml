@@ -1,0 +1,18 @@
+uuid: 7ac58091-d3f2-49d1-8341-6fe556901b14
+langcode: en
+status: true
+dependencies: {  }
+id: prod
+label: Prod
+description: ''
+weight: 0
+folder: ../src/config/default/sync_prod
+module:
+  acquia_connector: 0
+  smtp: 0
+theme: {  }
+blacklist:
+  - google_tag.container.prod
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true

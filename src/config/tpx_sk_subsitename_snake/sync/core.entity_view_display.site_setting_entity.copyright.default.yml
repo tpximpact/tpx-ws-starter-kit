@@ -1,0 +1,25 @@
+uuid: da8b2e2d-28e5-4ee7-a3e6-e5bd2f4ed1e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.copyright.field_copyright_message
+    - site_settings.site_setting_entity_type.copyright
+id: site_setting_entity.copyright.default
+targetEntityType: site_setting_entity
+bundle: copyright
+mode: default
+content:
+  field_copyright_message:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

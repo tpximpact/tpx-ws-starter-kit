@@ -1,0 +1,20 @@
+uuid: 2f4cc66a-7baf-4e28-a8ad-9d3b362f1567
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_card_items
+field_name: field_card_items
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

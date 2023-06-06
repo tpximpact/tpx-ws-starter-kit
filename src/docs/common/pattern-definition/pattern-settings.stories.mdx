@@ -1,0 +1,48 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Pattern definition/Settings"
+      parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+          canvas: {hidden: true},
+        },
+      }}
+/>
+
+# Settings
+<Subtitle>Properties available to the <code>settings</code> property of a <code>.wingsuit.yml</code> pattern definition file</Subtitle>
+
+An array of setting definitions keyed by the setting name, using the [`snake_case` convention](https://en.wikipedia.org/wiki/Snake_case). <br/>
+Each of the `settings` are editable with knobs and passed as a variable to the Twig template defined in the [`use` key](?path=/docs/docs-pattern-definition-overview--page#use). <br/>
+The pattern settings should provide configurable options to the component, which are most often visual changes such as background or text color options.<br/>
+
+**Each setting can have the following properties**:
+
+## [**`type`**](?path=/docs/docs-pattern-definition-field-types--page)
+The setting data type.
+
+**Available options are**:
+  * All [field types](?path=/docs/docs-pattern-definition-field-types--page)
+  * [`select` <small>(docs)</small>](?path=/docs/docs-pattern-definition-setting-types--page#select)
+```yaml
+  type: select
+```
+
+## **`label`**
+The user-friendly name of the setting.
+```yaml
+label: Title
+```
+
+## **`description`** <small>(optional)</small>
+Descriptive text about the setting.
+```yaml
+description: Describe the setting use.
+```
+
+## **`preview`** <small>(optional)</small>
+Preview content, passed to the Storybook preview. It can be either a string or a Drupal render array.
+```yaml
+preview:
+    -
+```

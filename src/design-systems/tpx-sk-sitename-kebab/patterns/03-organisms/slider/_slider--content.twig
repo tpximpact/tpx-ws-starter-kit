@@ -1,0 +1,98 @@
+{#
+
+/**
+ * @file
+ * slider
+ *
+ * See slider.wingsuit.yaml for documentation.
+ */
+#}
+
+{% set classes = [
+  'overflow-hidden',
+] %}
+
+{# Template#}
+<div {{ attributes.addClass(classes) }} x-data="sliderBehavior()">
+  <div class="splide o-slider__slider {{ container ? 'container' }}">
+    <div class="o-slider__top flex flex-col sm:flex-row mb-4 sm:mb-8 {{ heading|render or description|render ? 'lg:mb-11' : 'lg:mb-0 justify-end' }}">
+      {% if heading|render or description|render %}
+        <div class="o-slider__content flex-grow w-3/4 mb-4 sm:mb-0">
+          {% if heading %}
+            {{ pattern('headline', {
+              text: heading,
+              spacing_bottom: 'small',
+              attributes: create_attribute().addClass([
+                'o-slider__heading',
+                'text-blue',
+              ]),
+            }, 'h2') }}
+          {% endif %}
+
+          {% if description %}
+            <div class="o-slider__description text-grey text-md lg:text-lg">
+              {{ description }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="o-slider__controls flex items-center sm:ml-8 justify-between sm:justify-start {{ items|length < 4 ? 'lg:hidden' }}">
+        {% if pager_buttons or pager_text or autoplay_toggle %}
+          <div class="o-slider__pager-buttons">
+            {% if autoplay and autoplay_toggle %}
+              <button class="o-slider__autoplay-toggle relative {{ paginationButtonClasses }}"
+                      title="Pause"
+                      x-bind="bindToggleAutoplay"
+              >
+              <span class="o-slider__play-icon absolute" x-show="isPaused" x-transition>
+                {{ pattern('svg_icon', {icon: 'play', size: 'w-9 h-9'}) }}
+              </span>
+                <span class="o-slider__pause-icon absolute" x-show="!isPaused" x-transition>
+                {{ pattern('svg_icon', {icon: 'pause', size: 'w-8 h-8'}) }}
+              </span>
+              </button>
+            {% endif %}
+
+            {% if pager_buttons %}
+              <button class="{{ paginationButtonClasses }} rotate-180 mr-2"
+                      title="previous"
+                      x-bind="prevStep"
+                      x-bind:disabled="prevDisabled"
+              >
+                {{ pattern('svg_icon', {icon: 'chevron', size: buttonIconSize}) }}
+              </button>
+            {% endif %}
+
+            {% if pager_text %}
+              <div class="o-slider__controls-pager mx-2 inline-flex items-center text-blue-400">
+                <span class="o-slider__controls-pager-current"
+                      x-text="currentIndex + 1">1</span>
+                <span class="mx-0.5">/</span>
+                <span class="o-slider__controls-pager-total">{{ items|length }}</span>
+              </div>
+            {% endif %}
+
+            {% if pager_buttons %}
+              <button class="{{ paginationButtonClasses }} rotate-0 ml-2"
+                      title="next"
+                      x-bind="nextStep"
+                      x-bind:disabled="nextDisabled"
+              >
+                {{ pattern('svg_icon', {icon: 'chevron', size: buttonIconSize}) }}
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="splide__track o-slider__slider-track flex !overflow-visible">
+      <div class="splide__list o-slider__slides inline-flex">
+        {% for key, item in items %}
+          <li class="list-none splide__slide">{{ item }}</li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

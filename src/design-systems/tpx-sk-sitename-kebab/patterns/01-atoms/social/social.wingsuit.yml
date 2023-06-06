@@ -1,0 +1,22 @@
+social:
+  use: "@atoms/social/social.twig"
+  label: Social
+  description: Component for displaying social sharing links.
+  fields:
+    label:
+      type: text
+      label: Social label
+      description: The label that appears alongside the socia links.
+      preview: Share
+    social_links:
+      type: object
+      label: Social links
+      preview:
+        - title: facebook
+          url: 'https://www.facebook.com'
+        - title: twitter
+          url: 'https://twitter.com'
+        - title: whatsapp
+          url: 'https://whatsapp.com'
+        - title: email
+          url: 'mail:test@example.com'

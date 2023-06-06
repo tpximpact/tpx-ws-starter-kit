@@ -1,0 +1,337 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a862540c-1241-43b9-871f-ad69805a5d7d
+  bundle: page
+  default_langcode: en
+  depends:
+    7c9d2a65-d7a0-47d6-94ef-1d3770dfee13: media
+    a862540c-1241-43b9-871f-ad69805a5d7d: node
+    d9d7521b-59e2-44af-b1ae-2bf6119d0279: media
+    cf34e7a9-ff29-4a88-b9ae-07342532b3b7: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Lorem ipsum dolor sit amet'
+  created:
+    -
+      value: 1664528631
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /about-us
+      langcode: en
+      pathauto: 0
+  publish_state:
+    -
+      value: _none
+  unpublish_state:
+    -
+      value: _none
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 29d621d0-12d1-431f-8f49-a666a0e05743
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664528874
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_add_to_sub_nav:
+            -
+              value: false
+          field_padding_bottom:
+            -
+              value: medium
+          field_padding_top:
+            -
+              value: medium
+          field_text:
+            -
+              value: '<h2>Heading 2 is here and this is how it looks like</h2><p>Lorem Ipsum is simply <a href="google.com" data-cke-saved-href="google.com">dummy text</a> of the printing and <a href="google.com" data-cke-saved-href="google.com">typesetting industry</a>. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p>&nbsp;</p><h3>Heading 3 is here and this is how it looks like</h3><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when &nbsp;an unknown printer &nbsp;took a galley of type and scrambled it to make a type specimen book.</p><ul><li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li><li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li><li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li></ul><p>&nbsp;</p><ol><li>Item of a numbered list</li><li>Item of a numbered list</li><li>Item of a numbered list</li></ol><p>&nbsp;</p><p><a class="a-button a-button--primary" href="#" data-cke-saved-href="#">Primary button</a>&nbsp;<a class="a-button a-button--secondary" href="#" data-cke-saved-href="#">Secondary button</a></p>'
+              format: full_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e49db45a-5d99-46d7-8c16-a8a03029a78d
+          bundle: accordion
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664528913
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_accordion_items:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 0fbe2b54-579b-4bbd-b692-dcf2b6f88b9d
+                  bundle: accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1664528913
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_heading:
+                    -
+                      value: 'Lorem ipsum dolor sit amet'
+                  field_text:
+                    -
+                      value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: f0372101-3da7-47fd-a94a-914f488445e8
+                  bundle: accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1664528947
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_heading:
+                    -
+                      value: 'Lorem ipsum dolor sit amet'
+                  field_text:
+                    -
+                      value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+                      format: full_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 6e4783e2-8313-473b-902f-061bee433d24
+                  bundle: accordion_item
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1664528957
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_heading:
+                    -
+                      value: 'Lorem ipsum dolor sit amet'
+                  field_text:
+                    -
+                      value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+                      format: full_html
+          field_add_to_sub_nav:
+            -
+              value: false
+          field_heading:
+            -
+              value: 'Accordion heading'
+          field_padding_bottom:
+            -
+              value: medium
+          field_padding_top:
+            -
+              value: medium
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 03b1235f-7f0c-4291-83f1-8ff5fdc1063d
+          bundle: video
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664528975
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_video:
+            -
+              entity: 7c9d2a65-d7a0-47d6-94ef-1d3770dfee13
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 06a8ff85-67c0-4fd5-ae9c-7f20b3560d8a
+          bundle: card_collection
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664830410
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_card_items:
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+            -
+              entity: a862540c-1241-43b9-871f-ad69805a5d7d
+          field_leafs:
+            -
+              value: true
+          field_padding_bottom:
+            -
+              value: medium
+          field_padding_top:
+            -
+              value: medium
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1193eff8-eba0-4623-ab39-3b9c8bdf227f
+          bundle: cta_banner
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664830429
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_cta_primary:
+            -
+              uri: 'internal:/contact-us'
+              title: 'Give us a call'
+              options: {  }
+          field_cta_secondary:
+            -
+              uri: 'internal:/contact-us'
+              title: 'Send us an email'
+              options: {  }
+          field_heading:
+            -
+              value: 'Contact us'
+          field_text:
+            -
+              value: '<p>Speak to someone today, were ready for your call. Book an appointment or ask for advice here.</p>'
+              format: full_html
+  field_hero:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 24f6b7f6-2152-497e-9480-8b13098658a8
+          bundle: hero_simple
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1664528636
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_hero_image_desktop:
+            -
+              entity: d9d7521b-59e2-44af-b1ae-2bf6119d0279
+          field_hero_image_mobile:
+            -
+              entity: d9d7521b-59e2-44af-b1ae-2bf6119d0279
+          field_text:
+            -
+              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+              format: full_html
+  field_listing_date:
+    -
+      value: '2022-09-30'
+  field_listing_image:
+    -
+      entity: cf34e7a9-ff29-4a88-b9ae-07342532b3b7
+  field_meta_description:
+    -
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  field_meta_title:
+    -
+      value: 'Lorem ipsum dolor sit amet'

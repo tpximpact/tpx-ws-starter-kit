@@ -1,0 +1,106 @@
+uuid: 01f31d82-836a-4d51-b2fd-71d4fd3a9c5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.card_collection
+    - paragraphs.paragraphs_type.cta_banner
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_with_image
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_body
+field_name: field_body
+entity_type: node
+bundle: landing_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      cta_banner: cta_banner
+      accordion: accordion
+      card_collection: card_collection
+      text_with_image: text_with_image
+      image: image
+      video: video
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -61
+        enabled: true
+      accordion_item:
+        weight: -60
+        enabled: false
+      card_collection:
+        weight: -59
+        enabled: true
+      charity_directory:
+        weight: 36
+        enabled: true
+      cta_banner:
+        weight: -62
+        enabled: true
+      download:
+        weight: -57
+        enabled: true
+      embed:
+        weight: -53
+        enabled: false
+      from_library:
+        weight: -55
+        enabled: false
+      hero_advanced:
+        weight: -48
+        enabled: false
+      hero_simple:
+        weight: -47
+        enabled: false
+      iframe:
+        weight: -54
+        enabled: false
+      image:
+        weight: 33
+        enabled: true
+      key_info:
+        weight: -52
+        enabled: true
+      key_info_item:
+        weight: -49
+        enabled: false
+      media:
+        weight: -44
+        enabled: false
+      partner_logo:
+        weight: -42
+        enabled: false
+      testimonial:
+        weight: 57
+        enabled: true
+      text:
+        weight: -63
+        enabled: true
+      text_two_columns:
+        weight: -38
+        enabled: false
+      text_with_image:
+        weight: -37
+        enabled: true
+      video:
+        weight: 43
+        enabled: true
+      webform:
+        weight: -33
+        enabled: false
+field_type: entity_reference_revisions

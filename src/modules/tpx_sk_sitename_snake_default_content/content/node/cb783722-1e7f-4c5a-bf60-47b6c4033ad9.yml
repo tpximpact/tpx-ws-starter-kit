@@ -1,0 +1,88 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: cb783722-1e7f-4c5a-bf60-47b6c4033ad9
+  bundle: page
+  default_langcode: en
+  depends:
+    cf34e7a9-ff29-4a88-b9ae-07342532b3b7: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Terms & Conditions'
+  created:
+    -
+      value: 1669392977
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /terms-conditions
+      langcode: en
+      pathauto: 1
+  publish_state:
+    -
+      value: _none
+  unpublish_state:
+    -
+      value: _none
+  field_hero:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d6ba66aa-d3b8-42e7-8652-cce13aae0597
+          bundle: hero_simple
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1669392987
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_label:
+            -
+              value: 'Terms & Conditions'
+          field_text:
+            -
+              value: '<p>Terms &amp; Conditions content to go here.</p>'
+              format: full_html
+  field_listing_date:
+    -
+      value: '2022-11-25'
+  field_listing_image:
+    -
+      entity: cf34e7a9-ff29-4a88-b9ae-07342532b3b7
+  field_meta_description:
+    -
+      value: 'Terms & Conditions'
+  field_meta_title:
+    -
+      value: 'Terms & Conditions'

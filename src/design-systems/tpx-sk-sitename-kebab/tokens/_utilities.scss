@@ -1,0 +1,24 @@
+.w-full-extended {
+  position: relative;
+  left: theme('inset[1/2]');
+  right: theme('inset[1/2]');
+  width: 100vw !important;
+  margin-left: -50vw !important;
+  margin-right: 50vw !important;
+}
+
+.a11y-focus {
+  &:focus-visible {
+    outline: theme('outline.DEFAULT[0]');
+    z-index: theme('zIndex[50]');
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}

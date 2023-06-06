@@ -1,0 +1,20 @@
+uuid: a7683678-633d-4515-9b3c-84cbf432f134
+langcode: en
+status: false
+dependencies:
+  theme:
+    - tpx_sk_subsitename_snake
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: tpx_sk_subsitename_snake_page_title
+theme: tpx_sk_subsitename_snake
+region: main
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

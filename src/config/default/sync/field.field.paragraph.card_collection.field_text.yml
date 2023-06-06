@@ -1,0 +1,29 @@
+uuid: 35ac46c6-e74c-41af-9e35-427226517817
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.card_collection
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    plain_text: '0'
+    iframe_content: '0'
+id: paragraph.card_collection.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: card_collection
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

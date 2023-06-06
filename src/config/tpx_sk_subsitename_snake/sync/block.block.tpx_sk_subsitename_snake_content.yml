@@ -1,0 +1,22 @@
+uuid: 7d951706-bb56-47d0-8d56-d4241dd34411
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tpx_sk_subsitename_snake
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: tpx_sk_subsitename_snake_content
+theme: tpx_sk_subsitename_snake
+region: main
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

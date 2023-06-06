@@ -1,0 +1,23 @@
+uuid: 4cd6c843-a864-4d83-a8f2-9ea385507f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_bottom
+    - paragraphs.paragraphs_type.card_collection
+  module:
+    - options
+id: paragraph.card_collection.field_padding_bottom
+field_name: field_padding_bottom
+entity_type: paragraph
+bundle: card_collection
+label: 'Padding - Bottom'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

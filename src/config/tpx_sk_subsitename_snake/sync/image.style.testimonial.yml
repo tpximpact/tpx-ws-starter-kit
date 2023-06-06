@@ -1,0 +1,17 @@
+uuid: e8dab740-4c4c-4d90-bca6-d8c17d7b1b12
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: testimonial
+label: Testimonial
+effects:
+  7e17f2a5-612a-4d69-a49d-d5f653ea3776:
+    uuid: 7e17f2a5-612a-4d69-a49d-d5f653ea3776
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 350
+      crop_type: focal_point

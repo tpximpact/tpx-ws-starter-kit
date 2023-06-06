@@ -1,0 +1,23 @@
+# Define tpx_sk_subsitename theme's library CSS and JS assets along with dependencies.
+core:
+  css:
+    theme:
+      ws-assets://tokens.css:
+        preprocess: true
+      ws-assets://forms.css:
+        preprocess: true
+  js:
+    ws-assets://vendors/alpine.js:
+      preprocess: true
+    ws-assets://vendors/breakpoint-helper.js:
+      preprocess: true
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+lazy-load-youtube:
+  version: 1.x
+  js:
+    js/lazy-load-youtube.js: {}
+  dependencies:
+    - core/drupal

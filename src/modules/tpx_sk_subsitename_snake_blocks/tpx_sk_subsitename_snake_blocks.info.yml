@@ -1,0 +1,7 @@
+name: tpx_sk_subsitename Blocks
+type: module
+description: Generate tpx_sk_subsitename site blocks.
+package: tpx_sk_subsitename
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:block

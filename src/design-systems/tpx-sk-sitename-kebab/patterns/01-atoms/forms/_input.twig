@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set type = variant != 'default' ? type|default(variant) %}
+{% set color = color|default('blue') %}
+{% set standard_form_inputs = [
+  'text',
+  'email',
+  'url',
+  'password',
+  'number',
+  'date',
+  'datetime-local',
+  'month',
+  'search',
+  'tel',
+  'time',
+  'week',
+] %}
+{% set other_form_inputs = [
+  'textarea',
+  'radio',
+  'checkbox',
+  'toggle',
+  'submit',
+  'hidden',
+] %}
+
+{# Variants #}
+{% set classes = [
+  'a-form-input__' ~ variant|clean_class,
+  'a-form-input--' ~ color|clean_class,
+  type in standard_form_inputs ? 'a-form-input',
+  type in other_form_inputs ? 'a-form-' ~ type|clean_class,
+  type == 'date' ? 'hasDatepicker',
+] | sort | join(' ') | trim %}
+
+{% set attributes = attributes
+  .addClass(classes)
+  .setAttribute('type', type)
+%}
+
+{% if name %}
+  {% set attributes = attributes.setAttribute('name', name) %}
+{% endif %}
+
+{# Template #}
+{% if variant in other_form_inputs %}
+  {% if variant == 'submit' %}
+    {% set button_type = 'primary' %}
+    {% set button_text = value|default(attributes.value) %}
+    {% set secondary_buttons = [
+      'prev',
+      'back',
+    ] %}
+    {% for button_name in secondary_buttons %}
+      {% set button_type = button_name in button_text|lower ? 'secondary' : button_type %}
+    {% endfor %}
+
+    {{ pattern('button', {
+      text: button_text,
+      attributes: attributes.addClass(['font-medium lg:text-lg']),
+    }, button_type) }}
+  {% else %}
+    <input {{ attributes }} />
+    {{ children }}
+  {% endif %}
+{% else %}
+  <input {{ attributes }}
+    x-data="{
+      hasValue: false,
+      focused: false,
+      value: $el.hasAttributes() && 'value' in $el.attributes ? $el.attributes.value.value : ''
+    }"
+    x-model="value"
+    :class="{
+      'has-value': hasValue || value.length > 0,
+      'focused': focused
+    }"
+    @focusout="focused = true; hasValue = value.length > 0"
+  />
+  {{ children }}
+{% endif %}

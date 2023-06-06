@@ -1,0 +1,8 @@
+uuid: 8b969ab6-1f6a-4e80-8f8f-02071875310b
+langcode: en
+status: true
+dependencies: {  }
+id: footer-2
+label: 'Get support'
+description: 'Footer partners menu'
+locked: false

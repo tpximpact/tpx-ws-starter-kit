@@ -1,0 +1,30 @@
+breadcrumbs:
+  use: "@atoms/breadcrumbs/breadcrumbs.twig"
+  label: Breadcrumbs
+  description: Example description
+  fields:
+    crumbs:
+      type: object
+      label: Breadcrumbs
+      preview:
+        - text: Home
+          url: "#"
+        - text: Find an expert
+          url: "#"
+        - text: Consultants
+          url: "#"
+  settings:
+    color:
+      type: select
+      label: Colour
+      options:
+        blue: Blue
+        orange: Orange
+        green: Green
+        purple: Purple
+      preview: blue
+  libraries:
+    - pattern_breadcrumbs:
+       css:
+         component:
+           ../breadcrumbs.css: {}

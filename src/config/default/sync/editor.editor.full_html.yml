@@ -1,0 +1,71 @@
+uuid: 0c5abfcc-8caf-4f29-b862-4aff24e51b22
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - codeBlock
+      - style
+      - '|'
+      - bold
+      - underline
+      - italic
+      - strikethrough
+      - '|'
+      - link
+      - '|'
+      - undo
+      - redo
+      - '|'
+      - alignment
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - insertTable
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary button'
+          element: '<a class="a-button a-button--primary">'
+        -
+          label: 'Secondary button'
+          element: '<a class="a-button a-button--secondary">'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

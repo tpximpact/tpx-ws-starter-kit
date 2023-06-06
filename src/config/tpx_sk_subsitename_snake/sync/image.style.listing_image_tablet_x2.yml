@@ -1,0 +1,17 @@
+uuid: 590d0fd9-8d5c-4a62-a661-d833be6e1b40
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: listing_image_tablet_x2
+label: 'Listing image tablet x2'
+effects:
+  e73482f1-b54b-4f93-8817-8744096ae190:
+    uuid: e73482f1-b54b-4f93-8817-8744096ae190
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 352
+      height: 298
+      crop_type: focal_point

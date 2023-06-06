@@ -1,0 +1,12 @@
+.o-card-collection {
+
+  &__image {
+    img {
+      @apply w-full h-full object-cover object-top;
+    }
+  }
+
+  &__headline {
+    word-break: break-word;
+  }
+}

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0e0c3de6-e2e1-400e-9730-744db551ee1b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: snow-mountain.png
+  uri:
+    -
+      value: 'public://2022-10/snow-mountain.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 3710808
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1664827239

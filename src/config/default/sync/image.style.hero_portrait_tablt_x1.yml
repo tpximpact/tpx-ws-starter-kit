@@ -1,0 +1,17 @@
+uuid: bc7acb4f-134e-480b-9b78-36ed3668ec8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_portrait_tablt_x1
+label: 'Hero portrait tablet x1'
+effects:
+  448f017d-9437-4e56-be88-c4c396794c9d:
+    uuid: 448f017d-9437-4e56-be88-c4c396794c9d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 210
+      height: 280
+      crop_type: focal_point

@@ -1,0 +1,31 @@
+{% import '@molecules/menu/_menu-macros.twig' as menus %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+<nav role="navigation"
+     class="bg-primary sm:mr-5"
+     aria-label="{{ menu_name }} footer menu"
+     x-data="{footerIsOpen: true}"
+     x-init="footerIsOpen = !Breakpoint.isMobile"
+     @resize.window.debounce="footerIsOpen = !Breakpoint.isMobile">
+  <div class="menu__heading mb-5 text-xl lg:text-3xl font-bold cursor-pointer sm:cursor-default relative pb-2"
+       @click="footerIsOpen = !(footerIsOpen && Breakpoint.isMobile)">
+    {{ menu_name }}
+    <span class="sm:hidden absolute right-0 bottom-1">{{ menus.create_footerDropdownIndicator(in_active_trail) }}</span>
+  </div>
+  <ul class="list-reset mb-8 w-full" x-show="footerIsOpen"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 transform scale-95 -translate-y-4"
+      x-transition:enter-end="opacity-100 transform scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 transform scale-100"
+      x-transition:leave-end="opacity-0 transform scale-95 -translate-y-4">
+    {% for item in items %}
+      {{ pattern('menu_item', {
+        title: item.title,
+        url: item.url,
+        below: item.below,
+        in_active_trail: item.in_active_trail
+      }, 'footer') }}
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,10 @@
+uuid: 8736aa73-29e8-4820-a83c-ed4fb3e6f694
+langcode: en
+status: true
+dependencies: {  }
+id: webform
+label: Webform
+icon_uuid: null
+icon_default: null
+description: 'Add webforms to a node page.'
+behavior_plugins: {  }

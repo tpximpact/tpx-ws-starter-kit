@@ -1,0 +1,17 @@
+uuid: 5d9e8ee1-09d0-4e1c-b9ca-645f472a98e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: timeline_desktop_x1
+label: 'Timeline desktop x1'
+effects:
+  bee18191-9d85-47b4-810e-c1ca1d247af6:
+    uuid: bee18191-9d85-47b4-810e-c1ca1d247af6
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 180
+      crop_type: focal_point

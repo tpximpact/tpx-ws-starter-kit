@@ -1,0 +1,23 @@
+uuid: 2ebcf325-197d-451b-b03f-66b0bb8e353c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed_size
+    - paragraphs.paragraphs_type.embed
+  module:
+    - options
+id: paragraph.embed.field_embed_size
+field_name: field_embed_size
+entity_type: paragraph
+bundle: embed
+label: 'Embed size'
+description: 'Leaving as default will allow the embed to take up the full width of the screen. Selecting small will restrict the width of the embed.'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,29 @@
+uuid: 1eab508b-9dce-4382-b782-5cee336a316e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.hero_simple
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    restricted_html: '0'
+    basic_html: '0'
+    plain_text: '0'
+    iframe_content: '0'
+id: paragraph.hero_simple.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: hero_simple
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

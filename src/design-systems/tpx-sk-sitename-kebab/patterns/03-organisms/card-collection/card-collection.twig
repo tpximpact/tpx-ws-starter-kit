@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * card-collection
+ *
+ * See card-collection.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set padding_top = padding_top|default('medium') %}
+{% set padding_bottom = padding_bottom|default('medium') %}
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+{# Classes #}
+{% set classes = [
+  'o-card-collection',
+  spacing.padding_top,
+  spacing.padding_bottom,
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes).setAttribute('id', anchor) }}>
+  <div class="container">
+    <div class="">
+      {% if header %}
+        <h2 class="relative flex items-center">{{ header }}</h2>
+      {% endif %}
+
+      {% if description %}
+        <div class="o-card-collection__description mb-8 text-secondary-500 text-xl lg:text-2xl font-serif">
+          {{ description }}
+        </div>
+      {% endif %}
+
+      {% if items %}
+        <ul class="lg:flex space-y-8 lg:space-y-0 lg:space-x-8">
+          {{ items }}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>

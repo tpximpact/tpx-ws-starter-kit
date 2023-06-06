@@ -1,0 +1,23 @@
+uuid: 1d58fe9e-6b93-4ae2-b4c0-6e7fb91f6ecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.timeline
+    - field.field.media.image.field_media_image
+    - media.type.image
+_core:
+  default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
+id: media.image.timeline
+targetEntityType: media
+bundle: image
+mode: timeline
+content: {  }
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * embed
+ *
+ * See embed.wingsuit.yaml for documentation.
+ */
+#}
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% set padding_top = padding_top|default('medium') %}
+{% set padding_bottom = padding_bottom|default('medium') %}
+
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+{% set display_classes = embed_size == "small" ? 'max-w-xs md:max-w-md' : '' %}
+
+{# Classes #}
+{% set classes = [
+  'a-embed',
+  spacing.padding_top,
+  spacing.padding_bottom,
+] %}
+
+{% set attributes = attributes
+  .addClass(classes | sort | join(' ') | trim) %}
+
+{# Template #}
+<div{{ attributes }}>
+  <div class="container">
+    <div class="{{ display_classes }}">
+    {% if embed %}
+      {{ embed }}
+    {% endif %}
+    </div>
+  </div>
+</div>

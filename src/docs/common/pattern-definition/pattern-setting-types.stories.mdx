@@ -1,0 +1,28 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Pattern definition/Setting types"
+      parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+          canvas: {hidden: true},
+        },
+      }}
+/>
+
+# **Setting types**
+<Subtitle>
+  All <a href="?path=/docs/docs-pattern-definition-field-types--page"><strong>field types</strong></a> are available to use as setting types, with the addition of those listed below.
+</Subtitle>
+
+## **`select`**
+With field type `select` you get the key value of the selected option passed to the Twig template variable.<br />
+A `select` setting must supply an `options` array.
+```yaml
+items:
+  label: Color
+  type: select
+  options:
+    blue: Blue
+    black: Black
+  preview: blue
+```

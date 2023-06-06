@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * slider
+ *
+ * See slider.wingsuit.yaml for documentation.
+ */
+#}
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set video = video|trim %}
+{% set video_is_valid = video starts with 'http' or video starts with 'www' or video starts with '/' %}
+
+{# Classes #}
+{% set classes = [
+  'm-slide',
+  'm-slide--' ~ variant|clean_class,
+] | join(' ') | trim %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{# Template #}
+{% if video_is_valid %}
+  {% set variant = 'video' %}
+  {% set video_type = 'youtube.com' in video ? 'youtube'
+    : 'vimeo.com' in video ? 'vimeo'
+    : 'html-video'
+  %}
+
+  {% set attributes = attributes.setAttribute('data-splide-' ~ video_type, video) %}
+{% endif %}
+
+{% set play_button %}
+  <button class="m-slide__play-button group-hocus:bg-white group-hocus:text-blue">
+    <span class="m-slide__play-icon" x-show="!videoIsPlaying" x-transition>
+      {{ pattern('svg_icon', {icon: 'play', size: 'w-9 h-9'}) }}
+    </span>
+    <span class="m-slide__pause-icon" x-show="videoIsPlaying" x-transition>
+      {{ pattern('svg_icon', {icon: 'pause', size: 'w-8 h-8'}) }}
+    </span>
+  </button>
+{% endset %}
+
+{% if video_type or content %}
+  <article{{ attributes }}>
+    {% if video_is_valid %}
+      <div class="m-slide__video-overlay group" x-show="!videoIsPlaying" x-transition x-transition.delay.75ms>
+        {% if content %}
+          <div class="m-slide__content">
+            {{ content }}
+          </div>
+        {% endif %}
+
+        {{ play_button }}
+      </div>
+    {% elseif content %}
+      {{ content }}
+    {% endif %}
+
+    {% if indicator %}
+      <span class="m-slide__item-indicator"></span>
+    {% endif %}
+  </article>
+{% endif %}

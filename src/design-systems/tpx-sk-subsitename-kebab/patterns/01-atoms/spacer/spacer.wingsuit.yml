@@ -1,0 +1,47 @@
+spacer:
+  use: "@atoms/spacer/spacer.twig"
+  label: Spacer
+  description: |
+    <p>The purpose of this pattern is to provide a consistent approach to component spacing, when patterns are composed to build pages.</p><br>
+    <h6><strong><em>Don't include this pattern directly as part of your pattern.</em></strong></h6><br>
+    <p>Extend this pattern using the `<code>extends</code>` key in your pattern definition.</p>
+  configuration:
+    padding_top:
+      xs: 'pt-6 lg:pt-10'
+      small: 'pt-8 lg:pt-12'
+      medium: 'pt-12 lg:pt-16'
+      large: 'pt-16 lg:pt-20'
+      xl: 'pt-20 lg:pt-24'
+    padding_bottom:
+      xs: 'pb-6 lg:pb-10'
+      small: 'pb-8 lg:pb-12'
+      medium: 'pb-12 lg:pb-16'
+      large: 'pb-16 lg:pb-20'
+      xl: 'pb-20 lg:pb-24'
+  settings:
+    padding_top:
+      type: select
+      label: Top Padding
+      required: true
+      allow_expose: true
+      options:
+        none: None
+        xs: Extra small
+        small: Small
+        medium: Medium
+        large: Large
+        xl: Extra large
+      preview: medium
+    padding_bottom:
+      type: select
+      label: Bottom Padding
+      required: true
+      allow_expose: true
+      options:
+        none: None
+        xs: Extra small
+        small: Small
+        medium: Medium
+        large: Large
+        xl: Extra large
+      preview: medium

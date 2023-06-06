@@ -1,0 +1,116 @@
+headline:
+  use: "@atoms/headline/headline.twig"
+  label: Headline
+  description: Flexible headline with options to choose size and tags.
+  configuration:
+    size:
+      xl: 'text-6xl lg:text-8xl'
+      h1: 'text-5xl lg:text-7xl'
+      h2: 'text-4xl lg:text-6xl'
+      h3: 'text-3xl lg:text-4xl'
+      h4: 'text-xl lg:text-3xl'
+      h5: 'text-lg lg:text-2xl'
+      h6: 'text-base lg:text-xl'
+    spacing_bottom:
+      small: mb-2
+      default: mb-4
+      large: mb-8
+  variants:
+    div:
+      label: Default
+    xl:
+      label: XL
+      fields:
+        text: This is an XL heading and this is what it looks like
+      settings:
+        tag_name: h1
+        font_size: xl
+    h1:
+      label: h1
+      fields:
+        text: This is an H1 heading and this is what it looks like
+      settings:
+        tag_name: h1
+    h2:
+      label: h2
+      fields:
+        text: This is an H2 heading and this is what it looks like
+      settings:
+        tag_name: h2
+    h3:
+      label: h3
+      fields:
+        text: This is an H3 heading and this is what it looks like
+      settings:
+        tag_name: h3
+    h4:
+      label: h4
+      fields:
+        text: This is an H4 heading and this is what it looks like
+      settings:
+        tag_name: h4
+    h5:
+      label: h5
+      fields:
+        text: This is an H5 heading and this is what it looks like
+      settings:
+        tag_name: h5
+    h6:
+      label: h6
+      fields:
+        text: This is an H6 heading and this is what it looks like
+      settings:
+        tag_name: h6
+  settings:
+    tag_name:
+      type: select
+      label: Tag name
+      default_value: span
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
+        h5: H5
+        h6: H6
+        div: DIV
+        span: SPAN
+    font_size:
+      type: select
+      label: Font size
+      description: Override the default font size coming from the heading tag name
+      default_value: ''
+      options:
+        xl: Extra large
+        h1: H1
+        h2: H2
+        h3: H3
+        h4: H4
+        h5: H5
+        h6: H6
+        div: DIV
+    font_size_custom:
+      type: textfield
+      label: Font size custom
+      description: Override the font size using CSS classes rather than the predefined `font_size` options
+    spacing_bottom:
+      type: select
+      label: Spacing bottom
+      required: true
+      default_value: default
+      options:
+        none: None
+        small: Small
+        default: Default
+    color:
+      type: textfield
+      label: Color
+      description: Add a tailwind text colour class. e.g. text-orange
+      default_value: 'text-inherit'
+  fields:
+    text:
+      type: text
+      label: Headline
+      preview: |
+        This is a heading and this is what it looks like.
+        The <code>font_size</code> can be adjusted to override the default styles of the HTML <code>tag_name</code>.

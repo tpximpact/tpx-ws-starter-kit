@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * accordion
+ *
+ * See accordion.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set color = color|default('blue') %}
+{% set padding_top = padding_top|default('medium') %}
+{% set padding_bottom = padding_bottom|default('medium') %}
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+{# Classes #}
+{% set classes = [
+  'o-accordion',
+  'o-accordion--' ~ color,
+  spacing.padding_top,
+  spacing.padding_bottom,
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes).setAttribute('id', anchor) }}>
+  <div class="container">
+    <div class="lg:w-8/12 lg:max-w-prose">
+      {% if header %}
+        <h2 class="mb-4">{{ header }}</h2>
+      {% endif %}
+
+      {% if items %}
+        {{ items }}
+      {% endif %}
+    </div>
+  </div>
+</div>

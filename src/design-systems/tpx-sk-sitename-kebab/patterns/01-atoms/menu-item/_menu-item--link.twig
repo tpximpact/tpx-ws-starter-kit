@@ -1,0 +1,28 @@
+{# Defaults #}
+{% set link_tag_name = link_tag_name|default('span') %}
+{% set link_attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set link_classes = [
+  'a-menu-item__link',
+  'a-menu-item__link--link',
+  in_active_trail ? 'a-menu-item__link--active',
+  'font-normal',
+] | sort | join(' ') | trim %}
+
+{# Attributes #}
+{% if url is not empty %}
+  {% set link_tag_name = 'a' %}
+  {% set attributes = link_attributes.setAttribute('href', url|render).setAttribute('title', title).setAttribute('target', url.getOption('attributes').target) %}
+{% endif %}
+
+{# Template #}
+{% set link %}
+  <{{ link_tag_name }} {{ link_attributes.addClass(link_classes) }} {{ attributes }}>
+    {{ title }}
+  </{{ link_tag_name }}>
+{% endset %}
+
+<li class="a-menu-item a-menu-item--link">
+  {{ link }}
+</li>

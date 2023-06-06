@@ -1,0 +1,310 @@
+form_input:
+  use: '@atoms/forms/_input.twig'
+  namespace: 'Atoms/Forms'
+  label: Input
+  description: Input forms styled with Tailwind custom forms. Checkout https://tailwindcss-custom-forms.netlify.app/ for more infos.
+  variants:
+    default:
+      label: Default
+    textfield:
+      label: Textfield
+      settings:
+        type: text
+    password:
+      label: Password
+      settings:
+        type: password
+    submit:
+      label: Submit
+      settings:
+        type: submit
+    email:
+      label: Email
+      settings:
+        type: email
+    file:
+      label: File
+      settings:
+        type: file
+    tel:
+      label: Tel
+      settings:
+        type: tel
+    date:
+      label: Date
+      settings:
+        type: date
+    checkbox:
+      label: Checkbox
+      settings:
+        type: checkbox
+    toggle:
+      label: Toggle
+      settings:
+        type: checkbox
+    radio:
+      label: Radio
+      settings:
+        type: radio
+        name: radio-input
+    hidden:
+      label: Hidden
+      settings:
+        type: hidden
+  settings:
+    type:
+      type: textfield
+      label: Input type
+      preview: text
+    name:
+      type: textfield
+      label: Input name
+      preview: text
+    value:
+      type: textfield
+      label: Input value
+      preview: Submit
+    color:
+      type: select
+      label: Color
+      default_value: blue
+      options:
+        blue: Blue
+        orange: Orange
+        green: Green
+        purple: Purple
+  fields:
+    children:
+      type: pattern
+      label: Children
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+form_label:
+  use: '@atoms/forms/_form-label.twig'
+  namespace: 'Atoms/Forms'
+  label: Label
+  fields:
+    title:
+      type: text
+      label: Title
+      preview:
+        faker: lorem.word
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+
+form_textarea:
+  use: '@atoms/forms/_textarea.twig'
+  namespace: 'Atoms/Forms'
+  label: Textarea
+  settings:
+  fields:
+    value:
+      type: text
+      label: Value
+      preview:
+        faker: lorem.sentence
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+
+form_select:
+  use: '@atoms/forms/_select.twig'
+  namespace: 'Atoms/Forms'
+  label: Select
+  settings:
+  fields:
+    options:
+      type: object
+      label: Options
+      preview:
+        - label: Option 1
+          type: 'option'
+          selected: true
+        - label: Option 2
+          type: 'option'
+        - label: Option 3
+          type: 'option'
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+
+form_checkboxes:
+  use: '@atoms/forms/_checkboxes.twig'
+  namespace: 'Atoms/Forms'
+  label: Checkboxes
+  fields:
+    children:
+      type: pattern
+      label: Children
+      preview:
+        - id: form_element
+          variant: 'checkbox'
+          settings:
+            label_display: after
+        - id: form_element
+          variant: 'checkbox'
+          settings:
+            label_display: after
+        - id: form_element
+          variant: 'checkbox'
+          settings:
+            label_display: after
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+
+form_radios:
+  use: '@atoms/forms/_radios.twig'
+  namespace: 'Atoms/Forms'
+  label: Radios
+  fields:
+    children:
+      type: pattern
+      label: Children
+      preview:
+        - id: form_element
+          variant: 'radio'
+        - id: form_element
+          variant: 'radio'
+        - id: form_element
+          variant: 'radio'
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }
+
+
+form_element:
+  use: '@atoms/forms/_form-element.twig'
+  namespace: 'Atoms/Forms'
+  label: Form element
+  description: Wrapper around label and form element styled with Tailwind custom forms. Checkout https://tailwindcss-custom-forms.netlify.app/ for more infos.
+  variants:
+    textfield:
+      label: Textfield
+      fields:
+        children:
+          id: form_input
+          variant: 'textfield'
+    email:
+      label: Email
+      fields:
+        children:
+          id: form_input
+          variant: 'email'
+    file:
+      label: File
+      fields:
+        children:
+          id: form_input
+          variant: 'file'
+    tel:
+      label: Tel
+      fields:
+        children:
+          id: form_input
+          variant: 'tel'
+    date:
+      label: Date
+      fields:
+        children:
+          id: form_input
+          variant: 'date'
+    toggle:
+      label: Toggle
+      fields:
+        children:
+          id: form_input
+          variant: 'toggle'
+    checkbox:
+      label: Checkbox
+      fields:
+        children:
+          id: form_input
+          variant: 'checkbox'
+    checkboxes:
+      label: Checkboxes
+      fields:
+        children:
+          id: form_checkboxes
+    radio:
+      label: Radio
+      settings:
+        label_display: after
+      fields:
+        children:
+          id: form_input
+          variant: 'radio'
+    radios:
+      label: Radios
+      fields:
+        children:
+          id: form_radios
+    select:
+      label: Select
+      fields:
+        children:
+          id: form_select
+  settings:
+    label_display:
+      type: select
+      label: Label display
+      default_value: before
+      options:
+        before: Before
+        after: After
+        invisible: Invisible
+        hidden: Hidden
+    description_display:
+      type: select
+      label: Description display
+      options:
+        before: Before
+        after: After
+        invisible: Invisible
+        hidden: Hidden
+    required:
+      type: boolean
+      label: Required
+      preview: true
+  fields:
+    label:
+      type: pattern
+      label: Label
+      description: The form label.
+      preview:
+        id: form_label
+    description_text:
+      type: text
+      label: Description
+      description: The form description.
+      preview:
+        faker: lorem.sentence
+    errors:
+      type: text
+      label: Errors
+      description: The error message.
+    children:
+      type: pattern
+      label: Children
+      preview:
+        id: form_input
+        variant: 'textfield'
+  libraries:
+    - style:
+        css:
+          component:
+            ../forms.css: { }

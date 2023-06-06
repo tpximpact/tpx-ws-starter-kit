@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * accordion-item
+ *
+ * See accordion-item.wingsuit.yaml for documentation.
+ */
+#}
+{# Settings #}
+{% set id = uuid() %}
+
+{# Classes #}
+{% set icon_classes = [
+  'w-5 h-5 rotate-90 absolute right-4 lg:right-6',
+] | sort | join(' ') | trim %}
+
+{% set classes = [
+  'block p-4 pr-8 lg:p-6 lg:pr-12 leading-normal text-2xl cursor-pointer relative bg-white hover:bg-primary font-serif',
+] | sort | join(' ') | trim %}
+{% set attributes = attributes.addClass(classes) %}
+
+{# Template #}
+<div class="tab w-full overflow-hidden mb-4 last:mb-0" data-children-count="1">
+  <input class="absolute opacity-0" id="{{ id }}" type="checkbox" name="tabs">
+  <h3><label {{ attributes }} for="{{ id }}">{{ label }}
+    {{ pattern('svg_icon', {icon: 'chevron', size: icon_classes }) }}</label></h3>
+  <div class="tab-content overflow-hidden leading-normal sm:flex sm:flex-row-reverse">
+    <div class="prose pb-6 sm:pb-8 p-4 lg:p-6 text-grey-500 text-base lg:text-lg">{{ text }}</div>
+  </div>
+</div>

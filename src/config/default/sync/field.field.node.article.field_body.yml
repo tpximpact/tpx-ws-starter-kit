@@ -1,0 +1,98 @@
+uuid: c6908887-470d-4753-a4e4-b4a1942105ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.article
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.from_library
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.article.field_body
+field_name: field_body
+entity_type: node
+bundle: article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      from_library: from_library
+      accordion: accordion
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -25
+        enabled: true
+      accordion_item:
+        weight: -24
+        enabled: false
+      conditions:
+        weight: -19
+        enabled: false
+      experts:
+        weight: 24
+        enabled: true
+      from_library:
+        weight: -28
+        enabled: true
+      handholding_cta_banner:
+        weight: 26
+        enabled: false
+      iframe:
+        weight: 29
+        enabled: false
+      key_info_image_item:
+        weight: -22
+        enabled: false
+      key_info_images:
+        weight: -23
+        enabled: false
+      key_info_statistics:
+        weight: -21
+        enabled: false
+      key_info_stats_item:
+        weight: -20
+        enabled: false
+      media:
+        weight: -27
+        enabled: true
+      package_cost:
+        weight: -18
+        enabled: false
+      related_content:
+        weight: 36
+        enabled: true
+      step:
+        weight: 33
+        enabled: false
+      teaser:
+        weight: 34
+        enabled: false
+      text:
+        weight: -29
+        enabled: true
+      text_two_columns:
+        weight: -26
+        enabled: true
+      timeline:
+        weight: 37
+        enabled: false
+      treatment_overview:
+        weight: -16
+        enabled: false
+      treatments:
+        weight: -17
+        enabled: false
+      webform:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

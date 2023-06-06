@@ -1,0 +1,41 @@
+hero:
+  use: "@organisms/hero/hero.twig"
+  label: Hero
+  description: Displays an advanced hero.
+  extends:
+    - spacer.settings
+  fields:
+    title:
+      type: text
+      label: Header
+      preview: Breath is life
+    description:
+      type: text
+      label: Description
+      description: The hero description text.
+      preview: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    media:
+      type: text
+      label: Media
+      preview: 'ws-assets://images/hero.png'
+    media_mobile:
+      type: text
+      label: Media
+      preview: 'ws-assets://images/hero-mobile.png'
+  variants:
+    advanced:
+      label: Hero (advanced)
+    simple:
+      label: Hero (simple)
+      fields:
+        media:
+          'ws-assets://images/hero--simple.png'
+        media_mobile:
+          'ws-assets://images/hero--simple-mobile.png'
+        description: |
+          After such an incredible response last year, the tpx_sk_subsitename, presented by Royal Bank of Canada is again launching the Inspire campaign. We want to shine a light on the inspiring runners who are taking part in what is sure to be an incredible race day on Sunday 9 October 2022.
+  libraries:
+    - style:
+        css:
+          component:
+            ../hero.css: { }

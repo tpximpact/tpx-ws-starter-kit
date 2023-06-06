@@ -1,0 +1,84 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 215b94a1-689a-4cf1-b389-901a14337789
+  bundle: page
+  default_langcode: en
+  depends:
+    cf34e7a9-ff29-4a88-b9ae-07342532b3b7: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '403 - Access Denied'
+  created:
+    -
+      value: 1669393303
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /403
+      langcode: en
+      pathauto: 0
+  publish_state:
+    -
+      value: _none
+  unpublish_state:
+    -
+      value: _none
+  field_hero:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 94ad113d-6fbb-445c-8ad7-623f9b6445f2
+          bundle: hero_simple
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1669393314
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_label:
+            -
+              value: '403 - Access Denied'
+  field_listing_date:
+    -
+      value: '2022-11-25'
+  field_listing_image:
+    -
+      entity: cf34e7a9-ff29-4a88-b9ae-07342532b3b7
+  field_meta_description:
+    -
+      value: '403 - Access Denied'
+  field_meta_title:
+    -
+      value: '403 - Access Denied'

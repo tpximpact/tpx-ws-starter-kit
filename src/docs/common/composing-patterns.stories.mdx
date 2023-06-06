@@ -1,0 +1,129 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Composing patterns"
+      parameters={{
+        viewMode: 'docs',
+        docs: {
+          dark: true,
+        },
+        previewTabs: {
+          canvas: { hidden: true },
+        },
+      }}
+/>
+
+# Composing patterns
+<Subtitle>How to build a component in Storybook</Subtitle>
+
+## Definition
+
+A pattern is defined inside a `pattern.wingsuit.yml` file, where `pattern` is the name of the pattern.
+
+**A pattern contains**:
+  * `index.js`
+  * `pattern.stories.jsx`
+  * `pattern.wingsuit.yml`
+  * scss file(s) (optional)
+  * javascript file(s). (optional)
+
+**Expose the reference to the `.wingsuit.yml` file inside the pattern `.stories.jsx` file.**
+```jsx
+const patternDefinition = require('./pattern.wingsuit.yml');
+
+export const wingsuit = {
+  patternDefinition,
+};
+```
+
+## The pattern.wingsuit.yml
+The `pattern.wingsuit.yml` is an extended version of the <a href="https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html" target="_blank">UI Patterns yaml definition</a>.<br />
+Check out the <a href="https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html" target="_blank">UI Patterns documentation</a>, with additions of <a href="https://www.drupal.org/project/ui_patterns_settings" target="_blank">UI Patterns Settings</a>.
+
+**A typical pattern definition file looks like this**:
+```yaml
+blockquote:
+  use: "@atoms/blockquote/blockquote.twig"
+  label: Blockquote
+  description: Display a quote with attribution information.
+  variants:
+    default:
+      label: Default
+      description: An ordinary quote.
+    highlighted:
+      label: Highlighted
+      description: A special quote.
+  fields:
+    image:
+      type: pattern
+      preview:
+        id: image
+        variant: primary
+    quote:
+      type: text
+      label: Quote
+      description: Quote text.
+      preview: Life is like riding a bicycle. To keep your balance, you must keep moving.
+    attribution:
+      type: text
+      label: Attribution
+      description: Quote attribution.
+      preview: Albert Einstein
+  settings:
+    highlight_color:
+      type: select
+      label: Highlight color
+      required: false
+      options:
+        yellow: Yellow
+        red: Red
+  libraries:
+    - style:
+       css:
+         component:
+           blockquote.css: {}
+           http://example.com/external.min.css: { type: external, minified: true }
+    - behavior:
+       js:
+         js/blockquote.js: {}
+       dependencies:
+         - core/jquery
+```
+
+* Each of the `variants` are a storybook story.
+* Each of the `fields` are editable with knobs and passed to the Twig template.
+* Each of the `settings` are editable with knobs and passed to the Twig template.
+
+## Rendering patterns
+
+Wingsuit adds two Twig functions, [ported from the UI Patterns](https://ui-patterns.readthedocs.io/en/8.x-1.x/content/developer-documentation.html#render-patterns-using-twig-functions) Drupal module, to easily render patterns into your Twig templates.
+
+#### **`pattern()`**
+Useful for embedding existing patterns with in patterns.
+
+The `pattern()` function accepts 3 arguments:
+* Pattern ID
+* An array of `fields` or `settings`
+* The variant of the pattern to use
+  * **Optional** when a pattern does not define any variants.
+  * **Required** when a pattern defines 1 or more variants.
+```twig
+{{ pattern('button', {
+  title: 'Link title',
+  url: 'http://example.com'
+}, 'highlighted') }}
+```
+
+#### **`pattern_preview()`**
+Useful for Storybook preview stories.<br />
+Preview Stories usually live outside the design system and only in the respective storybook directory.
+
+The `pattern_preview()` function accepts 2 arguments:
+* Pattern ID
+* The variant of the pattern to use
+  * **Optional** when a pattern does not define any variants.
+  * **Required** when a pattern defines 1 or more variants.
+
+The pattern will use the preview values of each field from the selected pattern definition
+```twig
+{{ pattern_preview('button', 'highlighted') }}
+```

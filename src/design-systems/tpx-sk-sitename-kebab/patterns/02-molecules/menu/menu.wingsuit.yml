@@ -1,0 +1,104 @@
+menu:
+  use: "@molecules/menu/menu.twig"
+  label: Menu
+  description: Primary and footer menu component.
+  fields:
+    menu_name:
+      type: textfield
+      label: Menu name
+    items:
+      type: object
+      label: Items
+  variants:
+    primary:
+      label: Primary
+      fields:
+        items:
+          - title: Who we are
+            url: '#'
+            in_active_trail: true
+            below:
+              - title: About us
+                url: ''
+              - title: Our vision
+                url: ''
+              - title: A battle plan
+                url: ''
+              - title: Our impact
+                url: ''
+              - title: Our leadership team
+                url: ''
+              - title: Annual report
+                url: ''
+          - title: Get support
+            url: '#'
+            below:
+              - title: Our helpline
+                url: ''
+              - title: Health advice
+                url: ''
+              - title: Support groups
+                url: ''
+          - title: Get involved
+            url: ''
+            below:
+              - title: Fundraise
+                url: ''
+              - title: Campaign with us
+                url: ''
+              - title: Join an event
+                url: ''
+              - title: What's your legacy?
+                url: ''
+              - title: Corporate partnerships
+                url: ''
+              - title: Volunteer
+                url: ''
+              - title: Respiratory network
+                url: ''
+              - title: About our research
+                url: ''
+              - title: Shop
+                url: ''
+          - title: Blog
+            url: ''
+          - title: Contact us
+            url: ''
+    footer:
+      label: Footer
+      description: The footer menu.
+      fields:
+        menu_name: Social media
+        items:
+          - title: Instagram
+            url: ''
+          - title: Facebook
+            url: ''
+          - title: Youtube
+            url: ''
+          - title: Twitter
+            url: ''
+    footer-legal:
+      label: Footer legal
+      description: The footer legal menu.
+      fields:
+        items:
+          - title: Privacy
+            url: ''
+          - title: Cookies
+            url: ''
+          - title: Accessibility
+            url: ''
+          - title: Terms and conditions
+            url: ''
+  libraries:
+    - style:
+        css:
+          component:
+            '../menu.css': { }
+    - behavior:
+        js:
+          ../behaviors/menu.js:
+            attributes: { defer: true }
+        dependencies:
+          - site/core

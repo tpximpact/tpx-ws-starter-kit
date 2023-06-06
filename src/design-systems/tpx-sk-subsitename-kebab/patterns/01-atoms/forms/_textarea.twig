@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override for a 'textarea' #type form element.
+ *
+ * Available variables
+ * - wrapper_attributes: A list of HTML attributes for the wrapper element.
+ * - attributes: A list of HTML attributes for the textarea element.
+ * - resizable: An indicator for whether the textarea is resizable.
+ * - required: An indicator for whether the textarea is required.
+ * - value: The textarea content.
+ *
+ * @see template_preprocess_textarea()
+ */
+#}
+{# Classes #}
+{% set classes = [
+  'a-form-textarea',
+] %}
+
+{# Template #}
+<div{{ wrapper_attributes }}>
+  <textarea{{ attributes.addClass(classes) }}
+    x-data="{
+      hasValue: false,
+      focused: false,
+      value: $el.hasAttributes() && 'value' in $el.attributes ? $el.attributes.value.value : ''
+    }"
+    x-model="value"
+    :class="{
+      'has-value': hasValue || value.length > 0,
+      'focused': focused
+    }"
+    @focusout="focused = true; hasValue = value.length > 0; console.log('focused hasValue', `${focused} ${hasValue}`)"
+  >{{ value }}</textarea>
+</div>

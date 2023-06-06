@@ -1,0 +1,56 @@
+<style>
+  .sidebar-item {
+    color: #000 !important;
+    font-size: 0.9em !important;
+    padding-top: 0.35em !important;
+    padding-bottom: 0.35em !important;
+  }
+  .sidebar-item[data-selected='true'],
+  .sidebar-item[data-selected='true'] svg {
+    color: #FFF !important;
+    background-color: #000 !important;
+  }
+  .sidebar-item[data-selected="true"]:hover {
+    background-color: #000 !important;
+  }
+  .sidebar-item:hover {
+    background-color: #6C6863 !important;
+    color: #FFF !important;
+  }
+  .sidebar-item:hover svg {
+    background-color: transparent !important;
+    color: #FFF !important;
+  }
+  .sidebar-item:not([data-selected='true']):hover {
+    background: #6C6863 !important;
+    color: #FFF !important;
+  }
+
+  .sidebar-subheading {
+    background: #FAA61A !important;
+    color: #000 !important;
+  }
+  .sidebar-subheading button,
+  .sidebar-subheading button:focus {
+    font-size: 1.4em !important;
+    letter-spacing: 0.15em !important;
+    box-shadow: none;
+    color: currentColor;
+  }
+  .sidebar-subheading button[data-action='collapse-root'] {
+    flex-grow: 1 !important;
+    padding-top: 0.75em !important;
+    padding-bottom: 0.75em !important;
+  }
+  .sidebar-subheading button[data-action='expand-all'] {
+    width: 24px !important;
+    height: 24px !important;
+    background: #FAA61A !important;
+    color: #000 !important;
+    border-radius: 0px !important;
+    border: 1px solid #6C6863;
+  }
+  .sidebar-subheading button span {
+    color: #000 !important;
+  }
+</style>

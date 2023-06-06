@@ -1,0 +1,160 @@
+uuid: c6a3f184-e424-4bf4-82b9-7e1e9ff3f206
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_advanced.field_colour
+    - field.field.paragraph.hero_advanced.field_hero_ctas
+    - field.field.paragraph.hero_advanced.field_hero_image_desktop
+    - field.field.paragraph.hero_advanced.field_hero_image_mobile
+    - field.field.paragraph.hero_advanced.field_hero_title_bottom
+    - field.field.paragraph.hero_advanced.field_hero_title_top
+    - field.field.paragraph.hero_advanced.field_text
+    - paragraphs.paragraphs_type.hero_advanced
+  module:
+    - field_group
+    - link
+    - media_library
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_fields
+        - group_settings
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_settings:
+      children:
+        - field_colour
+      label: Settings
+      region: content
+      parent_name: group_content
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_fields:
+      children:
+        - field_hero_title_top
+        - field_hero_title_bottom
+        - field_text
+        - group_images
+        - group_ctas
+      label: Fields
+      region: content
+      parent_name: group_content
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_images:
+      children:
+        - field_hero_image_desktop
+        - field_hero_image_mobile
+      label: Images
+      region: content
+      parent_name: group_fields
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_ctas:
+      children:
+        - field_hero_ctas
+      label: CTAs
+      region: content
+      parent_name: group_fields
+      weight: 7
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.hero_advanced.default
+targetEntityType: paragraph
+bundle: hero_advanced
+mode: default
+content:
+  field_colour:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_ctas:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_hero_image_desktop:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_hero_image_mobile:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_hero_title_bottom:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_title_top:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

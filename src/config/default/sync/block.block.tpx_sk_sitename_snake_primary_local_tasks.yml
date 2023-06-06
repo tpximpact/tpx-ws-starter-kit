@@ -1,0 +1,22 @@
+uuid: 8251a770-424d-4951-8137-e5378429b153
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: tpx_sk_sitename_snake_primary_local_tasks
+theme: tpx_sk_sitename_snake
+region: top
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

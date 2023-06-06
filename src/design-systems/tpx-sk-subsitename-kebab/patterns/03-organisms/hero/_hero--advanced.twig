@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * hero
+ *
+ * See hero.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set color = color|default('white') %}
+
+{# Classes #}
+{% set classes = [
+  'o-hero',
+  'o-hero--' ~ color,
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes) }}>
+  {# Image section #}
+  <div class="o-hero__image bg-no-repeat bg-cover bg-bottom" style="--bg-image: url('{{ file_url(media) }}');--bg-image-mobile: url('{{ file_url(media_mobile) }}')">
+    <div class="o-hero__image-mobile bg-no-repeat bg-cover pt-16 lg:pt-32 lg:bg-none">
+      <div class="container">
+        <div>
+          <h1 class="text-white w-144">
+            {{ title}}
+          </h1>
+
+          {% if description %}
+            <div class="o-hero__description text-white lg:w-96 pt-16 pb-24 lg:pb-48 text-xl lg:text-2xl font-serif">
+              {{ description }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

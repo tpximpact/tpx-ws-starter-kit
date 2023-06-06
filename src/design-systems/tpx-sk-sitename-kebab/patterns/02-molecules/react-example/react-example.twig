@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * react-example
+ *
+ * See react-example.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'm-react-example',
+  'bg-grey-100 py-14',
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes).setAttribute('id', anchor) }}>
+  <div class="container">
+    <div react-example>
+    <noscript>The react example requires JavaScript to work</noscript>
+    </div>
+  </div>
+</div>

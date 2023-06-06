@@ -1,0 +1,28 @@
+uuid: 53fbcbc5-00da-4ab2-848f-c38006925634
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.media_full_width
+    - field.field.paragraph.text.field_padding_bottom
+    - field.field.paragraph.text.field_padding_top
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+id: paragraph.text.media_full_width
+targetEntityType: paragraph
+bundle: text
+mode: media_full_width
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_padding_bottom: true
+  field_padding_top: true
+  search_api_excerpt: true

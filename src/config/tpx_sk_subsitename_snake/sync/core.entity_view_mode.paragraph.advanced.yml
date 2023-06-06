@@ -1,0 +1,10 @@
+uuid: 3c4c8094-fdc7-455e-a701-c55448e9133e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.advanced
+label: Advanced
+targetEntityType: paragraph
+cache: true

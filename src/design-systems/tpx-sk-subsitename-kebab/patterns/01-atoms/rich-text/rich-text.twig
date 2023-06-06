@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * rich-text
+ * with the rich-text we can use to creat different types of text as you can see in storybook.
+ * Ex. headlines, list and more.
+ * See rich-text.wingsuit.yaml for documentation.
+ */
+#}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set desktop_width = 'lg:w-8/12 lg:max-w-prose' %}
+{% if width == 'full-width' %}
+  {% set desktop_width = 'lg:w-full lg:max-w-screen' %}
+{% endif %}
+{% set size = size|default('medium') %}
+{% set font_size = pattern_configuration('rich_text', variant, 'font_size')[size] %}
+{% set padding_top = padding_top|default('medium') %}
+{% set padding_bottom = padding_bottom|default('medium') %}
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+{% set wrapper_classes = [
+  spacing.padding_top,
+  spacing.padding_bottom,
+  container ? 'container mx-auto',
+] | sort | join(' ') | trim %}
+
+{% set default_classes = [
+  desktop_width,
+] | sort | join(' ') | trim %}
+
+{% set classes = [
+  'prose flex flex-col',
+  font_size,
+  variant == 'default' ? default_classes,
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div class="{{ wrapper_classes }}">
+  <div {{ attributes.addClass(classes) }}>
+    {{ text }}
+  </div>
+</div>

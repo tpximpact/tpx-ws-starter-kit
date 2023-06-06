@@ -1,0 +1,65 @@
+button:
+  use: "@atoms/button/button.twig"
+  label: Button
+  description: Regular buttons with different colors.
+  fields:
+    text:
+      type: text
+      label: Text
+      preview: Primary button
+  variants:
+    primary:
+      label: Primary
+      text: Testing
+    secondary:
+      label: Secondary
+      fields:
+        text: Secondary button
+    hero:
+      label: Hero
+      fields:
+        text: Secondary button
+    link:
+      label: Link
+      fields:
+        text: this is an inline hyperlink
+      settings:
+        color: false
+  settings:
+    target:
+      type: select
+      label: Target
+      options:
+        _blank: Blank
+        _top: Top
+    title:
+      type: textfield
+      label: Title
+    color:
+      type: select
+      required: true
+      label: Color
+      default_value: dark
+      options:
+        light: Light
+        dark: Dark
+    url:
+      type: url
+      label: Url
+      description: The action url of your button
+    width:
+      type: textfield
+      label: Width
+    align:
+      type: select
+      label: Align
+      default_value: center
+      options:
+        left: Left
+        center: Center
+        right: Right
+  libraries:
+    - style:
+        css:
+          component:
+            '../button.css': {}

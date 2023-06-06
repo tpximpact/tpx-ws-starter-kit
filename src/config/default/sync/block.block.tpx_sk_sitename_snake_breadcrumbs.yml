@@ -1,0 +1,22 @@
+uuid: 92b59640-c9f9-4c3c-b02f-af89873bd0ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: tpx_sk_sitename_snake_breadcrumbs
+theme: tpx_sk_sitename_snake
+region: top
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

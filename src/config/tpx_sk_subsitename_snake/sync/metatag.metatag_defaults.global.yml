@@ -1,0 +1,22 @@
+uuid: 2dfb066a-e787-4d66-8293-674f984c4439
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  title: '[current-page:title]'
+  canonical_url: '[current-page:url]'
+  description: '[node:field_meta_description]'
+  image_src: /themes/custom/tpx_sk_subsitename_snake/images/site.png
+  og_image_url: /themes/custom/tpx_sk_subsitename_snake/images/site.png
+  og_url: '[current-page:url]'
+  og_description: '[node:field_meta_description]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title] | [site:name]'
+  twitter_cards_image: /themes/custom/tpx_sk_subsitename_snake/images/site.png
+  twitter_cards_description: '[node:field_meta_description]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_title: '[current-page:title] | [site:name]'

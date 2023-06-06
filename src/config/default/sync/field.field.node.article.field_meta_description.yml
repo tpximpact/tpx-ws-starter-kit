@@ -1,0 +1,19 @@
+uuid: cd6117f7-68b0-4bc1-b5d1-94576ca4c8f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_description
+    - node.type.article
+id: node.article.field_meta_description
+field_name: field_meta_description
+entity_type: node
+bundle: article
+label: 'Meta description'
+description: 'Maximum of 155 characters.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

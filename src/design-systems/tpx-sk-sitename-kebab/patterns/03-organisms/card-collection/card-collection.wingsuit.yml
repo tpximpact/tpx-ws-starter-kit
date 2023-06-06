@@ -1,0 +1,28 @@
+card_collection:
+  use: "@organisms/card-collection/card-collection.twig"
+  label: Card collection
+  description: Displays a collection of cards.
+  extends:
+    - spacer.settings
+  fields:
+    header:
+      type: text
+      label: Header
+      preview: Cards collection heading
+    description:
+      type: text
+      label: Description
+      description: The card description text.
+      preview: Optional description of the card, 160 characters limit
+    items:
+      type: pattern
+      label: Card items
+      preview:
+        - id: card
+        - id: card
+        - id: card
+  libraries:
+    - style: # site/card_collection.style
+        css:
+          component:
+            ../card-collection.css: { }

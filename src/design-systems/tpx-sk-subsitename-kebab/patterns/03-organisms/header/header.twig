@@ -1,0 +1,41 @@
+{# Classes #}
+{% set classes = [
+  'o-header',
+] | sort | join(' ') | trim %}
+
+{% set attributes = attributes|default(create_attribute())
+  .addClass(classes)
+  .setAttribute('title', title)
+%}
+
+{# Template #}
+<header {{ attributes }}
+  x-data="header()"
+  x-bind="bindHeader"
+>
+  <div class="o-header__columns">
+    <div class="o-header__first">
+      {{ pattern('logo', {padding: false, url: '/', title: 'Homepage'}) }}
+    </div>
+
+    {% if menu %}
+      <div class="o-header__second">
+        <div class="o-header__menu">
+          {{ menu }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="o-header__third">
+      <button class="o-header__mobile-menu-button mr-8 hidden">Menu</button>
+
+      {% if cta.title and cta.url %}
+        {{ pattern('button', {
+          text: cta.title,
+          url: cta.url,
+          color: 'light',
+        }, 'primary') }}
+      {% endif %}
+    </div>
+  </div>
+</header>

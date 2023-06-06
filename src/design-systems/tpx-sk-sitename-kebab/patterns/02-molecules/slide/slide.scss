@@ -1,0 +1,79 @@
+@import "~@splidejs/splide/src/css/core/object/objects/sr";
+
+.m-slide {
+  @apply w-full;
+
+  &--object-cover {
+    img,
+    video {
+      @apply object-cover;
+    }
+  }
+
+  &__item-indicator {
+    @screen sm {
+      @apply block border-b-3 border-grey-200 pb-8;
+    }
+
+    @screen lg {
+      @apply pb-10;
+    }
+  }
+}
+
+// Content variant.
+.m-slide--content {
+  @apply w-full h-full pr-2.5;
+
+  &.is-active {
+    .m-slide__item-indicator {
+      @apply border-blue-400;
+    }
+  }
+}
+
+// Gallery variant.
+.m-slide--image,
+.m-slide--video {
+  @apply flex flex-shrink-0 items-center justify-center w-full h-full bg-blue-100;
+
+  .m-slide {
+    &__content,
+    &__video-overlay {
+      @apply absolute inset-0 flex items-center justify-center bg-blue-100;
+    }
+
+    &__video-overlay {
+      @apply cursor-pointer;
+    }
+
+    &__play-button {
+      @apply absolute flex items-center justify-center w-12 min-w-12 h-12 border-4 border-blue bg-blue text-white;
+      @apply hocus:bg-white hocus:text-blue group-hocus:bg-white group-hocus:text-blue;
+
+      @screen lg {
+        @apply w-15 h-15;
+      }
+    }
+
+    &__play-icon,
+    &__pause-icon {
+      @apply absolute;
+    }
+  }
+
+  .splide {
+    &__video {
+      @apply w-full h-full;
+
+      * {
+        @apply h-full w-full;
+      }
+    }
+  }
+
+  img,
+  video {
+    @apply w-full h-full object-contain;
+  }
+}

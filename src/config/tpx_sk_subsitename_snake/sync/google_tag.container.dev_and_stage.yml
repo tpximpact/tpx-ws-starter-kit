@@ -1,0 +1,49 @@
+uuid: 4c16905e-a567-45be-8896-9016bdf6497c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: dev_and_stage
+label: 'Dev and stage'
+weight: 0
+tag_container_ids:
+  - GTM-XXXXXX
+advanced_settings:
+  gtm:
+    data_layer: dataLayer
+    include_classes: false
+    allowlist_classes: |-
+      google
+      nonGooglePixels
+      nonGoogleScripts
+      nonGoogleIframes
+    blocklist_classes: |-
+      customScripts
+      customPixels
+    include_environment: true
+    environment_id: env-136
+    environment_token: zPxID9kP8_vHZkIBAZ335Q
+dimensions_metrics: {  }
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/admin*\r\n/batch*\r\n/node/add*\r\n/node/*/edit\r\n/node/*/delete\r\n/user/*/edit*\r\n/user/*/cancel*"
+  response_code:
+    id: response_code
+    negate: true
+    response_codes: |-
+      403
+      404
+events:
+  sign_up:
+    method: CMS
+  search: {  }
+  generate_lead:
+    value: ''
+    currency: ''
+  webform_purchase: {  }
+  login:
+    method: CMS
+  custom: {  }

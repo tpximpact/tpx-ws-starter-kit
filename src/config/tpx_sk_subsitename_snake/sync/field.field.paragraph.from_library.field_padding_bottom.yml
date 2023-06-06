@@ -1,0 +1,23 @@
+uuid: edf18c1a-4283-4242-83fb-d36433f4911d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_bottom
+    - paragraphs.paragraphs_type.from_library
+  module:
+    - options
+id: paragraph.from_library.field_padding_bottom
+field_name: field_padding_bottom
+entity_type: paragraph
+bundle: from_library
+label: 'Padding - Bottom'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: none
+default_value_callback: ''
+settings: {  }
+field_type: list_string

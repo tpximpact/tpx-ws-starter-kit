@@ -1,0 +1,46 @@
+slide:
+  use: "@molecules/slide/slide.twig"
+  namespace: "Organisms/Slider"
+  label: Slide
+  extends:
+    - slider.settings.object_fit
+  variants:
+    content:
+      label: Content
+      fields:
+        video: false
+        content:
+          - id: card
+      settings:
+        indicator: true
+    image:
+      label: Image
+    video:
+      label: Video
+      fields:
+        video: 'https://vimeo.com/556856745'
+  fields:
+    content:
+      type: pattern
+      label: Content
+      preview:
+        - id: image
+          variant: image
+          settings:
+            url: 'https://picsum.photos/720/1280?random=1'
+    video:
+      type: textfield
+      label: Video
+      description: The full URL or path to a video. Also supports YouTube & Vimeo URLs.
+      preview: 'test'
+  settings:
+    indicator:
+      type: boolean
+      label: Indicator
+      description: Highlight the active slide
+      default_value: false
+  libraries:
+    - pattern_slide:
+        css:
+          component:
+            ../slide.css: {}

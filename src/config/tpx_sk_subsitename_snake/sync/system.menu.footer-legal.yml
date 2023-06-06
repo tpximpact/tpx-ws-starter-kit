@@ -1,0 +1,8 @@
+uuid: c940c10c-a202-4d9f-8206-ed4ab28beee8
+langcode: en
+status: true
+dependencies: {  }
+id: footer-legal
+label: 'Footer legal'
+description: 'Footer legal menu'
+locked: false

@@ -1,0 +1,10 @@
+uuid: 84312cfa-c186-4a36-b727-844e3858f889
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.testimonial
+label: Testimonial
+targetEntityType: media
+cache: true

@@ -1,0 +1,49 @@
+{% set code_block_classes = 'block bg-grey-100 p-4 mb-4 text-sm border border-grey-200' %}
+{% set code_label_classes = 'bg-orange p-1 text-sm text-underline rounded-t-md border border-orange' %}
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+<p class="mb-2">The purpose of this pattern is to provide a consistent approach to component spacing, when patterns are composed to build pages.</p>
+<h6><strong><em>Don't include this pattern directly as part of your pattern.</em></strong></h6>
+
+<p class="my-4">Extend this pattern using the `<code>extends</code>` key in your pattern definition, like so:</p>
+<code class="{{ code_label_classes }}">your_pattern_id.wingsuit.yml</code>
+<code class="{{ code_block_classes }}">
+  your_pattern_id:<br>
+  <strong>
+    &nbsp;&nbsp;extends:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;- spacer.settings<br>
+  </strong>
+  &nbsp;&nbsp;fields:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+</code>
+
+<p class="mb-2">Then apply the padding to the most appropriate place with in your pattern template:</p>
+<code class="{{ code_label_classes }}">your_pattern_id.twig</code>
+<code class="{{ code_block_classes }}">
+  {{ "{% set padding_top = padding_top|default('none') %}" }}<br>
+  {{ "{% set padding_bottom = padding_bottom|default('none') %}" }}<br>
+  {{ "{% set spacing = {<br>
+    &nbsp;&nbsp;'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],<br>
+    &nbsp;&nbsp;'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],<br>
+  } %}" }}
+  <br><br>
+
+  &lt;div class="your-pattern-class ... {{ '{{ spacing.padding_top }} {{ spacing.padding_bottom }}' }}"&gt;<br>
+    &nbsp;&nbsp;Example pattern<br>
+  &lt;/div&gt;
+</code>
+
+<p class="mb-2">This would generate the following output:</p>
+<code class="{{ code_label_classes }}">your_pattern_id.twig <small>(rendered)</small></code>
+<code class="{{ code_block_classes }}">
+  &lt;div class="your-pattern-class ... {{ spacing.padding_top }} {{ spacing.padding_bottom }}"&gt;<br>
+    &nbsp;&nbsp;Example pattern<br>
+  &lt;/div&gt;
+</code>
+
+<div class="mb-16 bg-primary text-white px-4 {{ spacing.padding_top }} {{ spacing.padding_bottom }}">
+  <p>Example pattern</p>
+</div>

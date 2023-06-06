@@ -1,0 +1,13 @@
+# Ignore any path/file using .gitignore syntax
+
+dist/
+docroot/storybook
+pattern-lab/
+vendor/
+tools/tests/vrt/backstop_data
+preview.js-generated-config-entry.js
+storybook-init-framework-entry.js
+*.config.js
+
+# Ignore yeoman new-component templates
+tools/new-component/templates

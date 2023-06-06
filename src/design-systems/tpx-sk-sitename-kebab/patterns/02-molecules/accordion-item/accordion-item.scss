@@ -1,0 +1,16 @@
+/* :checked - resize to full height */
+.m-accordion-item {
+  [aria-expanded='true'] svg {
+    @apply -rotate-90 transition;
+  }
+
+  &__trigger[type=button] {
+    &[aria-expanded='true'] {
+      @apply rounded-b-0 border-b-0;
+    }
+    &:focus {
+      outline-offset: 4px;
+      outline-color: black;
+    }
+  }
+}

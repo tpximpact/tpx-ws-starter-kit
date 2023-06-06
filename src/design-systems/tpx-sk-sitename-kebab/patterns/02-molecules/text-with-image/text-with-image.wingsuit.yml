@@ -1,0 +1,40 @@
+text_with_image:
+  use: "@molecules/text-with-image/text-with-image.twig"
+  label: Text with image
+  description: Text with image
+  fields:
+    heading:
+      type: text
+      label: Heading
+      preview: Contact us
+    copy:
+      type: text
+      label: Subheading
+      preview: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum consequat ipsum. Maecenas ut turpis et quam convallis fermentum non sit amet nibh.
+    cta_text:
+      type: text
+      label: CTA text
+      preview: Contact Us
+    cta_link:
+      type: text
+      label: CTA url
+      preview: '/test'
+    media:
+      type: text
+      label: Media
+      preview: 'ws-assets://images/example.png'
+  settings:
+    image_alignment:
+      type: select
+      required: true
+      label: alignment
+      preview: Right
+      default_value: left
+      options:
+        left: Left
+        right: Right
+  libraries:
+    - style:
+        css:
+          component:
+            '../text-with-image.css': {}

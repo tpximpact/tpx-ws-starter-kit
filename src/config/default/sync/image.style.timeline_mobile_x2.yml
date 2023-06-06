@@ -1,0 +1,17 @@
+uuid: 7754dec9-47ef-4bb5-8aa6-52c14e5be20b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: timeline_mobile_x2
+label: 'Timeline mobile x2'
+effects:
+  f095efc3-0315-4266-a3d2-45bf93074c49:
+    uuid: f095efc3-0315-4266-a3d2-45bf93074c49
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1280
+      height: 720
+      crop_type: focal_point

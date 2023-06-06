@@ -1,0 +1,14 @@
+<nav role="navigation" aria-label="Footer actions">
+  <ul class="list-reset lg:ml-20 my-6 grid sm:grid-cols-2">
+    {% for item in items %}
+      <li class="my-2 mr-2 sm:mr-0 sm:pr-5 text-left">
+        <a
+          class="flex items-center lg:text-4xl text-3xl text-white font-bold hocus:text-primary hocus:underline not-italic {% if (item.in_active_trail) %}is-active{% endif %}"
+          href="{{ item.url }}" target="{{ item.url.getOption("attributes").target }}">
+          {{ item.title }}
+          {{ pattern('svg_icon', {icon: 'arrow', size: 'w-5 h-5'}) }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,51 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Pattern definition/Fields"
+      parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+          canvas: {hidden: true},
+        },
+      }}
+/>
+
+# Fields
+<Subtitle>Properties available to the <code>fields</code> property of a <code>.wingsuit.yml</code> pattern definition file</Subtitle>
+
+An array of field definitions keyed by the field name, using the [`snake_case` convention](https://en.wikipedia.org/wiki/Snake_case). <br/>
+Each of the `fields` are editable with knobs and passed as a variable to the Twig template defined in the [`use` key](?path=/docs/docs-pattern-definition-overview--page#use). <br/>
+The pattern fields should provide data to a component, which is usually rendered or visible to the user.<br/>
+
+**Each field can have the following properties**:
+
+## [**`type`**](?path=/docs/docs-pattern-definition-field-types--page)
+The field data type.
+
+**Available options are**:
+  * `text` <small>*(**default**)*</small>
+  * `numeric`
+  * [`pattern` <small>(docs)</small>](?path=/docs/docs-pattern-definition-field-types--page#pattern)
+  * [`object`  <small>(docs)</small>](?path=/docs/docs-pattern-definition-field-types--page#object)
+  * `boolean`
+```yaml
+  type: text
+```
+
+## **`label`**
+The user-friendly name of the field.
+```yaml
+label: Title
+```
+
+## **`description`** <small>(optional)</small>
+Descriptive text about the field.
+```yaml
+description: Describe the field use.
+```
+
+## **`preview`** <small>(optional)</small>
+Preview content, passed to the Storybook preview. It can be either a string or a Drupal render array.
+```yaml
+preview:
+    -
+```

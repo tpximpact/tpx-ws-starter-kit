@@ -1,0 +1,24 @@
+uuid: 081c3516-627c-4e95-9f13-87a5e8c3bbef
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.restricted_html
+  module:
+    - filter
+    - media
+    - site_settings
+    - system
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
+  - 'view media'
+  - 'view published site setting entities'

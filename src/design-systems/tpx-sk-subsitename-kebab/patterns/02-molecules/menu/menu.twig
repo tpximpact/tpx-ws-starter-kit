@@ -1,0 +1,8 @@
+{# Defaults #}
+{% set variant = variant|default('primary') %}
+
+{# Variants templates #}
+{% include '@molecules/menu/_menu--' ~ variant ~ '.twig' with {
+  variant: variant,
+  items: items
+} %}

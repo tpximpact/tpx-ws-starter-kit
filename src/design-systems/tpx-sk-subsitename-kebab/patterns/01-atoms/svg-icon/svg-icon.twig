@@ -1,0 +1,16 @@
+{# Settings #}
+{% set color = color|default('text-current') %}
+{% set stroke_inherits_color = stroke_inherits_color|default(false) %}
+{% set classes = ([
+  'svg fill-current',
+  size,
+  color,
+  stroke_inherits_color ? 'stroke-current',
+] | sort | join(' ') | trim ) %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+
+{# Template #}
+<svg {{ attributes }}>
+  <use xlink:href="{{ file_url('ws-assets://images/spritemap.svg') }}#{{ icon }}"></use>
+</svg>

@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * slider
+ *
+ * See slider.wingsuit.yaml for documentation.
+ */
+#}
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set attributes = anchor ? attributes.setAttribute('id', anchor) : attributes %}
+{% set color = color|default('grey') %}
+{% set object_fit = object_fit|default('contain') %}
+{% set buttonIconSize = 'w-4 h-4 lg:w-6 lg:h-6' %}
+{% set easing = easing == 'default' ? 'cubic-bezier(.75,.01,.25,1)' : easing %}
+
+{# Classes #}
+{% set colorClasses = pattern_configuration('slider', variant, 'color')[color] %}
+{% set hoverClasses = pattern_configuration('slider', variant, 'hover')[color] %}
+
+{% set classes = [
+  'o-slider',
+  'o-slider--' ~ variant|clean_class,
+  'o-slider--object-' ~ object_fit|clean_class,
+] | sort | join(' ') | trim %}
+
+{% set paginationButtonClasses = [
+  'flex', 'items-center', 'justify-center',
+  'w-12 lg:w-15 min-w-12', 'h-12 lg:h-15',
+  'border-4', colorClasses,
+  'hocus:bg-white', hoverClasses,
+] | sort | join(' ') | trim %}
+
+{% set attributes = attributes
+  .addClass(classes)
+  .setAttribute('data-autoplay', autoplay ? '1' : '0')
+  .setAttribute('data-autoplay-toggle', autoplay_toggle ? '1' : '0')
+  .setAttribute('data-pause-on-input', pause_on_input ? '1' : '0')
+  .setAttribute('data-loop', loop ? '1' : '0')
+  .setAttribute('data-rewind', rewind and not loop ? '1' : '0')
+  .setAttribute('data-pager-buttons', pager_buttons ? '1' : '0')
+  .setAttribute('data-pagination', pagination ? '1' : '0')
+  .setAttribute('data-interval', interval ? interval|number_format(0, '', '') : 5000)
+  .setAttribute('data-speed', speed ? speed|number_format(0, '', '') : 750)
+  .setAttribute('data-easing', easing)
+%}
+
+{# Variants templates #}
+{% include '@organisms/slider/_slider--' ~ variant|clean_class ~ '.twig' %}

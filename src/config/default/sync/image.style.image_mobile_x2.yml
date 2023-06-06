@@ -1,0 +1,15 @@
+uuid: 1e054394-a953-4122-a722-87d4ca15bd0b
+langcode: en
+status: true
+dependencies: {  }
+name: image_mobile_x2
+label: 'Image mobile x2'
+effects:
+  61f1c39b-511a-4cdb-bb1f-ba5f030baa58:
+    uuid: 61f1c39b-511a-4cdb-bb1f-ba5f030baa58
+    id: image_scale
+    weight: 1
+    data:
+      width: 604
+      height: null
+      upscale: false

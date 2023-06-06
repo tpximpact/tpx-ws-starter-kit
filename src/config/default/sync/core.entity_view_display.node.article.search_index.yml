@@ -1,0 +1,37 @@
+uuid: 396b0aad-c322-4a38-822b-7e946449772d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.article.field_body
+    - field.field.node.article.field_categories
+    - field.field.node.article.field_listing_date
+    - field.field.node.article.field_listing_image
+    - field.field.node.article.field_meta_description
+    - field.field.node.article.field_meta_title
+    - node.type.article
+  module:
+    - user
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.search_index
+targetEntityType: node
+bundle: article
+mode: search_index
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_body: true
+  field_categories: true
+  field_listing_date: true
+  field_listing_image: true
+  field_meta_description: true
+  field_meta_title: true
+  langcode: true
+  links: true

@@ -1,0 +1,119 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 18ee924b-7bb9-4699-8416-eca50e8b0eb4
+  bundle: page
+  default_langcode: en
+  depends:
+    cf34e7a9-ff29-4a88-b9ae-07342532b3b7: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '404 - Page not found'
+  created:
+    -
+      value: 1669393179
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /404
+      langcode: en
+      pathauto: 0
+  publish_state:
+    -
+      value: _none
+  unpublish_state:
+    -
+      value: _none
+  field_body:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 72921a08-0a8c-49c2-a2fc-d8cd303c5c27
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1669393211
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_add_to_sub_nav:
+            -
+              value: false
+          field_padding_bottom:
+            -
+              value: medium
+          field_padding_top:
+            -
+              value: medium
+          field_text:
+            -
+              value: '<p>404 copy to go here.</p>'
+              format: full_html
+  field_hero:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b37f32a3-b238-4d84-9d43-d69705efa8d9
+          bundle: hero_simple
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1669393188
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_label:
+            -
+              value: '404 - Page not found'
+  field_listing_date:
+    -
+      value: '2022-11-25'
+  field_listing_image:
+    -
+      entity: cf34e7a9-ff29-4a88-b9ae-07342532b3b7
+  field_meta_description:
+    -
+      value: '404 - Page not found'
+  field_meta_title:
+    -
+      value: '404 - Page not found'

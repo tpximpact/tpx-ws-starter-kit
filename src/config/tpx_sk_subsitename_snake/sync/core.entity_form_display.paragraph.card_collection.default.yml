@@ -1,0 +1,134 @@
+uuid: 5d7ebd81-e427-4af5-a5e8-c3d82629c563
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_collection.field_card_items
+    - field.field.paragraph.card_collection.field_heading
+    - field.field.paragraph.card_collection.field_leafs
+    - field.field.paragraph.card_collection.field_padding_bottom
+    - field.field.paragraph.card_collection.field_padding_top
+    - field.field.paragraph.card_collection.field_text
+    - paragraphs.paragraphs_type.card_collection
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_fields
+        - group_settings
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_settings:
+      children:
+        - field_leafs
+        - group_padding
+      label: Settings
+      region: content
+      parent_name: group_content
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_fields:
+      children:
+        - field_heading
+        - field_text
+        - field_card_items
+      label: Fields
+      region: content
+      parent_name: group_content
+      weight: 5
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_padding:
+      children:
+        - field_padding_top
+        - field_padding_bottom
+      label: Padding
+      region: content
+      parent_name: group_settings
+      weight: 24
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.card_collection.default
+targetEntityType: paragraph
+bundle: card_collection
+mode: default
+content:
+  field_card_items:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_leafs:
+    type: boolean_checkbox
+    weight: 23
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_padding_bottom:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_padding_top:
+    type: options_select
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

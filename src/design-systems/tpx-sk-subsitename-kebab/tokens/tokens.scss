@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "font";
+  @import "base";
+  @import "typography";
+
+  .tabs  {
+    @apply flex relative z-20 m-2.5 ;
+
+    &__link {
+      @apply relative flex grow items-center overflow-hidden min-h-[3rem];
+      @apply pt-5 pb-6 px-6 rounded-t-lg box-border;
+      @apply font-bold font-serif not-italic leading-5 text-grey-400;
+
+      &:hover,
+      &:focus {
+        @apply bg-primary-300 text-black;
+      }
+
+      &.is-active {
+        @apply text-black;
+
+        &::before {
+          @apply absolute block border-b-4 border-primary w-full;
+          @apply inset-x-0 bottom-0 top-auto;
+          content: "";
+          height: 0.1875rem;
+        }
+      }
+    }
+  }
+
+  .tabs-wrapper {
+    &::after {
+      @apply relative block w-full h-[2.375rem] -mt-12 mx-auto mb-8 z-10;
+      content: "";
+      box-shadow: 0 10px 20px -16px #333;
+    }
+  }
+
+  .tabs__link  {
+    @apply relative;
+  }
+
+  .bg-success {
+    color: #32cea4!important;
+    background-color: #145242!important;
+  }
+
+  .bg-warning {
+    color: #efcf64!important;
+    background-color: #605328!important;
+  }
+
+  .bg-error {
+    color: #f39b9d!important;
+    background-color: #583333!important;
+  }
+
+  .message {
+    padding-bottom: 1rem;
+  }
+
+  .message:last-child {
+    padding-bottom: 0;
+  }
+
+}
+
+@layer components {
+  @import "../patterns/01-atoms/button/button";
+}
+
+@layer utilities {
+  @import "utilities";
+}
+

@@ -1,0 +1,17 @@
+uuid: 27520c0f-d5b3-466b-b581-5f3c75663ea7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_landscape_desktop_x1
+label: 'Wide landscape desktop x1'
+effects:
+  94c010b7-98f4-4a86-bfa1-05e47560e7aa:
+    uuid: 94c010b7-98f4-4a86-bfa1-05e47560e7aa
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 880
+      height: 495
+      crop_type: focal_point

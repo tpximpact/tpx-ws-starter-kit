@@ -1,0 +1,17 @@
+uuid: 3319abc0-8af8-4d98-adb3-a2e865a01705
+langcode: en
+status: true
+dependencies:
+  module:
+    - iframeremove
+name: 'iFrame content'
+format: iframe_content
+weight: 0
+filters:
+  iframeremove_filter:
+    id: iframeremove_filter
+    provider: iframeremove
+    status: false
+    weight: 0
+    settings:
+      iframeremove_whitelist: "*.jotform.com\r\n*doctify.com\r\n*.onetrust.com"

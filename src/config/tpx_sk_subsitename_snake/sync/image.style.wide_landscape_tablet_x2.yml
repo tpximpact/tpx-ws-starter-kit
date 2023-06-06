@@ -1,0 +1,17 @@
+uuid: 17238278-2338-40ea-8220-119b8df9477f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_landscape_tablet_x2
+label: 'Wide landscape tablet x2'
+effects:
+  7ee2443d-f280-427a-8dfa-e6bc9deb2887:
+    uuid: 7ee2443d-f280-427a-8dfa-e6bc9deb2887
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1440
+      height: 810
+      crop_type: focal_point

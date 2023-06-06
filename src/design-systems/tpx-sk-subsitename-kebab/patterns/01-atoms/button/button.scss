@@ -1,0 +1,58 @@
+.a-button {
+  @apply relative flex inline-flex items-center justify-center z-0;
+  @apply py-4 px-6 rounded-2 border-2 overflow-hidden;
+  @apply text-center lg:text-xl text-secondary-600 font-serif font-bold not-italic leading-none;
+  @apply cursor-pointer transition-all duration-100;
+  @apply outline-none active:outline-dashed;
+
+  &:active {
+    outline-color: theme('colors.secondary.600');
+  }
+
+  &--primary {
+    @apply text-white bg-secondary-600 border-secondary-300;
+  }
+
+  &--secondary {
+    @apply bg-transparent;
+    @apply hocus:before:bg-primary;
+  }
+
+  &--link {
+    @apply p-1 italic font-medium border-0 rounded-none before:hidden;
+    @apply hocus:bg-orange;
+    text-underline-offset: 1px;
+  }
+
+  &--light {
+    &:active {
+      outline-color: theme('colors.white');
+    }
+
+    &.a-button {
+      &--primary {
+        @apply bg-white text-secondary-600 border-secondary-200;
+        @apply hocus:before:bg-orange;
+      }
+
+      &--secondary {
+        @apply text-white border-white;
+        @apply hocus:before:bg-secondary-500;
+
+        &:active {
+          outline-color: theme('colors.white');
+        }
+      }
+    }
+  }
+
+  &--align {
+    &-left {
+      @apply text-left justify-start;
+    }
+
+    &-right {
+      @apply text-right justify-end;
+    }
+  }
+}

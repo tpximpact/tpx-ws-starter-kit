@@ -1,0 +1,17 @@
+uuid: f58754c4-40ba-452f-9fb7-26876c462297
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait_tablet_x1
+label: 'Portrait tablet x1'
+effects:
+  b387e7fd-8567-4ac2-825e-0983e291059b:
+    uuid: b387e7fd-8567-4ac2-825e-0983e291059b
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 133
+      height: 133
+      crop_type: focal_point

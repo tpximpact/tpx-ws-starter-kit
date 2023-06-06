@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * slider
+ *
+ * See slider.wingsuit.yaml for documentation.
+ */
+#}
+
+{% set classes = [
+  container ? 'page-container',
+] %}
+
+<div {{ attributes.addClass(classes) }} x-data="sliderBehavior()">
+  <div class="splide o-slider__slider relative">
+    <div class="splide__track o-slider__slider-track">
+      <ul class="splide__list o-slider__slides inline-flex">
+        {% for item in items %}
+          <li class="list-none splide__slide w-full">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="o-slider__controls relative bg-white sm:absolute bottom-0 right-0 flex sm:justify-start">
+      {% if pager_buttons or pager_text or (autoplay and autoplay_toggle) %}
+        <div class="o-slider__pager-buttons">
+          {% if autoplay and autoplay_toggle %}
+            <button class="o-slider__autoplay-toggle relative {{ paginationButtonClasses }}"
+                    title="Pause"
+                    x-bind="bindToggleAutoplay"
+            >
+              <span class="o-slider__play-icon absolute" x-show="isPaused" x-transition>
+                {{ pattern('svg_icon', {icon: 'play', size: 'w-9 h-9'}) }}
+              </span>
+              <span class="o-slider__pause-icon absolute" x-show="!isPaused" x-transition>
+                {{ pattern('svg_icon', {icon: 'pause', size: 'w-8 h-8'}) }}
+              </span>
+            </button>
+          {% endif %}
+
+          {% if pager_buttons %}
+            <button class="{{ paginationButtonClasses }} rotate-180"
+                    title="previous"
+                    x-bind="prevStep"
+                    x-bind:disabled="prevDisabled"
+            >
+              {{ pattern('svg_icon', {icon: 'arrow', size: buttonIconSize}) }}
+            </button>
+          {% endif %}
+
+          {% if pager_text %}
+            <div class="o-slider__controls-pager mx-2 inline-flex items-center text-blue-400">
+                <span class="o-slider__controls-pager-current"
+                      x-text="currentIndex + 1">1</span>
+              <span class="mx-0.5">/</span>
+              <span class="o-slider__controls-pager-total">{{ items|length }}</span>
+            </div>
+          {% endif %}
+
+          {% if pager_buttons %}
+            <button class="{{ paginationButtonClasses }} ml-2"
+                    title="next"
+                    x-bind="nextStep"
+                    x-bind:disabled="nextDisabled"
+            >
+              {{ pattern('svg_icon', {icon: 'arrow', size: buttonIconSize}) }}
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

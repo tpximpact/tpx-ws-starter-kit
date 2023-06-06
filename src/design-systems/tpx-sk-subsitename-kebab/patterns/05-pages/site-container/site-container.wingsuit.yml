@@ -1,0 +1,55 @@
+site_container:
+  use: "@pages/site-container/site-container.twig"
+  label: Site Container
+  description: Site Container template
+  variants:
+    default:
+      label: Default
+  fields:
+    header:
+      type: pattern
+      label: Header
+      description: The global site header
+      preview:
+        id: header
+    top:
+      type: pattern
+      label: Top
+      description: |
+        Top of the page content.
+        This region is named `top` to avoid conflict with the default `page_top` Drupal region.
+      preview:
+        - id: breadcrumbs
+          fields:
+            color: purple
+    sidebar:
+      type: pattern
+      label: Sidebar
+      description: |
+        Content that appears in the sidebar.
+        Relevant for pages that use right-aligned content for desktop devices, like search result filters.
+    main:
+      type: pattern
+      label: Main content
+    bottom:
+      type: pattern
+      label: Bottom
+      description: |
+        Bottom of the page content.
+        This region is named `bottom` to avoid conflict with the default `page_bottom` Drupal region.
+    footer:
+      type: pattern
+      label: Footer
+      preview:
+        id: footer
+  settings:
+    page_color:
+      label: Colour scheme
+      type: select
+      default_value: blue
+      options:
+        blue: Blue
+        orange: Orange
+        green: Green
+        purple: Purple
+      preview: false

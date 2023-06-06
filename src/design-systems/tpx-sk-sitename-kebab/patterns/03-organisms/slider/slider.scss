@@ -1,0 +1,123 @@
+@import "~@splidejs/splide/src/css/core/object/objects/sr";
+
+.o-slider {
+  @apply w-full h-full;
+
+  &__controls {
+    @apply items-stretch pt-2 sm:pl-2;
+  }
+
+  &__pager-buttons {
+    @apply flex;
+
+    button {
+      @apply ml-2 first:ml-0;
+
+      &[disabled="disabled"] {
+        @apply pointer-events-none opacity-50;
+      }
+    }
+
+    + .o-slider__pagination {
+      @apply sm:ml-2;
+    }
+  }
+
+  &__pagination {
+    @apply flex justify-center w-full sm:w-auto bottom-0 right-0 px-4 sm:px-8 py-4 lg:py-5 bg-blue;
+  }
+
+  &__pagination-button {
+    @apply flex w-4 h-4 mx-1 bg-blue transition-all;
+    box-shadow: inset 0 0 0 theme('spacing.2') theme('colors.white');
+
+    &.is-active {
+      @apply bg-blue;
+      box-shadow: inset 0 0 0 theme('spacing.1') theme('colors.white');
+    }
+  }
+
+  &__item-indicator {
+    @screen sm {
+      @apply block border-b-3 border-grey-200 pb-8;
+    }
+
+    @screen lg {
+      @apply pb-10;
+    }
+  }
+
+  .splide {
+    &__video {
+      @apply h-full;
+    }
+
+    &__video__wrapper {
+      @apply #{'!flex'};
+    }
+  }
+}
+
+// Content variant.
+.o-slider--content {
+  .o-slider {
+    &__slides {
+      &.splide__list {
+        width: calc(100% + theme('spacing[2.5]'));
+
+        @screen sm {
+          width: calc(100% + theme('spacing.4'));
+        }
+
+        @screen lg {
+          width: calc(100% + theme('spacing.9'));
+        }
+      }
+    }
+  }
+}
+
+// Gallery variant.
+.o-slider--gallery,
+.o-slider--carousel {
+  @apply overflow-hidden;
+  aspect-ratio: 1/1;
+
+  @screen sm {
+    aspect-ratio: 3/2;
+  }
+
+  @screen lg {
+    aspect-ratio: 2/1;
+  }
+
+  &.o-slider {
+    &--object-cover {
+      .m-slide {
+        img,
+        video,
+        iframe {
+          @apply object-cover;
+        }
+      }
+    }
+  }
+
+  .o-slider {
+    &__slider {
+      @apply flex flex-col sm:flex-row h-full;
+    }
+
+    &__slider-track {
+      @apply flex w-full h-full;
+    }
+
+    &__slides {
+      @apply w-full;
+    }
+
+    &__pager-buttons {
+      @apply absolute sm:relative pl-2 pt-2 sm:p-0 bottom-full right-0 bg-white;
+    }
+  }
+}

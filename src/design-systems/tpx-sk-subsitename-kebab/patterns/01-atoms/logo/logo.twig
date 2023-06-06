@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * logo
+ *
+ * See logo.wingsuit.yaml for documentation.
+ */
+#}
+{# Defaults #}
+{% set tag_name = tag_name|default('div') %}
+{% set color = color|default('white') %}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Classes #}
+{% set classes = [
+  'a-logo flex',
+  padding ? 'p-5',
+] %}
+
+{% if url is not empty %}
+  {% set attributes = attributes.setAttribute('href', url) %}
+  {% set tag_name = 'a' %}
+{% endif %}
+
+{% set attributes = attributes
+  .addClass(classes | sort | join(' ') | trim)
+  .setAttribute('title', title)
+%}
+
+{# Template #}
+<{{ tag_name }}{{ attributes }}>
+  {{ pattern('svg_icon', {
+    icon: 'logo',
+    size: 'w-full',
+    attributes: create_attribute().setAttribute('viewBox', '0 0 307 134'),
+  }) }}
+</{{ tag_name }}>

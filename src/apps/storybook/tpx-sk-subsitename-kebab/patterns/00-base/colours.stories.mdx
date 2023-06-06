@@ -1,0 +1,88 @@
+import { Meta, ColorPalette, ColorItem, Subtitle } from '@storybook/addon-docs/blocks';
+import { colorShades } from "../../.storybook/utilities";
+const tailwindFile = require('../../config/silo/tailwind.json');
+const colors = tailwindFile.tailwind.theme.colors;
+import { brandColors } from '../../../../../../tailwind/config/_defaults';
+const semanticColors = [
+  'error',
+  'warning',
+  'success',
+];
+const ignoredBrandColors = [];
+const backgroundColors = {
+  bg: {
+    'white': colors.white,
+    'grey-100': colors.grey['100'],
+  },
+};
+const textColors = {
+  text: {
+    'black': colors.black,
+  },
+};
+
+<Meta title="Tokens/Colours"
+parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true }}}}
+/>
+
+# Colours
+
+<Subtitle>tpx_sk_subsitename colour palette.</Subtitle>
+
+## Brand
+<ColorPalette>
+  {
+    Object.keys(colors).map((key) => {
+      if (Object.keys(brandColors).includes(key) && !semanticColors.includes(key) && !ignoredBrandColors.includes(key)) {
+        const color = typeof colors[key] === 'string' ? [colors[key]] : colorShades(colors[key]);
+        const title = `.${key}`;
+        return (
+          <ColorItem key={key} title={title} colors={color} />
+        )
+      }
+    })
+  }
+</ColorPalette>
+
+## Text
+<ColorPalette>
+  {
+    Object.keys(textColors).map((key) => {
+      const color = typeof textColors[key] === 'string' ? [textColors[key]] : colorShades(textColors[key]);
+      const title = `.${key}`;
+      return (
+        <ColorItem key={key} title={title} colors={color} />
+      )
+    })
+  }
+</ColorPalette>
+
+## Semantic
+<ColorPalette>
+  {
+    Object.keys(colors).map((key) => {
+      if (semanticColors.includes(key) && !ignoredBrandColors.includes(key)) {
+        const color = typeof colors[key] === 'string' ? [colors[key]] : colorShades(colors[key]);
+        const title = `.${key}`;
+        return (
+          <ColorItem key={key} title={title} colors={color}/>
+        )
+      }
+    })
+  }
+</ColorPalette>
+
+## Other
+<ColorPalette>
+  {
+    Object.keys(colors).map((key) => {
+      if (!Object.keys(brandColors).includes(key) && !semanticColors.includes(key) && !ignoredBrandColors.includes(key)) {
+        const color = typeof colors[key] === 'string' ? [colors[key]] : colorShades(colors[key]);
+        const title = `.${key}`;
+        return color.length && (
+          <ColorItem key={key} title={title} colors={color} />
+        );
+      }
+    })
+  }
+</ColorPalette>

@@ -1,0 +1,33 @@
+module.exports = {
+  important: false,
+  darkMode: '[data-theme="dark"]',
+  content: [
+    './src/{apps,design-systems,themes}/**/*.{yml,twig,scss,js}',
+  ],
+  plugins: [ // https://tailwindcss.com/docs/plugins.
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries'),
+    require('./tailwind/plugins/utilities'),
+    require('./tailwind/plugins/variants'),
+  ],
+  presets: [ // https://tailwindcss.com/docs/presets.
+    require('./tailwind/config/screens'),
+    require('./tailwind/config/colors'),
+    require('./tailwind/config/themes'),
+    require('./tailwind/config/layout'),
+    require('./tailwind/config/flexbox'),
+    require('./tailwind/config/grid'),
+    require('./tailwind/config/spacing'),
+    require('./tailwind/config/sizing'),
+    require('./tailwind/config/typography'),
+    require('./tailwind/config/backgrounds'),
+    require('./tailwind/config/borders'),
+    require('./tailwind/config/effects'),
+    require('./tailwind/config/filters'),
+    require('./tailwind/config/transitions'),
+    require('./tailwind/config/animation'),
+    require('./tailwind/config/transforms'),
+    require('./tailwind/config/interactivity'),
+    require('./tailwind/config/svg'),
+  ],
+};

@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+langcode: en
+uuid: 6d7572ea-88d4-4776-9f3d-c4390b901f60
+name: 'tpx_sk_sitename'
+mail: no-reply@TPX-STARTERKIT-SITE-URL
+slogan: ''
+page:
+  403: /node/3916
+  404: /node/3911
+  front: /home
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

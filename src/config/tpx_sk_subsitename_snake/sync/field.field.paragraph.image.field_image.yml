@@ -1,0 +1,29 @@
+uuid: 55196ad8-c22b-4f81-80c9-784353e7f0ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.image
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: image
+label: Image
+description: "Images should have a minimum width of 1248px. <br/>\r\nIf the zoom setting is being used images should have a minimum width of 1920px."
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

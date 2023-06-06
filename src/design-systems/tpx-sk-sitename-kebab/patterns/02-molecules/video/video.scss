@@ -1,0 +1,9 @@
+.o-video {
+  &__content {
+    @apply relative overflow-hidden w-full ; 
+
+    > * {
+      @apply absolute h-full w-full inset-x-0 inset-y-0;
+    }
+  }
+}

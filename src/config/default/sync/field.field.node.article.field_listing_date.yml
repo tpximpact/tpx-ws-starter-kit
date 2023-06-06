@@ -1,0 +1,21 @@
+uuid: a9770d45-8f26-403e-ae29-30b37bbc7c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_date
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_listing_date
+field_name: field_listing_date
+entity_type: node
+bundle: article
+label: 'Listing date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

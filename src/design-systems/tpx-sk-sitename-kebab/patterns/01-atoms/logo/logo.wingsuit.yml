@@ -1,0 +1,18 @@
+logo:
+  use: "@atoms/logo/logo.twig"
+  label: Logo
+  description: Simple component to display the site logo.
+  fields:
+    title:
+      type: text
+      label: Title
+    url:
+      type: url
+      label: Url
+      description: The action url of the logo
+      preview: ''
+  settings:
+    padding:
+      label: Padding
+      type: boolean
+      default_value: true

@@ -1,0 +1,397 @@
+menus:
+  -
+    menu_name: main
+    title: 'About us'
+    parent: null
+    uri: 'internal:#about'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa
+  -
+    menu_name: main
+    title: 'Leadership team'
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/team'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: aac20188-836d-4750-b94e-39bd38f26eec
+  -
+    menu_name: main
+    title: 'Our vision'
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/vision'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 7061e484-69d7-4439-be46-b2d6064a7c1f
+  -
+    menu_name: main
+    title: 'Our impact'
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/impact'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 10d0a30a-7e23-46e4-ae31-3d1540407a32
+  -
+    menu_name: main
+    title: 'Who we are'
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/about-us'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 5133f0ae-6132-466a-a558-d4f649004827
+  -
+    menu_name: main
+    title: 'Annual report'
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/report'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: en
+    uuid: 72bf4dcb-3cc6-436b-b250-ddef683a4df8
+  -
+    menu_name: main
+    title: Careers
+    parent: 'menu_link_content:f46ad459-b9db-4a67-acbc-0b4ca6b9e5aa'
+    uri: 'internal:/careers'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: en
+    uuid: c1cfd62c-fadd-4314-9b7e-cc8822a15c8b
+  -
+    menu_name: main
+    title: 'Get support'
+    parent: null
+    uri: 'internal:#get-support'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: a7dec527-d5f5-4ae7-bf9a-fd7eeb260a67
+  -
+    menu_name: main
+    title: 'Our helpline'
+    parent: 'menu_link_content:a7dec527-d5f5-4ae7-bf9a-fd7eeb260a67'
+    uri: 'internal:/helpline'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 96b72dff-caa1-44e0-a6c4-733639a53823
+  -
+    menu_name: main
+    title: 'Health advice'
+    parent: 'menu_link_content:a7dec527-d5f5-4ae7-bf9a-fd7eeb260a67'
+    uri: 'internal:/advice'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 1ebf492b-e622-4f68-ab18-32b863226b74
+  -
+    menu_name: main
+    title: 'Support groups'
+    parent: 'menu_link_content:a7dec527-d5f5-4ae7-bf9a-fd7eeb260a67'
+    uri: 'internal:/support-groups'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: a1c3a37a-0db1-4ad9-be5b-6df5052fe3f5
+  -
+    menu_name: main
+    title: Blog
+    parent: null
+    uri: 'internal:/blog'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: de160a4c-c6e5-4b43-bc8f-e1dd75869fc7
+  -
+    menu_name: main
+    title: 'Contact us'
+    parent: null
+    uri: 'internal:/contact'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 7df44695-bfdd-47ca-8da8-b8e710f08e8c
+  -
+    menu_name: footer-4
+    title: Instagram
+    parent: null
+    uri: 'http://instagram.com'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 3835f781-6d6b-44f3-ad91-7d059f6de306
+  -
+    menu_name: footer-4
+    title: Twitter
+    parent: null
+    uri: 'http://twitter.com'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: eec18788-179f-426b-84d6-132b45974bd6
+  -
+    menu_name: footer-4
+    title: Facebook
+    parent: null
+    uri: 'http://facebook.com'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: a5830aba-ec7b-4192-a934-e67b49f9a776
+  -
+    menu_name: footer-4
+    title: Youtube
+    parent: null
+    uri: 'http://youtube.com'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 858d8b12-6ce7-4566-828c-b8573b55d2ab
+  -
+    menu_name: footer-1
+    title: 'Who we are'
+    parent: null
+    uri: 'internal:/about-us'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 940b8412-e6b6-4d2e-ab61-eea51dff38f4
+  -
+    menu_name: footer-1
+    title: 'Our vision'
+    parent: null
+    uri: 'internal:/vision'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 7c44ae61-b9f8-44ba-9f8a-84bacd8dee48
+  -
+    menu_name: footer-1
+    title: 'Our leadership team'
+    parent: null
+    uri: 'internal:/leadership'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 898677c7-1f55-4b34-9c23-421095b99f00
+  -
+    menu_name: footer-1
+    title: 'Annual report'
+    parent: null
+    uri: 'internal:/report'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 9103043a-55fd-4ff0-bd39-699be9e01b19
+  -
+    menu_name: footer-2
+    title: Support
+    parent: null
+    uri: 'internal:/support'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: bb65fd3f-befa-43fb-9e89-b0b985c532bc
+  -
+    menu_name: footer-2
+    title: 'Our helpline'
+    parent: null
+    uri: 'internal:/helpline'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 34220df7-58c8-45dd-b972-ffce5c002ca8
+  -
+    menu_name: footer-2
+    title: 'Support groups'
+    parent: null
+    uri: 'internal:/support-groups'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 91bd2c39-fa1e-4531-82ab-7a5ea2f6aab9
+  -
+    menu_name: footer-2
+    title: 'Health advice'
+    parent: null
+    uri: 'internal:/health-advice'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 28f5fe53-aaf4-45af-970e-b50d2f53f5aa
+  -
+    menu_name: footer-3
+    title: 'Our offices'
+    parent: null
+    uri: 'internal:/offices'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 9eff7c63-2a32-4f8b-9041-2810f041c196
+  -
+    menu_name: footer-3
+    title: 'Send us an email'
+    parent: null
+    uri: 'internal:/email'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 91dc4b0e-21d5-4373-9ae7-b7b9c62d2044
+  -
+    menu_name: footer-3
+    title: 'Give us a call'
+    parent: null
+    uri: 'internal:/telephones'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: 4d4740a0-13ef-4ba7-b7e6-062e1804f3ac
+  -
+    menu_name: footer-3
+    title: 'Join an event'
+    parent: null
+    uri: 'internal:/events'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: 001941ee-8d27-40f3-ab15-988fac73f942
+  -
+    menu_name: footer-legal
+    title: Cookies
+    parent: null
+    uri: 'internal:/cookies'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: 3d09239f-e9ed-4294-aeaa-baccacf07064
+  -
+    menu_name: footer-legal
+    title: Privacy
+    parent: null
+    uri: 'internal:/privacy'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 8ccba0ab-b97a-47fc-bd87-ea22674d663d
+  -
+    menu_name: footer-legal
+    title: Accessibility
+    parent: null
+    uri: 'internal:/accessibility'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: en
+    uuid: f925e180-cd3d-415b-98ac-28fdf768f798
+  -
+    menu_name: footer-legal
+    title: 'Terms and conditions'
+    parent: null
+    uri: 'internal:/terms-and-conditions'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: d9ed74a7-4ca9-46db-b497-714d2bf6b6d5

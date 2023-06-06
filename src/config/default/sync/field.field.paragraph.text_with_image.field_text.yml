@@ -1,0 +1,29 @@
+uuid: 72ef7f1c-1756-46c5-8aed-b02c530af5bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.text_with_image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    restricted_html: restricted_html
+    basic_html: basic_html
+    plain_text: '0'
+    iframe_content: '0'
+id: paragraph.text_with_image.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: text_with_image
+label: Copy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

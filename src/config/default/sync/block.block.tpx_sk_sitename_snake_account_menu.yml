@@ -1,0 +1,27 @@
+uuid: 26bad011-13e4-47f3-a0e5-ec44fe2d4b1d
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: gmxYWWHmgbe0Pnv8y48ZLSLH5mEHejOjAP6RLxUfdzU
+id: tpx_sk_sitename_snake_account_menu
+theme: tpx_sk_sitename_snake
+region: sidebar
+weight: -3
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

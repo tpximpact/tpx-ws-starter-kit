@@ -1,0 +1,100 @@
+{% import _self as menus %}
+
+{% macro create_dropdownIndicator(active) %}
+  {% set button_classes = ([
+    'a-menu-item__dropdown-button',
+    'a-menu-item__link',
+    'a-menu-item__link--primary',
+    active ? 'a-menu-item__link--active',
+    'right-0 bottom-2 xl:relative xl:bottom-0'
+  ] | sort | join(' ') | trim ) %}
+
+  <button
+    class="{{ button_classes }}"
+    :class="subMenuIsOpen && 'a-menu-item__link--active'"
+    x-ref="subMenuButton"
+    x-bind="bindToggleSubMenu"
+  >
+    <span class="a-menu-item__label">
+      {{ pattern('svg_icon', {
+        icon: 'chevron',
+        size: 'w-3.5 h-3.5 sm:w-5 sm:h-5 xl:w-3.5 xl:h-3.5',
+        attributes: create_attribute()
+          .addClass([
+            'transition-all pointer-events-none origin-center',
+          ])
+          .setAttribute(':class', "
+            {
+              'xl:-rotate-90': subMenuIsOpen,
+              'xl:rotate-90': !subMenuIsOpen,
+            }"
+          )
+      }) }}
+    </span>
+  </button>
+{% endmacro %}
+
+{% macro create_footerDropdownIndicator(active) %}
+  {% set button_classes = ([
+    'a-menu-item__link',
+    'a-menu-item__link--primary !flex-grow-0',
+    active ? 'a-menu-item__link--active',
+  ] | sort | join(' ') | trim ) %}
+
+  <button
+    class="{{ button_classes }}"
+    :class="footerIsOpen && 'a-menu-item__link--active'"
+  >
+    <span
+      class="transition-all pointer-events-none origin-center"
+      :class="{'-rotate-90': footerIsOpen, 'rotate-90': !footerIsOpen}"
+    >
+      {{ pattern('svg_icon', {icon: 'chevron', size: 'w-3.5 h-3.5'}) }}
+    </span>
+  </button>
+{% endmacro %}
+
+{% macro create_submenu(items, parent_title) %}
+  {% set container_classes = ([
+    'm-menu__submenu',
+  ] | sort | join(' ') | trim ) %}
+
+  <div class="{{ container_classes }}"
+       x-show="subMenuIsOpen"
+       x-ref="submenu"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 transform scale-110 translate-x-full xl:translate-x-0 xl:-translate-y-4"
+       x-transition:enter-end="opacity-100 transform scale-100"
+       x-transition:leave="transition ease-in duration-200 pointer-events-none"
+       x-transition:leave-start="opacity-100 transform scale-100"
+       x-transition:leave-end="opacity-0 transform scale-110 translate-x-full xl:translate-x-0 xl:-translate-y-4"
+  >
+    <div class="m-menu__submenu-container w-full-extended">
+      <div class="relative container mx-auto">
+        {% if parent_title %}
+          <h6 class="xl:hidden py-4 cursor-pointer" x-bind="bindToggleSubMenu">{{ parent_title }}</h6>
+        {% endif %}
+
+        <ul class="flex flex-col xl:grid grid-cols-3 gap-x-8 gap-y-2">
+          {% for item in items %}
+            {{ pattern('menu_item', {
+              title: item.title,
+              url: item.url,
+              below: item.below,
+              in_active_trail: item.in_active_trail
+            }, 'link') }}
+          {% endfor %}
+
+          <li class="a-menu-item a-menu-item--link xl:!hidden">
+            <button class="a-menu-item__link a-menu-item__link--link border-t-2 border-primary" x-bind="bindToggleSubMenu">
+              <span class="rotate-180 mr-4">
+                {{ pattern('svg_icon', {icon: 'chevron', size: 'w-2.5 h-5'}) }}
+              </span>
+              Back to main menu
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

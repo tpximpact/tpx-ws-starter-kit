@@ -1,0 +1,44 @@
+{# Defaults #}
+{% set variant = variant|default('primary') %}
+{% set tag_name = tag_name|default('button') %}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set color = color|default('dark') %}
+{% set align = align|default('center') %}
+{% set title = title|default(text) %}
+
+{# Classes #}
+{% set classes = [
+  'a-button',
+  'a-button--' ~ variant,
+  'a-button--' ~ color,
+  align is not same as('center') ? 'a-button--align-' ~ align,
+  width,
+] | sort | join(' ') | trim %}
+
+{# Attributes #}
+{% if url is not empty %}
+  {% set attributes = attributes
+    .setAttribute('href', url)
+    .setAttribute('target', target)
+  %}
+  {% set tag_name = 'a' %}
+{% endif %}
+
+{% set attributes = attributes
+  .addClass(classes)
+  .setAttribute('title', title)
+%}
+
+{# Template #}
+{% if text %}
+  <{{ tag_name }} {{ attributes }}>
+    {{ text }}
+    {% if variant == 'hero' %}
+      {{ pattern('svg_icon', {
+        icon: 'arrow',
+        size: 'w-5 h-4',
+        color: 'text-orange hocus:text-black',
+      }) }}
+    {% endif %}
+  </{{ tag_name }}>
+{% endif %}

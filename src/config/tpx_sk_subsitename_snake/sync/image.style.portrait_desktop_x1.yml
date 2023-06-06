@@ -1,0 +1,17 @@
+uuid: f40c6564-c3ef-4165-9f1c-4cde69e649d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait_desktop_x1
+label: 'Portrait desktop x1'
+effects:
+  619a41c4-ce50-42bb-b0fc-5c3c06f724a3:
+    uuid: 619a41c4-ce50-42bb-b0fc-5c3c06f724a3
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 270
+      height: 270
+      crop_type: focal_point

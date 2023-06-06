@@ -1,0 +1,10 @@
+uuid: e64d2e7c-e370-499d-9f6c-19eff1614962
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: Footer
+description: 'tpx_sk_sitename information links'
+locked: true

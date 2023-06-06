@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{%
+  set classes = [
+  'relative flex inline-flex items-center justify-center z-0',
+  'py-4 px-6 rounded-2 border-2 overflow-hidden',
+  'text-center lg:text-xl font-serif font-bold not-italic leading-none',
+  'outline-none active:outline-dashed',
+  'before:content before:absolute before:w-full before:h-1/2 before:left-0 before:-bottom-0.5',
+  'before:bg-secondary-500 before:translate-y-full before:transition-all before:-z-10 before:pointer-events-none',
+  'hocus:before:translate-y-0 hocus:before:active:bg-secondary-500',
+  'active:before:translate-y-full',
+  'text-white bg-secondary-600 border-secondary-300',
+  'cursor-pointer'
+]
+%}
+<input{{ attributes.addClass(classes) }} />{{ children }}

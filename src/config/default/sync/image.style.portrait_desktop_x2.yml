@@ -1,0 +1,17 @@
+uuid: b2ec205d-419c-46ea-96ab-7f31cd0d477d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait_desktop_x2
+label: 'Portrait desktop x2'
+effects:
+  ca69c285-5617-43dc-910b-9a64a74c5642:
+    uuid: ca69c285-5617-43dc-910b-9a64a74c5642
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 540
+      height: 540
+      crop_type: focal_point

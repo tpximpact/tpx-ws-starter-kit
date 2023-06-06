@@ -1,0 +1,20 @@
+uuid: eaabd4ec-efe2-405b-87ec-ed150f5461f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - tpx_sk_subsitename_snake_blocks
+  theme:
+    - tpx_sk_subsitename_snake
+id: tpx_sk_subsitename_snake_site_footer
+theme: tpx_sk_subsitename_snake
+region: footer
+weight: 0
+provider: null
+plugin: tpx_sk_subsitename_snake_site_footer
+settings:
+  id: tpx_sk_subsitename_snake_site_footer
+  label: 'tpx_sk_subsitename: Site Footer'
+  label_display: '0'
+  provider: tpx_sk_subsitename_snake_blocks
+visibility: {  }

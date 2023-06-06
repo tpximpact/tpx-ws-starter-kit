@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * button-group
+ *
+ * See button-group.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set gap = gap|default('small') %}
+{% set align = align|default('left') %}
+{% set grid = grid|default(false) %}
+{% set columns = columns|default(3) %}
+
+{# Classes #}
+{% set classes = [
+  'm-button-group',
+] | sort | join(' ') | trim %}
+
+{% set group_classes = [
+  'm-button-group__buttons',
+  'flex flex-row flex-wrap',
+  'items-baseline',
+  align == 'center' ? 'justify-center',
+  align == 'right' ? 'justify-end',
+  columns > 0 ? 'grid',
+  columns > 0 ? pattern_configuration('button_group', variant, 'columns')[columns],
+  pattern_configuration('button_group', '', 'gap')[gap],
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes) }}>
+  {% if heading %}
+    <div class="m-button-group__heading mb-4 lg:mb-7 text-base lg:text-3xl text-inherit">
+      {{ heading }}
+    </div>
+  {% endif %}
+
+  <div class="{{ group_classes }}">
+    {{ buttons }}
+  </div>
+</div>

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 249260a1-3650-4807-844a-1f23bb8fef3d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: lSekQhDsk0HvZVlZDsscyzGr3p9e0Fnom_EsAEaXbGU.jpg
+  uri:
+    -
+      value: 'public://oembed_thumbnails/lSekQhDsk0HvZVlZDsscyzGr3p9e0Fnom_EsAEaXbGU.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 26932
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1664529029

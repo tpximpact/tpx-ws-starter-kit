@@ -1,0 +1,88 @@
+import {Meta, Subtitle} from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs/Pattern definition/Overview"
+      parameters={{
+        viewMode: 'docs',
+        previewTabs: {
+          canvas: {hidden: true},
+        },
+      }}
+/>
+
+# Pattern definition - Overview
+<Subtitle>Keys available for use in <code>.wingsuit.yml</code> definition files</Subtitle>
+
+## **`use`**
+A path to the twig template that the pattern should use.
+```yaml
+use: '@atoms/blockquote/blockquote.twig'
+```
+
+## **`label`**
+The user-friendly name of the component.
+```yaml
+label: 'Blockquote'
+```
+
+## **`description`** <small>(optional)</small>
+Pattern description, appears when viewing the **Docs** Storybook tab.
+```yaml
+description: 'Describe your component'
+```
+
+## **`variants`** <small>(optional)</small>
+Pattern variants, appears when viewing the **Docs** Storybook tab.
+```yaml
+variants: 'Describe your component'
+```
+
+## [**`fields`**](?path=/docs/docs-pattern-definition-fields--page) <small>(optional)</small>
+An array of field definitions keyed by the field name, using the [`snake_case` convention](https://en.wikipedia.org/wiki/Snake_case). <br/>
+Each of the `fields` are editable with knobs and passed as a variable to the Twig template defined in the [`use` key](?path=/docs/docs-pattern-definition-overview--page#use). <br/>
+The pattern fields should provide data to a component, which is usually rendered or visible to the user.
+
+See the [*fields*](?path=/docs/docs-pattern-definition-fields--page) documentation for available properties.
+```yaml
+fields:
+  quote:
+    type: text
+    label: Quote
+    description: Quote text.
+    preview: Life is like riding a bicycle. To keep your balance, you must keep moving.
+```
+
+## [**`settings`**](?path=/docs/docs-pattern-definition-settings--page) <small>(optional)</small>
+An array of setting definitions keyed by the setting name, using the [`snake_case` convention](https://en.wikipedia.org/wiki/Snake_case). <br/>
+Each of the `settings` are editable with knobs and passed as a variable to the Twig template defined in the [`use` key](?path=/docs/docs-pattern-definition-overview--page#use). <br/>
+The pattern settings should provide configurable options to the component, which are most often visual changes such as background or text color options.<br/>
+
+See the [*settings*](?path=/docs/docs-pattern-definition-settings--page) documentation for available properties.
+```yaml
+settings:
+    color:
+      type: select
+      label: Color
+      required: false
+      options:
+        blue: Blue
+        black: Black
+```
+
+## **`libraries`** <small>(optional)</small>
+The pattern libraries should provide configurable options, which are most often visual changes such as text or background color options.<br/>
+```yaml
+libraries: []
+```
+
+## **`visible`** <small>(optional)</small>
+With the `visible` property you can control in which type of app a pattern should be visible to.<br />
+If the property is omitted, the pattern is visible in every app.
+
+**Available options are**:
+  * `storybook`
+  * `drupal`
+  * `none`
+```yaml
+visible: storybook
+```
+Multiple options can be supplied with a pipe separator, e.g. `storybook | drupal`

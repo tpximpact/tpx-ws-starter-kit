@@ -1,0 +1,8 @@
+.o-accordion {
+  &--white {
+    @apply bg-white;
+  }
+  &--grey {
+    @apply bg-grey;
+  }
+}

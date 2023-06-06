@@ -1,0 +1,34 @@
+cta_banner:
+  use: "@molecules/cta-banner/cta-banner.twig"
+  label: CTA Banner
+  description: CTA banner displayed across the site
+  fields:
+    heading:
+      type: text
+      label: Heading
+      preview: Contact us
+    subheading:
+      type: text
+      label: Subheading
+      preview: Speak to someone today, we’re ready for your call. Book an appointment or ask for advice here.
+    cta_text_1:
+      type: text
+      label: CTA text 1
+      preview: Give us a call
+    cta_link_1:
+      type: text
+      label: CTA url 1
+      preview: '/test'
+    cta_text_2:
+      type: text
+      label: CTA text 2
+      preview: Send us an email
+    cta_link_2:
+      type: text
+      label: CTA url 2
+      preview: '/test'
+  libraries:
+    - style: # site/cta_banner.style
+        css:
+          component:
+            '../cta-banner.css': {}

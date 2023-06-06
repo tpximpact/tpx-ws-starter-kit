@@ -1,0 +1,17 @@
+uuid: 14fc46ec-378c-462f-955c-bce921cff8ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: listing_image_desktop_x1
+label: 'Listing image desktop x1'
+effects:
+  eb6825a0-6906-4fa0-bbc8-2dbb85dc27f8:
+    uuid: eb6825a0-6906-4fa0-bbc8-2dbb85dc27f8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 396
+      height: 252
+      crop_type: focal_point

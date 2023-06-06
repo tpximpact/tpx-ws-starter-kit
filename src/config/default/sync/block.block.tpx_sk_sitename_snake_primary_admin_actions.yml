@@ -1,0 +1,20 @@
+uuid: 4dd9a9a6-6de8-4aad-bdaa-d8f813ee6d36
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: tpx_sk_sitename_snake_primary_admin_actions
+theme: tpx_sk_sitename_snake
+region: top
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

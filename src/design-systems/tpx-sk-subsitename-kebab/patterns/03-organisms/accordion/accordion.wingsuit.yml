@@ -1,0 +1,32 @@
+accordion:
+  use: "@organisms/accordion/accordion.twig"
+  label: Accordion
+  description: Displays a collection of accordion items.
+  extends:
+    - spacer.settings
+  fields:
+    header:
+      type: text
+      label: Header
+      preview: FAQs
+    items:
+      type: pattern
+      label: Accordion items
+      preview:
+        - id: accordion_item
+        - id: accordion_item
+        - id: accordion_item
+    anchor:
+      type: text
+      label: Anchor name
+      description: A unique CSS ID for this section of text, for sub navigation
+  settings:
+    color:
+      type: select
+      label: Colour
+      options:
+        blue: Blue
+        orange: Orange
+        green: Green
+        purple: Purple
+      preview: blue

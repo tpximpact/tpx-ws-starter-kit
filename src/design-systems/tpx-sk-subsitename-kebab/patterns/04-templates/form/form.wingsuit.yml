@@ -1,0 +1,197 @@
+form:
+  use: "@templates/form/form.twig"
+  label: Form
+  description: Form template
+  variants:
+    default:
+      label: Default
+  fields:
+    progress:
+      type: pattern
+      label: Progress
+      preview:
+        id: form_progress
+    form_build_id:
+      type: text
+      label: Build ID
+    form_token:
+      type: text
+      label: Token
+    form_id:
+      type: text
+      label: ID
+    actions:
+      type: pattern
+      label: Actions
+      preview:
+        - id: button_group
+          settings:
+            gap: medium
+            columns: 2
+          fields:
+            heading: ''
+            buttons:
+              - id: form_input
+                variant: submit
+                fields:
+                  value: Back
+              - id: form_input
+                variant: submit
+                fields:
+                  value: Next
+              # Workaround to prevent button group preview coming through to this pattern.
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+              - id: form_input
+                variant: hidden
+    children:
+      type: pattern
+      label: Children
+      description: The rendered markup of child elements of the webform.
+    elements:
+      type: pattern
+      label: Elements
+      preview:
+        - id: form_element
+          variant: textfield
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'First name'
+        - id: form_element
+          variant: textfield
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Middle name (optional)'
+        - id: form_element
+          variant: textfield
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Last name'
+        - id: form_element
+          variant: select
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Dropdown label'
+        - id: form_element
+          variant: date
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Date picker label'
+        - id: form_element
+          variant: file
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Upload a file'
+        - id: form_element
+          variant: checkboxes
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Looking for...'
+            children:
+              id: form_checkboxes
+              fields:
+                children:
+                  - id: form_element
+                    variant: 'checkbox'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'Consultant'
+                  - id: form_element
+                    variant: 'checkbox'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'General Practitioner (GP)'
+                  - id: form_element
+                    variant: 'checkbox'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'Treatment'
+        - id: form_element
+          variant: radios
+          fields:
+            label:
+              id: form_label
+              fields:
+                title: 'Looking for...'
+            children:
+              id: form_radios
+              fields:
+                children:
+                  - id: form_element
+                    variant: 'radio'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'Consultant'
+                  - id: form_element
+                    variant: 'radio'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'General Practitioner (GP)'
+                  - id: form_element
+                    variant: 'radio'
+                    fields:
+                      label_display: after
+                      label:
+                        id: form_label
+                        fields:
+                          title: 'Treatment'
+  libraries:
+    - style:
+        css:
+          component:
+            ../form.css: { }

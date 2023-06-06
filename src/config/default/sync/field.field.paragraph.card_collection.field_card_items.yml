@@ -1,0 +1,29 @@
+uuid: e9d78f65-707d-45bf-8c71-63a2a18ed84f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_items
+    - node.type.page
+    - paragraphs.paragraphs_type.card_collection
+id: paragraph.card_collection.field_card_items
+field_name: field_card_items
+entity_type: paragraph
+bundle: card_collection
+label: 'Card items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

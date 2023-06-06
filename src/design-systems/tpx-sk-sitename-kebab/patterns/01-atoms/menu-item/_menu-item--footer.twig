@@ -1,0 +1,19 @@
+{% import '@molecules/menu/_menu-macros.twig' as menus %}
+{% set social_media = title|lower %}
+{% set social_links = 'instagram' in social_media or 'facebook' in social_media or 'youtube' in social_media or
+  'twitter' in social_media or 'tiktok' in social_media or 'linkedin' in social_media  %}
+
+<li class="mt-2 mr-2 grid md:mr-0" {{ item_js }}>
+  <a class="mb-2 text-base lg:text-lg font-light not-italic hocus:underline {% if (item.in_active_trail) %}is-active{% endif %}"
+     href="{{ url }}" target="{{ url.getOption("attributes").target }}">
+    {% if social_links %}
+      <span class="inline-flex align-text-bottom">
+        {% include "@atoms/svg-icon/svg-icon.twig" with {
+          icon: social_media,
+          size: 'w-5 h-5',
+        } only %}
+      </span>
+    {% endif %}
+    {{ title }}
+  </a>
+</li>

@@ -1,0 +1,15 @@
+uuid: f2e8ed45-377e-408f-93e9-270bc251959e
+langcode: en
+status: true
+dependencies: {  }
+name: image_desktop_x2
+label: 'Image desktop x2'
+effects:
+  f0f94925-d21d-44ec-aad4-37ce278559b0:
+    uuid: f0f94925-d21d-44ec-aad4-37ce278559b0
+    id: image_scale
+    weight: 1
+    data:
+      width: 1656
+      height: null
+      upscale: false

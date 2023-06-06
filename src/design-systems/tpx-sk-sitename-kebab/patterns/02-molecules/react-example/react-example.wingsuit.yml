@@ -1,0 +1,16 @@
+react_example:
+  use: "@molecules/react-example/react-example.twig"
+  label: React Example
+  description: |
+    <p>The purpose of this pattern is to provide an example for creating and embedding react components.</p><br>
+    <p>To embed this react component into Drupal add the pattern into a twig template</p><br/>
+    <p>{{ pattern('react_example') }}</p>
+  libraries:
+    - style:
+        css:
+          component:
+            '../react-example.css': { }
+    - behavior:
+        js:
+          ../behaviors/react-example.js:
+            attributes: { defer: true }

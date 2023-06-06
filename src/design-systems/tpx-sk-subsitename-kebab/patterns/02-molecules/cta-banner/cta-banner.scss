@@ -1,0 +1,10 @@
+.m-cta-banner {
+  .a-button {
+    @apply w-max;
+
+    &--secondary {
+      @apply bg-white;
+      @apply lg:ml-auto mb-3 sm:mb-0;
+    }
+  }
+}

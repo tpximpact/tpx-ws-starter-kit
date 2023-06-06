@@ -1,0 +1,65 @@
+.o-header {
+  @apply relative w-full top-0 bg-white dark:bg-black text-white xl:text-black xl:dark:text-white font-normal z-50 transition-all duration-500;
+  height: auto !important;
+
+  &__columns {
+    @apply relative container flex items-stretch justify-between;
+  }
+
+  &__first {
+    @apply flex w-2/12 min-w-32 mr-6 flex-shrink-0 justify-start overflow-hidden py-2.5 lg:py-3.5;
+
+    .a-logo {
+      @apply w-full min-w-32 max-w-46 text-black fill-black transition-all duration-300 ease-in-out;
+      animation: slide-in-bottom 700ms theme('transitionTimingFunction.spring') both;
+      animation-delay: 350ms;
+    }
+  }
+
+  &__second {
+    @apply flex flex-shrink w-8/12 justify-end xl:justify-center;
+  }
+
+  &__third {
+    @apply hidden xl:flex ml-6 flex-shrink-0 w-2/12 items-center justify-end;
+  }
+
+  &__menu {
+    @apply flex;
+
+    .m-menu {
+      position: unset;
+
+      &__menu-wrapper {
+        @apply left-0;
+      }
+    }
+  }
+
+  &--fixed {
+    @apply fixed top-0 left-0 right-0;
+  }
+
+  &--slim {
+    .o-header {
+      &__first {
+        .a-logo {
+          @apply max-w-36 duration-500;
+        }
+      }
+    }
+  }
+
+  &--hidden {
+    @apply -translate-y-full duration-1000;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(150%) scale(115%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

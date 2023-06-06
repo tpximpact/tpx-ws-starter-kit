@@ -1,0 +1,20 @@
+uuid: 386f417c-6934-424e-bbb3-636663f7e7e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - tpx_sk_sitename_snake_blocks
+  theme:
+    - tpx_sk_sitename_snake
+id: tpx_sk_sitename_snake_site_header
+theme: tpx_sk_sitename_snake
+region: header
+weight: 0
+provider: null
+plugin: tpx_sk_sitename_snake_site_header
+settings:
+  id: tpx_sk_sitename_snake_site_header
+  label: 'tpx_sk_sitename: Site Header'
+  label_display: '0'
+  provider: tpx_sk_sitename_snake_blocks
+visibility: {  }

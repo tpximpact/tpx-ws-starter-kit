@@ -1,0 +1,46 @@
+# Application 'tpx_sk_acquia_sitename', environment 'dev'.
+dev:
+  root: /var/www/html/tpx_sk_acquia_sitename.dev/docroot
+  ac-site: tpx_sk_acquia_sitename
+  ac-env: dev
+  ac-realm: prod
+  uri: tpx_sk_acquia_sitenamedev.prod.acquia-sites.com
+  dev.livedev:
+    parent: '@tpx_sk_acquia_sitename.dev'
+    root: /mnt/gfs/tpx_sk_acquia_sitename.dev/livedev/docroot
+  host: tpx_sk_acquia_sitenamedev.ssh.prod.acquia-sites.com
+  user: tpx_sk_acquia_sitename.dev
+  paths:
+    drush-script: drush9
+
+
+# Application 'tpx_sk_acquia_sitename', environment 'prod'.
+prod:
+  root: /var/www/html/tpx_sk_acquia_sitename.prod/docroot
+  ac-site: tpx_sk_acquia_sitename
+  ac-env: prod
+  ac-realm: prod
+  uri: tpx_sk_acquia_sitename.prod.acquia-sites.com
+  prod.livedev:
+    parent: '@tpx_sk_acquia_sitename.prod'
+    root: /mnt/gfs/tpx_sk_acquia_sitename.prod/livedev/docroot
+  host: tpx_sk_acquia_sitename.ssh.prod.acquia-sites.com
+  user: tpx_sk_acquia_sitename.prod
+  paths:
+    drush-script: drush9
+
+
+# Application 'tpx_sk_acquia_sitename', environment 'test'.
+test:
+  root: /var/www/html/tpx_sk_acquia_sitename.test/docroot
+  ac-site: tpx_sk_acquia_sitename
+  ac-env: test
+  ac-realm: prod
+  uri: tpx_sk_acquia_sitenamestg.prod.acquia-sites.com
+  test.livedev:
+    parent: '@tpx_sk_acquia_sitename.test'
+    root: /mnt/gfs/tpx_sk_acquia_sitename.test/livedev/docroot
+  host: tpx_sk_acquia_sitenamestg.ssh.prod.acquia-sites.com
+  user: tpx_sk_acquia_sitename.test
+  paths:
+    drush-script: drush9

@@ -1,0 +1,29 @@
+uuid: 8ccd894a-90e9-4da2-af2f-5cc3c2fcd781
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_image_desktop
+    - media.type.hero
+    - paragraphs.paragraphs_type.hero_simple
+id: paragraph.hero_simple.field_hero_image_desktop
+field_name: field_hero_image_desktop
+entity_type: paragraph
+bundle: hero_simple
+label: 'Hero image desktop'
+description: "Images should have a minimum width of 1440px.<br/>\r\nImages will be cropped to 1440px × 483px.<br/>\r\nTo avoid cropping unwanted parts of the image set the focal point."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      hero: hero
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

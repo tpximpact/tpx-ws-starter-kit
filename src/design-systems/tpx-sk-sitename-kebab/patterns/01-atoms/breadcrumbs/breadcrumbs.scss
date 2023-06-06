@@ -1,0 +1,15 @@
+.a-breadcrumbs {
+  @apply bg-grey;
+
+  svg {
+    @apply text-orange;
+  }
+
+  &--orange {
+    @apply bg-orange;
+
+    svg {
+      @apply text-grey;
+    }
+  }
+}

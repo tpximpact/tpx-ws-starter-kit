@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * card
+ *
+ * See card.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set text_classes = [
+  'mt-1 lg:mt-1 text-secondary-400 text-sm lg:text-base',
+] | sort | join(' ') | trim %}
+
+{# Classes #}
+{% set classes = [
+  'm-card',
+  'w-full h-full',
+  'overflow-hidden',
+  'border-grey-100',
+  'mb-6 lg:mb-0 last:mb-0',
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<li class="list-none">
+  <div {{ attributes.addClass(classes) }} x-data="cardAccessibilityWrap" x-bind="bindCard">
+    {% if image %}
+      <div class="m-card__image relative overflow-hidden">
+        {{ image }}
+      </div>
+    {% endif %}
+
+    <div class="m-card__content lg:min-w-none p-4 lg:p-6 border-x-2 border-t-2 border-white rounded-b-lg">
+      {% if preheadline %}
+        <h6 class="m-card__preheadline font-normal relative flex items-center b-2 text-secondary-500 text-sm lg:text-base">
+          {{ preheadline }}
+        </h6>
+      {% endif %}
+
+      {% if headline %}
+        <h3 class="m-card__headline text-lg lg:text-4xl">
+          {% if url %}<a class="m-card__link" href="{{ url }}" x-bind="bindCardLink">{% endif %}
+          {{ headline }}
+          {% if url %}</a>{% endif %}
+        </h3>
+      {% endif %}
+
+      {% if description %}
+        <p class="m-card__description flex-grow {{ text_classes }}">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</li>

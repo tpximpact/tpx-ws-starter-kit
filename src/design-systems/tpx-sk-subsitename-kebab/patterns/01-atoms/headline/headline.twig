@@ -1,0 +1,19 @@
+{# SETTING #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set color = color|default('text-inherit') %}
+{% set tag_name = tag_name|default('span') %}
+{% set font_size = font_size|default(tag_name) %}
+{% set spacing_bottom = spacing_bottom|default('default') %}
+{% set classes = ([
+  'a-headline font-serif font-bold', 'transition-all duration-100',
+  color,
+  pattern_configuration('headline', variant, 'spacing_bottom')[spacing_bottom],
+  font_size_custom ? font_size_custom : pattern_configuration('headline', variant, 'size')[font_size],
+]) | sort | join(' ') | trim %}
+
+{# TEMPLATES #}
+<{{ tag_name }} {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ text }}
+  {{ title_suffix }}
+</{{ tag_name }}>

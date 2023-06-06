@@ -1,0 +1,427 @@
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select, {
+  &.a-form-input,
+  &.a-form-select,
+  &.a-form-textarea {
+    @apply border-grey-200 rounded border-3 p-6 font-light text-grey-400 lg:text-lg focus:border-orange hocus:ring-0 transition-all ease-in-out;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.error {
+      @apply border-error;
+    }
+
+    &[required] {
+      &.focused {
+        @apply border-error;
+
+        &.has-value {
+          @apply border-success;
+        }
+      }
+    }
+
+    &.has-value {
+      @apply border-success;
+    }
+
+    &::placeholder {
+      @apply text-grey-400 font-light;
+    }
+
+    &.hasDatepicker {
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='22' viewBox='0 0 20 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2H17V0H15V2H5V0H3V2H0V22H20V2ZM18 20H2V7H18V20Z' fill='%23626366'/%3E%3C/svg%3E%0A");
+      background-position: calc(100% - 24px) center;
+      @apply bg-no-repeat;
+      &:hover,
+      &:focus {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='22' viewBox='0 0 20 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2H17V0H15V2H5V0H3V2H0V22H20V2ZM18 20H2V7H18V20Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  &.a-form-checkbox,
+  &.a-form-radio {
+    @apply w-10 h-10 border-grey-200 border-3 transition-all;
+
+    &:checked {
+      @apply bg-orange hocus:bg-orange focus:ring-orange;
+    }
+
+    &.error {
+      @apply border-error;
+    }
+
+    &.a-form-input {
+      &--orange {
+        @apply focus:ring-orange;
+
+        &:checked {
+          @apply bg-orange hocus:border-orange focus:ring-orange;
+        }
+      }
+
+      &--orange {
+        @apply focus:ring-orange;
+
+        &:checked {
+          @apply bg-orange hocus:border-orange focus:ring-orange;
+        }
+      }
+    }
+  }
+}
+
+[type='checkbox'] {
+  &.a-form-checkbox {
+    @apply rounded;
+    background-size: 150%;
+
+    &:checked {
+      @apply bg-center;
+      background-image: url("data:image/svg+xml,%3Csvg width='26' height='20' viewBox='0 0 26 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.74924 15.9073L2.84174 9.99978L0.830078 11.9973L8.74924 19.9164L25.7492 2.91645L23.7517 0.918945L8.74924 15.9073Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-size: 24px;
+    }
+
+    // Toggle.
+    &.a-form-input__toggle {
+      @apply relative flex items-center w-14 h-auto mr-12 bg-grey-100 border-2 rounded-full cursor-pointer hocus:ring-0;
+
+      @screen lg {
+        @apply w-20;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:active {
+        &::before {
+          @apply scale-x-110 scale-y-90;
+        }
+      }
+
+      &::before {
+        @apply w-5 h-5 m-1 border-2 bg-white rounded-full transition-all ease-bounce;
+        content: '';
+
+        @screen lg {
+          @apply w-7 h-7;
+        }
+      }
+
+      &::after {
+        @apply block absolute left-full ml-4 text-grey-400 text-base font-serif font-light;
+        content: 'No';
+      }
+
+      &:checked {
+        background-image: none;
+
+        &::before {
+          @apply border-white;
+          transform: translateX(calc(100% + #{theme('spacing.1')}));
+
+          @screen lg {
+            transform: translateX(calc(100% + #{theme('spacing[2.5]')}));
+          }
+        }
+
+        &:active {
+          &::before {
+            transform: translateX(calc(100% + #{theme('spacing.1')})) scaleX(1.1) scaleY(0.9);
+
+            @screen lg {
+              transform: translateX(calc(100% + #{theme('spacing[2.5]')})) scaleX(1.1) scaleY(0.9);
+            }
+          }
+        }
+
+        &::after {
+          content: 'Yes';
+        }
+      }
+    }
+  }
+}
+
+[type="file"] {
+  &.a-form-file {
+    text-align-last: center;
+    @apply text-base lg:text-lg font-light w-full;
+    @screen sm {
+      text-align-last: left;
+    }
+
+    &::-webkit-file-upload-button {
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='17' viewBox='0 0 14 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 13H10V7H14L7 0L0 7H4V13ZM0 15H14V17H0V15Z' fill='%23323232'/%3E%3C/svg%3E%0A");
+      background-position-x: calc(50% + 50px);
+      background-position-y: center;
+      @apply w-full sm:w-auto block sm:inline rounded-full bg-white py-4 pr-8 sm:pl-16 sm:pr-24 bg-no-repeat mb-2 sm:mr-4 font-medium hocus:bg-orange hocus:border-orange hocus:text-white hocus:cursor-pointer;
+      @screen sm {
+        background-position-x: calc(100% - 64px);
+      }
+      &:hover,
+      &:focus {
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='17' viewBox='0 0 14 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 13H10V7H14L7 0L0 7H4V13ZM0 15H14V17H0V15Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
+
+.a-form-input,
+.a-form-select,
+.a-form-textarea,
+.a-form-checkbox,
+.a-form-radio {
+  @apply w-full;
+
+  &--orange {
+    @apply hocus:border-orange;
+
+    &::before {
+      @apply border-orange;
+    }
+
+    &:checked {
+      @apply border-orange;
+    }
+  }
+}
+
+.form-item span:not(.form-required):not(.option) {
+  &:after {
+    content: ' (optional)';
+    @apply contents;
+  }
+}
+
+// Form element.
+.a-form-item {
+  @apply flex flex-col mb-6 lg:mb-8;
+
+  &--optional {
+    .a-form-item__label {
+      &::after {
+        @apply inline-block text-grey;
+        content: '(optional)'
+      }
+    }
+  }
+
+  &__label {
+    @apply inline-block pb-4 lg:text-2xl;
+  }
+
+  &__description {
+    @apply text-base text-grey mb-4;
+
+    &--after {
+      @apply mb-0;
+    }
+
+    *:last-child {
+      @apply mb-0;
+    }
+  }
+
+  &__children {
+    .a-form-item__label {
+      &::after {
+        @apply hidden;
+      }
+    }
+  }
+
+  &__toggle {
+    @apply flex items-center justify-between md:flex-col md:items-start;
+
+    .a-form-item__label {
+      @apply pb-2;
+    }
+  }
+
+  &__checkboxes,
+  &__radios {
+    .a-form-item__children {
+      .a-form-item {
+        @apply mb-4;
+
+        &__label {
+          @apply pl-4 pb-0;
+        }
+
+        &__checkbox,
+        &__radio {
+          @apply flex-row items-center;
+        }
+      }
+    }
+  }
+}
+
+.choices {
+  &.is-focused {
+    @apply border-orange;
+  }
+
+  &.is-open {
+    @apply border-3 border-orange rounded;
+    .choices__list--single {
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.12 10.5469L8 4.44021L1.88 10.5469L-3.12482e-07 8.66687L8 0.666874L16 8.66688L14.12 10.5469Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+    }
+
+    .choices__list--dropdown {
+      @apply block;
+      .choices__item {
+        @apply hocus:bg-orange hocus:text-white hocus:cursor-pointer;
+      }
+    }
+
+    .choices__item {
+      @apply border-0 border-b-2 rounded-none;
+    }
+  }
+
+  &__placeholder .choices__item {
+    @apply text-grey-300;
+  }
+
+  &__list {
+    &--single {
+      @apply w-full bg-no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88 0.453125L8 6.55979L14.12 0.453125L16 2.33312L8 10.3331L0 2.33312L1.88 0.453125Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+      background-size: 16px;
+      background-position: calc(100% - 1.5em) center;
+
+      .choices__item:not(.choices__placeholder) {
+        @apply border-success;
+      }
+    }
+
+    &--dropdown {
+      @apply hidden;
+    }
+  }
+
+  &__item {
+    @apply border-grey-200 rounded border-3 p-6 font-light text-grey-400 lg:text-lg;
+  }
+}
+
+div.ui-datepicker {
+  width: calc(100% - 20px);
+  @screen sm {
+    width: 600px;
+  }
+  .ui-datepicker-header {
+    @apply bg-white border-none py-4;
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88 0.453125L8 6.55979L14.12 0.453125L16 2.33312L8 10.3331L0 2.33312L1.88 0.453125Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+      background-size: 16px;
+      @apply p-4 sm:p-6 border-grey-200 rounded border-3 font-light text-grey-400 lg:text-lg hocus:border-orange hocus:shadow-none;
+    }
+  }
+
+  select.ui-datepicker-year {
+    @apply ml-3;
+  }
+
+  .ui-state-default {
+    background: none;
+    @apply rounded-sm border-white border-3 text-grey-400 py-2.5 font-medium text-center;
+    &.ui-state-hover {
+      @apply border-orange border-3;
+    }
+
+    &.ui-state-active {
+      @apply bg-orange text-white;
+    }
+  }
+
+  .ui-state-highlight {
+    @apply border-0;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    @apply bg-center bg-no-repeat top-7 sm:top-10 h-8;
+
+    &.ui-state-hover {
+      @apply border-0;
+    }
+
+    span {
+      @apply hidden;
+    }
+  }
+
+  .ui-datepicker-prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='16' viewBox='0 0 11 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.546 14.12L4.43935 8L10.546 1.88L8.66602 0L0.666016 8L8.66602 16L10.546 14.12Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+    @apply left-4;
+
+    &-hover {
+      @apply top-7 sm:top-10 left-2.5 sm:left-4;
+    }
+  }
+
+  .ui-datepicker-next {
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='16' viewBox='0 0 11 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.453125 14.12L6.55979 8L0.453125 1.88L2.33312 0L10.3331 8L2.33312 16L0.453125 14.12Z' fill='%2300568C'/%3E%3C/svg%3E%0A");
+    @apply right-4;
+
+    &-hover {
+      @apply top-7 sm:top-10 right-2.5 sm:right-4;
+    }
+  }
+
+  th {
+    @apply text-base lg:text-lg text-grey-300 font-light;
+  }
+}
+
+.ui-datepicker-trigger {
+  @apply hidden;
+}
+
+// Raiser's Edge overrides.
+.prose #mongo-form {
+  font-size: 16px;
+
+  select {
+    background-size: 1em 1em;
+    padding-right: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 0.5rem;
+      &:before {
+        content: '';
+      }
+    }
+  }
+}
+#bbox-msg-wrapper img {
+  width: auto;
+}

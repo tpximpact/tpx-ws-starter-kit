@@ -1,0 +1,10 @@
+uuid: ec38ee66-a3de-49d6-9a64-54300e585ec8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwyg_full_width
+label: 'WYSIWYG full width'
+targetEntityType: media
+cache: true

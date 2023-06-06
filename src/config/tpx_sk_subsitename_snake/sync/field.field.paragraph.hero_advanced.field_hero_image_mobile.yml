@@ -1,0 +1,29 @@
+uuid: 4091c109-f738-4dc4-81bf-ae0fb5edec62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_image_mobile
+    - media.type.hero
+    - paragraphs.paragraphs_type.hero_advanced
+id: paragraph.hero_advanced.field_hero_image_mobile
+field_name: field_hero_image_mobile
+entity_type: paragraph
+bundle: hero_advanced
+label: 'Hero image mobile'
+description: "Images should have a minimum width of 768px.<br/>\r\nImages will be cropped to 768px × 1152px.<br/>\r\nTo avoid cropping unwanted parts of the image set the focal point."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      hero: hero
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

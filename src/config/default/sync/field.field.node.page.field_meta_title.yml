@@ -1,0 +1,19 @@
+uuid: 95d0e8a4-dd69-47c2-9987-d2a76a97d81e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_title
+    - node.type.page
+id: node.page.field_meta_title
+field_name: field_meta_title
+entity_type: node
+bundle: page
+label: 'Meta title'
+description: 'Maximum of 60 characters.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,50 @@
+card:
+  use: "@molecules/card/card.twig"
+  label: Card
+  description: A card component with image, headline, description and link.
+  configuration:
+    text_color:
+      white: 'text-grey-400'
+      blue: 'text-blue-100'
+      orange: 'text-orange-100'
+      green: 'text-green-100'
+      purple: 'text-purple-100'
+  fields:
+    preheadline:
+      type: text
+      label: Pre-headline
+      description: Preceding headline text.
+      preview: 01 May 2020
+    headline:
+      type: text
+      label: Headline
+      description: The title of card.
+      preview: The title of the card
+    url:
+      type: text
+      label: Url
+      description: The url of card.
+      preview: http://www.google.com
+    description:
+      type: text
+      label: Description
+      description: The card description text.
+      preview: Optional description of the card, 160 characters limit
+    image:
+      label: Image
+      type: pattern
+      description: The image tag.
+      preview:
+        id: image
+        variant: image
+        settings:
+          url: 'ws-assets://images/card.jpg'
+  libraries:
+    - pattern_card:
+        css:
+          component:
+            ../card.css: { }
+    - behavior:
+        js:
+          ../behaviors/card.js:
+            attributes: { defer: true }

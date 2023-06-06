@@ -1,0 +1,28 @@
+uuid: 860aeb2c-e887-4837-a2e1-38bf0df42fed
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - content_moderation
+    - honeypot
+    - node
+    - paragraphs
+    - system
+    - toolbar
+id: reviewer
+label: Reviewer
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'bypass honeypot protection'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view page revisions'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

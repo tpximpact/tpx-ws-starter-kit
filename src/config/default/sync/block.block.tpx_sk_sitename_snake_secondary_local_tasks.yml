@@ -1,0 +1,22 @@
+uuid: 736babdf-f595-4f17-9796-61e4c1f9578a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tpx_sk_sitename_snake
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: tpx_sk_sitename_snake_secondary_local_tasks
+theme: tpx_sk_sitename_snake
+region: top
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

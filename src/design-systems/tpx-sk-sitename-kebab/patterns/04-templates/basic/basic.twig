@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * basic
+ *
+ * See basic.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{# Template #}
+<article class="t-article">
+  <div class="tlc__content t-article__content">
+    {% if anchor_nav %}
+      {{ anchor_nav }}
+    {% endif %}
+
+    {% if content %}
+      {{ content }}
+    {% endif %}
+  </div>
+</article>

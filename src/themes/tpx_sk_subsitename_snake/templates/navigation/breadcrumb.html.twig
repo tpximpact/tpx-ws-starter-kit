@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb %}
+  {{ pattern('breadcrumbs', {crumbs: breadcrumb, color: tlc_color}) }}
+{% endif %}

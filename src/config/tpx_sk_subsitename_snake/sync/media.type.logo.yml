@@ -1,0 +1,14 @@
+uuid: 3336dca8-a8d6-42a0-b9b6-c2f08cf971b0
+langcode: en
+status: true
+dependencies: {  }
+id: logo
+label: Logo
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_2
+field_map:
+  name: name

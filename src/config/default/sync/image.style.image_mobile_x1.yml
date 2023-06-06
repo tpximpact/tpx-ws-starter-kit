@@ -1,0 +1,15 @@
+uuid: b36aac79-10b7-453b-a3a4-41f6b6714b69
+langcode: en
+status: true
+dependencies: {  }
+name: image_mobile_x1
+label: 'Image mobile x1'
+effects:
+  739f3d6a-6f73-45c2-95ee-bbf7bea5fc7d:
+    uuid: 739f3d6a-6f73-45c2-95ee-bbf7bea5fc7d
+    id: image_scale
+    weight: 1
+    data:
+      width: 302
+      height: null
+      upscale: false

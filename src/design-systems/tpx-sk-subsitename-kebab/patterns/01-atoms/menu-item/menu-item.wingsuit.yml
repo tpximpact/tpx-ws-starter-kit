@@ -1,0 +1,49 @@
+menu_item:
+  use: "@atoms/menu-item/menu-item.twig"
+  label: Menu Item
+  description: Menu item component for use with in menus.
+  fields:
+    title:
+      type: text
+      label: Text
+      preview: Services
+    url:
+      type: url
+      label: URL
+    below:
+      type: object
+      label: Sub menu items
+      preview:
+        - title: Treatments
+          url: ''
+        - title: Conditions we treat
+          url: ''
+        - title: Test, scans and screening
+          url: ''
+        - title: Video consultations
+          url: ''
+        - title: Private GP
+          url: ''
+  variants:
+    primary:
+      label: Primary
+    link:
+      label: Link
+      fields:
+        title: For healthcare professionals
+        below: []
+    footer:
+      label: Footer
+      title: For healthcare professionals
+      below: [ ]
+  settings:
+    in_active_trail:
+      type: boolean
+      label: Active trail
+      default_value: false
+      preview: false
+  libraries:
+    - style:
+        css:
+          component:
+            '../menu-item.css': {}

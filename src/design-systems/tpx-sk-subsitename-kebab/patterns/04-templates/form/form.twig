@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * form
+ *
+ * See form.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+
+{% set classes = [
+  't-form',
+] | join(' ') | trim %}
+
+{# Template #}
+<form{{ attributes.addClass(classes) }}>
+  {% if elements or children or actions %}
+    <div class="container">
+      <div class="t-form__wrapper w-full sm:w-9/12 lg:w-6/12">
+        {% if children %}
+          <div class="t-form__children">
+            {{ children }}
+          </div>
+        {% elseif elements %}
+          <div class="t-form__elements">
+            {{ elements }}
+
+            <div class="t-form__hidden-elements visually-hidden">
+              {{ form_id }}
+              {{ form_build_id }}
+              {{ form_token }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if actions %}
+          <div class="t-form__actions">
+            {{ actions }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</form>

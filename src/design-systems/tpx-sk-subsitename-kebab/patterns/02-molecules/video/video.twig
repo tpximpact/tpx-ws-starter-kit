@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * card-collection
+ *
+ * See card-collection.wingsuit.yaml for documentation.
+ */
+#}
+
+{# Defaults #}
+{% set attributes = attributes|default(create_attribute()) %}
+{% set padding_top = padding_top|default('medium') %}
+{% set padding_bottom = padding_bottom|default('medium') %}
+{% set spacing = {
+  'padding_top': pattern_configuration('spacer', '', 'padding_top')[padding_top],
+  'padding_bottom': pattern_configuration('spacer', '', 'padding_bottom')[padding_bottom],
+} %}
+
+{# Classes #}
+{% set classes = [
+  'o-video',
+  spacing.padding_top,
+  spacing.padding_bottom,
+] | sort | join(' ') | trim %}
+
+{# Template #}
+<div {{ attributes.addClass(classes) }}>
+  <div class="container">
+
+    {% if header %}
+      <h2 class="relative flex items-center">{{ header }}</h2>
+    {% endif %}
+
+    {% if description %}
+      <div class="o-video__description mb-8 text-secondary-500 text-xl lg:text-2xl font-serif">
+        {{ description }}
+      </div>
+    {% endif %}
+
+    <div class="o-video__content aspect-w-16 aspect-h-9">
+      {{ iframe }}
+      {% apply spaceless %}
+        <button
+          aria-label="{{ 'Play video'|t }}"
+          class="bg-no-repeat bg-cover bg-center rounded-lg",
+          style="background-image: url({{ media_thumbnail }})"
+          data-bg-legacy="{{ media_thumbnail_legacy }}"
+        >
+          <i class="flex justify-center items-center mx-auto w-20 h-20 bg-white rounded-full" aria-hidden="true">
+            {{ pattern('svg_icon', {icon: 'play-arrow', size: 'w-6 h-6'}) }}
+          </i>
+
+        </button>
+      {% endapply %}
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,54 @@
+{#
+Classes
+#}
+{% set classes = [
+  'm-text-with-image',
+  'text-black',
+] | sort | join(' ') | trim %}
+
+{% set attributes = attributes|default(create_attribute()).addClass(classes) %}
+{% set alignment = image_alignment == 'left' ? 'md:-order-1' : '' %}
+{% set alignment_margin = image_alignment == 'left' ? 'w-full' : 'w-screen' %}
+
+
+<section {{ attributes }}>
+  <div class="grid md:grid-cols-2">
+
+    {# Text section #}
+    <div class="m-text-with-image__copy py-12 w-full md:h-[50vw] lg:h-[35vw] xl:h-[30vw]">
+      <div class="content-wrapper relative md:h-full">
+        <div class="pb-4 self-center font-serif md:absolute md:top-1/2 md:-translate-y-1/2 {{ alignment_margin }}">
+          <div class="container">
+            <div class="md:max-w-xs lg:max-w-sm xl:max-w-md">
+              {% if heading %}
+                <h2 class="lg:text-6xl text-4xl mb-2 relative">{{ heading }}</h2>
+              {% endif %}
+
+              {% if copy %}
+                <div>
+                  {{ copy }}
+                </div>
+              {% endif %}
+
+              {% if cta_text or cta_link %}
+                <div class="pt-4 flex-none self-center lg:text-right sm:flex">
+                  {{ pattern('button', {text: cta_text, url: cta_link, color: button_color}, 'secondary') }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# Image section #}
+    {% if media %}
+      <div class="m-text-with-image__image {{ alignment }}">
+        {{ pattern('image', {
+          url: media,
+          background_style: 'bg-cover h-[60vw] md:h-full md:bg-center',
+        }, 'background') }}
+      </div>
+    {% endif %}
+  </div>
+</section>

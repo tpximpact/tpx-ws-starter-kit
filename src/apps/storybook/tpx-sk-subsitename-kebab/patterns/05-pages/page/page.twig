@@ -1,0 +1,27 @@
+{% set header %}
+  {{ pattern_preview('header', {menu: false}) }}
+{% endset %}
+
+{% set top %}
+{% endset %}
+
+{% set main %}
+  {{ pattern_preview('hero', {}, 'simple') }}
+  {{ pattern_preview('rich_text', {}, 'default') }}
+  {{ pattern_preview('accordion') }}
+  {{ pattern_preview('video') }}
+  {{ pattern_preview('card_collection') }}
+  {{ pattern_preview('cta_banner') }}
+{% endset %}
+
+{% set footer %}
+  {{ pattern_preview('footer') }}
+{% endset %}
+
+{{ pattern('site_container', {
+  header: header,
+  top: top,
+  main: main,
+  bottom: bottom,
+  footer: footer,
+}, 'default') }}
